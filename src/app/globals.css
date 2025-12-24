@@ -53,6 +53,9 @@
     --destructive: 0 100% 50%;
     --destructive-foreground: 210 40% 98%;
 
+    --overlay-bg: 0 0% 8%;
+    --overlay-glass: 0 0% 8% / 0.6;
+
     --font-ivy: "IvyMode";
     --font-manrope: "Manrope";
   }
@@ -110,12 +113,22 @@
   h6 {
     font-family: var(--font-ivy);
   }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  * {
+    scrollbar-width: none;
+  }
+  * {
+    -ms-overflow-style: none;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 @layer utilities {
-  /* -----------------------------
-     IvyMode – Headings
-  ------------------------------ */
   .heading-xl {
     font-family: var(--font-ivy);
     font-size: 50px;
@@ -138,6 +151,17 @@
     @apply heading-xl;
     font-weight: 400;
   }
+  .heading-xlg {
+    @apply heading-xl;
+    font-weight: 300;
+    line-height: 50px;
+    font-size: 40px;
+    letter-spacing: 0.04em;
+  }
+  .heading-xmd {
+    @apply heading-xlg;
+    font-size: 26px;
+  }
 
   .heading-lg {
     font-family: var(--font-ivy);
@@ -146,10 +170,14 @@
     line-height: 43px;
     letter-spacing: 0.04em;
   }
-
-  /* -----------------------------
-     Manrope – Body text
-  ------------------------------ */
+  .heading-lg-thin {
+    font-family: var(--font-ivy);
+    font-weight: 250;
+    font-style: thin;
+    font-size: 28px;
+    line-height: 35px;
+    letter-spacing: 0.04em;
+  }
 
   .text-body {
     font-family: var(--font-manrope);
@@ -173,7 +201,7 @@
   .text-md {
     font-family: var(--font-manrope);
     font-weight: 400;
-    font-size: 18px;
+    font-size: 22px;
     line-height: 100%;
   }
 
@@ -187,6 +215,10 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 100%;
+  }
+  .text-xsm {
+    @apply text-sm;
+    font-size: 14px;
   }
 }
 

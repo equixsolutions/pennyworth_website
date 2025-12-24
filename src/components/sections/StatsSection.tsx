@@ -1,42 +1,32 @@
-function StatsSection() {
-  const values = [
-    { id: 0, heading: "ISO 9001", subHeading: "2015 Certified" },
-    { id: 1, heading: "10+ Years", subHeading: "Experience" },
-    { id: 2, heading: "100+", subHeading: "Corporate Clients" },
-    { id: 3, heading: "Worldwide", subHeading: "Shipping" },
-    { id: 4, heading: "500", subHeading: "Pieces Min. Order" },
-  ];
+import { values } from "@/constance/ui";
 
+function StatsSection() {
   return (
     <div className="bg-white flex items-center justify-center my-24">
       <div className="w-full">
-        <div className="mb-4">
-          <h2 className="text-lg font-light text-gray-700 px-18">
+        <div className="mb-4 md:px-10 px-5">
+          <h2 className="text-sm  md:text-md font-light text-primary px-18">
             Experience. Trust. Global Reach.
           </h2>
         </div>
-        <div className="grid grid-cols-2 lg:grid-cols-5 border-t border-gray-300">
+        <div className="grid grid-cols-2 lg:grid-cols-5 border-t border-muted-foreground">
           {values.map((value, index) => (
             <div
               key={value.id}
               className="
-            flex flex-col items-center justify-center
-            py-10 px-6 text-center
-
-            border-b border-gray-300
-            border-r border-gray-300
-
-            lg:border-b-0
-            lg:last:border-r-0
-
-            [&:nth-child(2n)]:border-r-0
-            lg:[&:nth-child(2n)]:border-r
-          "
+                flex flex-col
+                items-start justify-start
+                py-6 md:px-10 px-6
+                border-r border-b border-muted-foreground
+                lg:last:border-r-0
+                [&:nth-child(2n)]:border-r-1
+                lg:[&:nth-child(2n)]:border-r-1
+                text-left"
             >
-              <h3 className="text-3xl md:text-4xl font-light text-gray-900 mb-2">
+              <h3 className="heading-xmd md:heading-xlg font-light text-primary mb-2">
                 {value.heading}
               </h3>
-              <p className="text-sm text-gray-600 font-light">
+              <p className="text-xsm md:text-sm text-muted-foreground font-light">
                 {value.subHeading}
               </p>
             </div>
