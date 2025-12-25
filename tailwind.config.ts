@@ -17,6 +17,7 @@ module.exports = {
         foreground: "hsl(var(--foreground))",
         overlay: "hsl(var(--overlay-bg))",
         "overlay-glass": "hsl(var(--overlay-glass))",
+        "border-main": "hsla(var(--border-main))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

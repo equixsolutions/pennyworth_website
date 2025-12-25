@@ -5,13 +5,13 @@ function StatsSection() {
     <div className="bg-white flex items-center justify-center my-24">
       <div className="w-full">
         <div className="mb-4 md:px-10 px-5">
-          <h2 className="text-sm  md:text-md font-light text-primary px-18">
+          <h2 className="text-m-sm  md:text-m-md font-light text-primary px-18">
             Experience. Trust. Global Reach.
           </h2>
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-5 border-t border-muted-foreground">
           {values.map((value, index) => (
-            <div
+            <div  
               key={value.id}
               className="
                 flex flex-col
@@ -26,7 +26,7 @@ function StatsSection() {
               <h3 className="heading-xmd md:heading-xlg font-light text-primary mb-2">
                 {value.heading}
               </h3>
-              <p className="text-xsm md:text-sm text-muted-foreground font-light">
+              <p className="text-xsm md:text-m-sm text-muted-foreground font-light">
                 {value.subHeading}
               </p>
             </div>

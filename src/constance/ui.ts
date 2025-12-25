@@ -4,6 +4,15 @@ import Facebook from "@/assets/svg/Facebook.svg";
 import Youtube from "@/assets/svg/youtube.svg";
 import x from "@/assets/svg/X.svg";
 
+import {
+  ArrowUpRight,
+  ShieldCheck,
+  Factory,
+  Boxes,
+  Palette,
+  Leaf,
+} from "lucide-react";
+
 export const menuItems = [
   { label: "Home", href: "#" },
   { label: "About Us", href: "#about" },
@@ -26,4 +35,32 @@ export const values = [
   { id: 2, heading: "100+", subHeading: "Corporate Clients" },
   { id: 3, heading: "Worldwide", subHeading: "Shipping" },
   { id: 4, heading: "500", subHeading: "Pieces Min. Order" },
+];
+export const features = [
+  {
+    icon: ShieldCheck,
+    title: "Certified Safety Standards",
+    description: "EN ISO 11612, NFPA 2112, EN 1149 compliant",
+  },
+  {
+    icon: Factory,
+    title: "Competitive Factory Pricing",
+    description: "Direct manufacturer rates with no middlemen",
+  },
+  {
+    icon: Boxes,
+    title: "Seamless Bulk Production",
+    description: "500 to 550,000+ pieces delivered on time",
+  },
+  {
+    icon: Palette,
+    title: "Custom Design Excellence",
+    description:
+      "Full branding, embroidery, and color matching and panton Dying",
+  },
+  {
+    icon: Leaf,
+    title: "Sustainability Focus",
+    description: "Eco-friendly materials and ethical manufacturing",
+  },
 ];

@@ -35,7 +35,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 47.4% 11.2%;
 
-    --border: 214.3 31.8% 91.4%;
+    --border-main: 0, 0%, 58%, 1;
     --input: 214.3 31.8% 91.4%;
 
     --card: transparent;
@@ -179,27 +179,35 @@
     letter-spacing: 0.04em;
   }
 
-  .text-body {
+  .text-manrope {
     font-family: var(--font-manrope);
+  }
+  .text-m-body {
+    @apply text-manrope;
     font-weight: 400;
     font-size: 20px;
     line-height: 32px;
   }
 
   .text-body-bold {
-    @apply text-body;
+    @apply text-manrope;
     font-weight: 700;
+    font-size: 22px;
   }
-
-  .text-lg {
-    font-family: var(--font-manrope);
+  .text-body-bold-md {
+    @apply text-manrope;
+    font-weight: 700;
+    font-size: 18px;
+  }
+  .text-m-lg {
+    @apply text-manrope;
     font-weight: 400;
     font-size: 22px;
     line-height: 100%;
   }
 
-  .text-md {
-    font-family: var(--font-manrope);
+  .text-m-md {
+    @apply text-manrope;
     font-weight: 400;
     font-size: 22px;
     line-height: 100%;
@@ -210,14 +218,14 @@
     font-weight: 700;
   }
 
-  .text-sm {
-    font-family: var(--font-manrope);
+  .text-m-sm {
+    @apply text-manrope;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 100%;
+    font-size: 18px;
+    line-height: 25px;
   }
   .text-xsm {
-    @apply text-sm;
+    @apply text-m-sm;
     font-size: 14px;
   }
 }

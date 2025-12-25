@@ -65,7 +65,7 @@ const HeroSection = ({ onMenuOpen }: HeroSectionProps) => {
             </span>
           </h1>
           <div className="w-full flex justify-center">
-            <p className="text-gray-300 text-base text-md md:text-lg mb-8 md:mt-20 mt-14  text-left ml-5">
+            <p className="text-gray-300 text-base text-m-md md:text- mb-8 md:mt-20 mt-14  text-left ml-5">
               India&apos;s Biggest Manufacturer of Flame-Resistant Workwear
               <br className="hidden md:block" />& Custom Uniforms{" "}
               <span className="text-white font-medium">Since 2014</span>
@@ -77,7 +77,7 @@ const HeroSection = ({ onMenuOpen }: HeroSectionProps) => {
               variant="heroPrimary"
               size="lg"
               className="group text-secondary 
-               text-sm px-4 py-2 
+               text-m-sm px-4 py-2 
                md:text-base md:px-6 md:py-3"
             >
               Talk to Us
@@ -88,7 +88,7 @@ const HeroSection = ({ onMenuOpen }: HeroSectionProps) => {
               variant="destructive"
               size="lg"
               className="group bg-secondary text-primary
-               text-sm px-4 py-2
+               text-m-sm px-4 py-2
                md:text-base md:px-6 md:py-3"
             >
               Explore Our Products
