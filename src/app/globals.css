@@ -154,7 +154,7 @@
   .heading-xlg {
     @apply heading-xl;
     font-weight: 300;
-    line-height: 50px;
+    line-height: 30px;
     font-size: 40px;
     letter-spacing: 0.04em;
   }
@@ -168,6 +168,13 @@
     font-weight: 400;
     font-size: 30px;
     line-height: 43px;
+    letter-spacing: 0.04em;
+  }
+  .heading-l-lg {
+    font-family: var(--font-ivy);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
     letter-spacing: 0.04em;
   }
   .heading-lg-thin {

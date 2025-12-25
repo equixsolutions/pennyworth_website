@@ -11,6 +11,12 @@ import {
   Boxes,
   Palette,
   Leaf,
+  FileText,
+  HeartPulse,
+  Building2,
+  HardHat,
+  Hotel,
+  Truck,
 } from "lucide-react";
 
 export const menuItems = [
@@ -63,4 +69,14 @@ export const features = [
     title: "Sustainability Focus",
     description: "Eco-friendly materials and ethical manufacturing",
   },
+];
+
+export const industries = [
+  { label: "Oil, Gas & Energy", icon: FileText },
+  { label: "Healthcare & Medical", icon: HeartPulse },
+  { label: "Corporate & Retail", icon: Building2 },
+  { label: "Manufacturing & Industrial", icon: Factory },
+  { label: "Construction & Infrastructure", icon: HardHat },
+  { label: "Hospitality & Tourism", icon: Hotel },
+  { label: "Logistics & Warehousing", icon: Truck },
 ];

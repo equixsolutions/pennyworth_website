@@ -6,6 +6,9 @@ import { useState } from "react";
 import StatsSection from "@/components/sections/StatsSection";
 import AboutSection from "@/components/sections/AboutSection";
 import LeadershipSection from "@/components/sections/LeadershipSection";
+import ValuesSection from "@/components/sections/ValuesSection";
+import IndustriesSection from "@/components/sections/IndustriesSection";
+import NewsAndEvents from "@/components/sections/NewsAndEvents";
 // import Footer from "@/components/Footer";
 
 const Home = () => {
@@ -18,6 +21,9 @@ const Home = () => {
         <StatsSection />
         <AboutSection />
         <LeadershipSection />
+        <ValuesSection />
+        <IndustriesSection />
+        <NewsAndEvents />
         {/* <Footer /> */}
         <NavigationMenu
           isOpen={isMenuOpen}
