@@ -3,7 +3,7 @@ import ValueCard from "../common/ValueCard";
 
 const ValuesSection = () => {
   return (
-    <section className="w-full md:px-10 px-5 ">
+    <section className="w-full md:px-10 px-5 md:mt-24 ">
       <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2">
         <div className="relative h-[200px] md:aspect-square md:h-auto md:order-1">
           <Image

@@ -8,7 +8,7 @@ export default function IndustriesSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section className="w-full bg-primary text-secondary md:px-10 px-5 py-16 md:mt-36 mt-20">
+    <section className="w-full bg-primary text-secondary md:px-10 px-5 py-16 md:mt-32 mt-20">
       <div className="pt-4 mb-8">
         <h2 className="text-m-md mb-2">
           Trusted by Leading Sectors Across India and Beyond

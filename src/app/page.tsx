@@ -9,7 +9,11 @@ import LeadershipSection from "@/components/sections/LeadershipSection";
 import ValuesSection from "@/components/sections/ValuesSection";
 import IndustriesSection from "@/components/sections/IndustriesSection";
 import NewsAndEvents from "@/components/sections/NewsAndEvents";
-// import Footer from "@/components/Footer";
+import FeaturesSection from "@/components/sections/FeaturesSection";
+import AboutMoreSection from "@/components/sections/AboutMoreSection";
+import TestimonialSection from "@/components/sections/TestimonialSection";
+import Footer from "@/components/layout/Footer";
+
 
 const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,10 +25,13 @@ const Home = () => {
         <StatsSection />
         <AboutSection />
         <LeadershipSection />
+        <NewsAndEvents />
         <ValuesSection />
         <IndustriesSection />
-        <NewsAndEvents />
-        {/* <Footer /> */}
+        <FeaturesSection />
+        <AboutMoreSection />
+        <TestimonialSection />
+        <Footer />
         <NavigationMenu
           isOpen={isMenuOpen}
           onClose={() => setIsMenuOpen(false)}

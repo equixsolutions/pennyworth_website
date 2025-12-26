@@ -76,9 +76,9 @@ const HeroSection = ({ onMenuOpen }: HeroSectionProps) => {
             <Button
               variant="heroPrimary"
               size="lg"
-              className="group text-secondary 
+              className="group
                text-m-sm px-4 py-2 
-               md:text-base md:px-6 md:py-3"
+               text-secondary md:px-6 md:py-3"
             >
               Talk to Us
               <ArrowRight className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -88,7 +88,7 @@ const HeroSection = ({ onMenuOpen }: HeroSectionProps) => {
               variant="destructive"
               size="lg"
               className="group bg-secondary text-primary
-               text-m-sm px-4 py-2
+                text-m-sm px-4 py-2
                md:text-base md:px-6 md:py-3"
             >
               Explore Our Products

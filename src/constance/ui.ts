@@ -80,3 +80,83 @@ export const industries = [
   { label: "Hospitality & Tourism", icon: Hotel },
   { label: "Logistics & Warehousing", icon: Truck },
 ];
+export const sustainabilityFeaturesData = [
+  {
+    title: "Eco-Friendly Fabrics",
+    description: "Organic cotton, recycled polyester, Lenzing FR, viscose",
+    bgColor: "bg-black",
+    textColor: "text-white",
+  },
+  {
+    title: "Ethical Manufacturing",
+    description: "Fair wages, safe working conditions, zero child labor",
+    bgColor: "bg-[#f3f3f3]",
+    textColor: "text-primary",
+  },
+  {
+    title: "Water Conservation",
+    description: "Advanced dyeing processes that reduce water usage by 40%",
+    bgColor: "bg-[#f3f3f3]",
+    textColor: "text-primary",
+  },
+  {
+    title: "Carbon Footprint Reduction",
+    description: "Energy-efficient machinery and solar-powered facilities",
+    bgColor: "bg-[#f3f3f3]",
+    textColor: "text-primary",
+  },
+];
+
+export const carouselItems = [
+  {
+    id: 1,
+    image: "/assets/images/design/news_1.png",
+    title: "Pennywort Meeting in Japan",
+    description: "Advanced dyeing processes that reduce water usage by 40%",
+  },
+  {
+    id: 2,
+    image: "/assets/images/design/news_2.png",
+    title: "Global Strategy Meet",
+    description: "Leadership discussion on sustainable manufacturing",
+  },
+  {
+    id: 3,
+    image: "/assets/images/design/news_3.png",
+    title: "Tech Collaboration",
+    description: "Digital transformation with global partners",
+  },
+  {
+    id: 4,
+    image: "/assets/images/design/news_4.png",
+    title: "Business Review",
+    description: "Quarterly growth and expansion planning",
+  },
+  {
+    id: 5,
+    image: "/assets/images/design/news_4.png",
+    title: "Business Review",
+    description: "Quarterly growth and expansion planning",
+  },
+];
+
+export const testimonials = [
+  {
+    quote:
+      "Pennywort delivered 35,000 IFR coveralls for our refinery project—on time, on budget, and exceeding our safety standards.",
+    author: "Safety Manager",
+    company: "Major Petrochemical Corporation",
+  },
+  {
+    quote:
+      "We've ordered over multiple years. Pennywort’s quality, vibrant colors, and customer support are exceptional.",
+    author: "Procurement Head",
+    company: "Multi-Specialty Industry",
+  },
+  {
+    quote:
+      "Their attention to detail and compliance standards make them a trusted long-term partner.",
+    author: "Operations Lead",
+    company: "Manufacturing Group",
+  },
+];
