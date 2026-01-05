@@ -13,7 +13,8 @@ import FeaturesSection from "@/components/sections/FeaturesSection";
 import AboutMoreSection from "@/components/sections/AboutMoreSection";
 import TestimonialSection from "@/components/sections/TestimonialSection";
 import Footer from "@/components/layout/Footer";
-
+import SignatureProductSection from "@/components/sections/SignatureProductsSection";
+import WhyPennywortSection from "@/components/sections/WhyPennywortSection";
 
 const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,6 +26,8 @@ const Home = () => {
         <StatsSection />
         <AboutSection />
         <LeadershipSection />
+        <SignatureProductSection />
+        <WhyPennywortSection />
         <NewsAndEvents />
         <ValuesSection />
         <IndustriesSection />

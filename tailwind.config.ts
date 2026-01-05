@@ -9,6 +9,9 @@ module.exports = {
   darkMode: ["class"],
   theme: {
     extend: {
+      screens: {
+        lg2: "1300px",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -18,6 +21,7 @@ module.exports = {
         overlay: "hsl(var(--overlay-bg))",
         "overlay-glass": "hsl(var(--overlay-glass))",
         "border-main": "hsla(var(--border-main))",
+        danger: "hsl(var(--danger))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -25,10 +29,13 @@ module.exports = {
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
+          background: "hsl(var(--secondary-background))",
         },
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
+          secondary: "hsl(var(--muted-secondary))",
+          secondary_light: "hsl(var(--muted-secondary-light))",
         },
         accent: {
           DEFAULT: "hsl(var(--accent))",

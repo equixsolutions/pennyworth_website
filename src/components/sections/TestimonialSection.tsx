@@ -36,9 +36,10 @@ function TestimonialSection() {
     setIndex((i) => (i - 1 + total) % total);
   };
 
+  // Reduced translate distance to avoid overflow on resize
   const containerVariants = {
     enter: (direction: number) => ({
-      x: direction > 0 ? 80 : -80,
+      x: direction > 0 ? 40 : -40,
       opacity: 0,
     }),
     center: {
@@ -46,26 +47,26 @@ function TestimonialSection() {
       opacity: 1,
     },
     exit: (direction: number) => ({
-      x: direction > 0 ? -80 : 80,
+      x: direction > 0 ? -40 : 40,
       opacity: 0,
     }),
   };
 
   return (
-    <section className="relative">
-      <div className="pt-4 sm:px-10 mb-8 md:mx-10 mx-5">
+    <section className="relative overflow-x-hidden w-full">
+      <div className="pt-4 mb-8 md:mx-10 mx-5">
         <h2 className="text-m-md mb-2">What Our Partners Say</h2>
         <hr className="border-t border-main" />
       </div>
-      <div className="absolute text-6xl text-muted-foreground md:ml-10 ml-5 mb-6 z-0">
-        <span className="flex justify-end relative top-10 sm:top-auto text-[100px] leading-none text-muted-foreground font-serif">
+      <div className="absolute inset-x-0 md:top-20 top-10 pointer-events-none overflow-hidden z-0 md:mx-10 mx-5">
+        <span className="flex justify-start leading-none text-muted-foreground relative md:right-auto right-14  scale-50 md:scale-100">
           <Comma />
           <Comma />
         </span>
       </div>
-      <div className="relative mt-44 flex items-start md:ml-10 ml-5">
-        <div className="md:flex hidden items-center justify-between gap-4 mt-12 z-10">
-          <div className="flex md:justify-center gap-1 mt-8 mr-8">
+      <div className="relative md:mt-44 mt-28 flex items-start md:ml-10 ml-5 w-full">
+        <div className="hidden md:flex items-center justify-between gap-4 mt-12 z-10">
+          <div className="flex gap-1 mt-8 mr-8">
             <button
               onClick={prevSlide}
               className="w-14 h-14 rounded-full border border-primary flex items-center justify-center hover:border-muted-foreground hover:text-muted-foreground transition"
@@ -80,40 +81,43 @@ function TestimonialSection() {
             </button>
           </div>
         </div>
-        <div className="flex flex-col">
-          <AnimatePresence mode="wait" custom={direction}>
-            <motion.div
-              key={index}
-              custom={direction}
-              variants={containerVariants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{ duration: 0.6, ease: "easeInOut" }}
-              className="flex gap-16 items-start"
-            >
-              <div className="max-w-xl">
-                <p className="text-xl leading-relaxed text-gray-900 mb-6">
-                  {active.quote}
-                </p>
-                <p className="text-sm text-gray-600">
-                  — {active.author}, {active.company}
-                </p>
-              </div>
-              <div className="hidden md:block max-w-md">
-                <p className="text-lg leading-relaxed text-gray-400">
-                  {next.quote}
-                </p>
-              </div>
-            </motion.div>
-          </AnimatePresence>
+        <div className="flex flex-col w-full max-w-full">
+          <div className="overflow-hidden w-full">
+            <AnimatePresence mode="wait" custom={direction}>
+              <motion.div
+                key={index}
+                custom={direction}
+                variants={containerVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+                className="flex gap-16 items-start will-change-transform"
+              >
+                <div className="max-w-xl">
+                  <p className="text-xl leading-relaxed text-gray-900 mb-6">
+                    {active.quote}
+                  </p>
+                  <p className="text-sm text-gray-600">
+                    — {active.author}, {active.company}
+                  </p>
+                </div>
+
+                <div className="hidden md:block max-w-md">
+                  <p className="text-lg leading-relaxed text-gray-400">
+                    {next.quote}
+                  </p>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
 
           <div className="flex gap-2 mt-6">
             {testimonials.map((_, i) => (
               <div
                 key={i}
                 className={`h-[2px] w-24 transition-colors duration-300 ${
-                  i === index ? "bg-black" : "bg-gray-300"
+                  i === index ? "bg-  " : "bg-gray-300"
                 }`}
               />
             ))}
@@ -121,8 +125,7 @@ function TestimonialSection() {
           <Button
             variant="heroPrimary"
             size="lg"
-            className="group w-[300px]
-               text-m-sm px-4 py-2 mt-6 text-primary border border-primary md:px-6 md:py-3"
+            className="group w-[300px] text-m-sm px-4 py-2 mt-6 text-primary border border-primary md:px-6 md:py-3"
           >
             Read More Success Stories
             <ArrowRight className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

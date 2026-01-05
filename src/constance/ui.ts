@@ -42,6 +42,7 @@ export const values = [
   { id: 3, heading: "Worldwide", subHeading: "Shipping" },
   { id: 4, heading: "500", subHeading: "Pieces Min. Order" },
 ];
+
 export const features = [
   {
     icon: ShieldCheck,
@@ -80,6 +81,7 @@ export const industries = [
   { label: "Hospitality & Tourism", icon: Hotel },
   { label: "Logistics & Warehousing", icon: Truck },
 ];
+
 export const sustainabilityFeaturesData = [
   {
     title: "Eco-Friendly Fabrics",
@@ -158,5 +160,53 @@ export const testimonials = [
       "Their attention to detail and compliance standards make them a trusted long-term partner.",
     author: "Operations Lead",
     company: "Manufacturing Group",
+  },
+];
+
+export const footerLinksData = [
+  {
+    label: "Request a Quote",
+    description: "Get custom pricing for your bulk order",
+  },
+  { label: "Order Samples", description: "Test quality before bulk order" },
+  {
+    label: "Design Your Uniform",
+    description: "Use our online customization tool",
+  },
+  {
+    label: "Download Catalog",
+    description: "Browse our complete product range",
+  },
+];
+
+export const navigationLinks = [
+  "HOME",
+  "ABOUT US",
+  "CUSTOMIZE WEAR",
+  "BLOG",
+  "CONTACT US",
+];
+export const visitUsData = [
+  {
+    title: "Address",
+    lines: [
+      "2nd Floor, AIM Shopping Complex",
+      "Vivekananda Road, Opposite Police Station",
+      "Adimaly - 685561, Idukki District",
+      "Kerala, India",
+    ],
+  },
+  {
+    title: "Contact",
+    lines: [
+      "+91-9446666055 | +91-9447544448",
+      "office@pennywort.in",
+      "www.pwort.com",
+    ],
+  },
+  {
+    title: "Business Hours",
+    lines: ["Monday – Friday: 9:00 AM – 6:00 PM", "Sat – Sunday: Closed"],
+    highlightLast: true,
   },
 ];

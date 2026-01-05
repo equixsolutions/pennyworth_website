@@ -50,7 +50,7 @@ export default function NewsAndEvents() {
   }, []);
 
   return (
-    <section className="w-full overflow-hidden md:mt-24 mt-16">
+    <section className="w-full overflow-hidden md:mt-10 mt-16">
       <div className="pt-4 px-5 md:px-10">
         <h2 className="text-m-md mb-2">Find our more Engagements</h2>
         <hr className="border-t border-main" />
