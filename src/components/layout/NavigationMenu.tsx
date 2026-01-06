@@ -9,7 +9,7 @@ import {
   Twitter,
 } from "lucide-react";
 import ArrowRight from "@/assets/svg/Arrow_right.svg";
-import { menuItems, socialLinks } from "@/constance/ui";
+import { menuItems, socialLinks } from "@/constance/home";
 
 interface NavigationMenuProps {
   isOpen: boolean;

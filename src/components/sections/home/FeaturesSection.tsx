@@ -1,4 +1,4 @@
-import { sustainabilityFeaturesData } from "@/constance/ui";
+import { sustainabilityFeaturesData } from "@/constance/home";
 
 function FeaturesSection() {
   return (

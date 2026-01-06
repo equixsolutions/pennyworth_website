@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import ProductCard from "../common/ProductCard";
+import ProductCard from "../../common/ProductCard";
 import ArrowSide from "@/assets/svg/arrow_down.svg";
 
 const products = [

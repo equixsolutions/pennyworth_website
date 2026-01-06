@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import ArrowSide from "@/assets/svg/arrow_down.svg";
-import { carouselItems } from "@/constance/ui";
+import { carouselItems } from "@/constance/home";
 
 const IMAGE_WIDTH_MOBILE = 230;
 const IMAGE_WIDTH_DESKTOP = 270;

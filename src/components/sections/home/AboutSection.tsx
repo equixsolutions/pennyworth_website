@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import FeatureItem from "@/components/common/FeatureItem";
 import ImageGrid from "@/components/common/ImageGrid";
-import { features } from "@/constance/ui";
+import { features } from "@/constance/home";
 import { ArrowUpRight } from "lucide-react";
 
 

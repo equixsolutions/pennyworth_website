@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { testimonials } from "@/constance/ui";
-import { Button } from "../ui/button";
+import { testimonials } from "@/constance/home";
+import { Button } from "../../ui/button";
 import ArrowRight from "@/assets/svg/Arrow_right.svg";
 import ArrowSide from "@/assets/svg/arrow_down.svg";
 import Comma from "@/assets/svg/comma.svg";
@@ -53,7 +53,7 @@ function TestimonialSection() {
   };
 
   return (
-    <section className="relative overflow-x-hidden w-full">
+    <section className="relative overflow-x-hidden mb-20 w-full">
       <div className="pt-4 mb-8 md:mx-10 mx-5">
         <h2 className="text-m-md mb-2">What Our Partners Say</h2>
         <hr className="border-t border-main" />

@@ -1,10 +1,10 @@
 import React from "react";
 import ArrowRight from "@/assets/svg/Arrow_right.svg";
-import { footerLinksData, navigationLinks, visitUsData } from "@/constance/ui";
+import { footerLinksData, navigationLinks, visitUsData } from "@/constance/home";
 
 export default function Footer() {
   return (
-    <footer className="relative mt-20 ">
+    <footer className="relative ">
       <section className="relative bg-primary overflow-hidden md:h-auto h-[1000px]">
         <img
           src="/assets/images/design/footer_cover.png"

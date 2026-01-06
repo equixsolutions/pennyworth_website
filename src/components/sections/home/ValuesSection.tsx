@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ValueCard from "../common/ValueCard";
+import ValueCard from "../../common/ValueCard";
 
 const ValuesSection = () => {
   return (

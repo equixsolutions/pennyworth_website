@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { CertLogo } from "../common/CertLogo";
+import { CertLogo } from "../../common/CertLogo";
 
 export default function WhyPennywortSection() {
   return (

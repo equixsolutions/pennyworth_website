@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { industries } from "@/constance/ui";
+import { industries } from "@/constance/home";
 
 export default function IndustriesSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);

@@ -1,20 +1,20 @@
 "use client";
 
-import HeroSection from "@/components/sections/HeroSection";
+import HeroSection from "@/components/sections/home/HeroSection";
 import NavigationMenu from "@/components/layout/NavigationMenu";
 import { useState } from "react";
-import StatsSection from "@/components/sections/StatsSection";
-import AboutSection from "@/components/sections/AboutSection";
-import LeadershipSection from "@/components/sections/LeadershipSection";
-import ValuesSection from "@/components/sections/ValuesSection";
-import IndustriesSection from "@/components/sections/IndustriesSection";
-import NewsAndEvents from "@/components/sections/NewsAndEvents";
-import FeaturesSection from "@/components/sections/FeaturesSection";
-import AboutMoreSection from "@/components/sections/AboutMoreSection";
-import TestimonialSection from "@/components/sections/TestimonialSection";
+import StatsSection from "@/components/sections/home/StatsSection";
+import AboutSection from "@/components/sections/home/AboutSection";
+import LeadershipSection from "@/components/sections/home/LeadershipSection";
+import ValuesSection from "@/components/sections/home/ValuesSection";
+import IndustriesSection from "@/components/sections/home/IndustriesSection";
+import NewsAndEvents from "@/components/sections/home/NewsAndEvents";
+import FeaturesSection from "@/components/sections/home/FeaturesSection";
+import AboutMoreSection from "@/components/sections/home/AboutMoreSection";
+import TestimonialSection from "@/components/sections/home/TestimonialSection";
 import Footer from "@/components/layout/Footer";
-import SignatureProductSection from "@/components/sections/SignatureProductsSection";
-import WhyPennywortSection from "@/components/sections/WhyPennywortSection";
+import SignatureProductSection from "@/components/sections/home/SignatureProductsSection";
+import WhyPennywortSection from "@/components/sections/home/WhyPennywortSection";
 
 const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

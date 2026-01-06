@@ -1,4 +1,4 @@
-import { values } from "@/constance/ui";
+import { values } from "@/constance/home";
 
 function StatsSection() {
   return (
