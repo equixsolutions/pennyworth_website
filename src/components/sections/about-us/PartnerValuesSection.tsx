@@ -6,8 +6,8 @@ export default function PartnerValuesSection() {
     <section className="bg-secondary ">
       <div className="px-5 md:px-0 ">
         <div className="mb-10 px-5 md:px-10 ">
-          <h2 className="text-sm md:text-base font-medium">
-            What Our Partners Value Most:
+          <h2 className="">
+            What Our Partners Value Most
           </h2>
         </div>
 

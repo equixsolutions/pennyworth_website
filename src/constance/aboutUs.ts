@@ -49,3 +49,17 @@ export const values = [
   "Flexibility in customization and design",
   "Compliance documentation for audit requirements",
 ];
+
+export const requirements = [
+  "ISO 9001 or equivalent quality certification",
+  "Minimum 50-machine capacity",
+  "Compliance with labor and safety regulations",
+];
+
+export const benefits = [
+  "Steady stream of production orders",
+  "Technical and quality assurance support",
+  "On-site QC assistance during production",
+  "Certification of manufacturing capability",
+  "Revenue growth opportunities",
+];

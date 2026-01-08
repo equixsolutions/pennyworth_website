@@ -6,16 +6,18 @@ import ArrowRight from "@/assets/svg/Arrow_right.svg";
 type Props = {
   image: string;
   title: string;
+  textColor: string;
+  bgColor: string;
 };
 
-function ProductCard({ image, title }: Props) {
+function ProductCard({ image, title, textColor, bgColor }: Props) {
   return (
     <motion.div
       initial="rest"
       whileHover="hover"
-      className="relative w-[320px] h-[460px] bg-primary cursor-pointer"
+      className="relative w-[320px] h-[460px]  cursor-pointer"
     >
-      <div className="relative h-[420px] overflow-hidden">
+      <div className={`relative h-[420px] overflow-hidden ${bgColor}`}>
         <img src={image} alt={title} className="w-full h-full object-cover" />
         <motion.div
           variants={{
@@ -64,7 +66,7 @@ function ProductCard({ image, title }: Props) {
       </div>
 
       <div className="h-[40px] flex items-center justify-center">
-        <p className="text-sm tracking-wide text-secondary">{title}</p>
+        <p className={`text-sm tracking-wide ${textColor} `}>{title}</p>
       </div>
     </motion.div>
   );

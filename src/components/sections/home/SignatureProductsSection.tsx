@@ -3,19 +3,9 @@
 import { useRef, useState } from "react";
 import ProductCard from "../../common/ProductCard";
 import ArrowSide from "@/assets/svg/arrow_down.svg";
+import { products } from "@/constance/products";
 
-const products = [
-  {
-    title: "Flame-Resistant Coveralls",
-    image: "/assets/images/design/news_1.png",
-  },
-  {
-    title: "High-Visibility Safety Vests",
-    image: "/assets/images/design/news_2.png",
-  },
-  { title: "Corporate Uniforms", image: "/assets/images/design/news_3.png" },
-  { title: "Industrial Workwear", image: "/assets/images/design/news_4.png" },
-];
+
 
 function SignatureProductSection() {
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -98,7 +88,12 @@ function SignatureProductSection() {
                   <hr className="absolute bottom-0 left-0 w-[99%] border-secondary/40" />
 
                   <div className="pb-5 pt-10 px-2">
-                    <ProductCard image={item.image} title={item.title} />
+                    <ProductCard
+                      image={item.image}
+                      title={item.title}
+                      textColor={"text-secondary"}
+                      bgColor={"bg-primary"}
+                    />
                   </div>
                 </div>
               ))}

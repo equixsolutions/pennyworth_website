@@ -1,8 +1,5 @@
 "use client";
 
-import ArrowRight from "@/assets/svg/Arrow_right.svg";
-import ArrowDown from "@/assets/svg/arrow_down.svg";
-import Menu from "@/assets/svg/menu.svg";
 import Footer from "@/components/layout/Footer";
 import NavigationMenu from "@/components/layout/NavigationMenu";
 import CertificationsSection from "@/components/sections/about-us/CertificationsSection";

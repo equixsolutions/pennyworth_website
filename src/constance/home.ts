@@ -20,11 +20,11 @@ import {
 } from "lucide-react";
 
 export const menuItems = [
-  { label: "Home", href: "#" },
-  { label: "About Us", href: "#about" },
-  { label: "Products", href: "#products" },
-  { label: "Blog", href: "#blog" },
-  { label: "Contact us", href: "#contact" },
+  { label: "Home", href: "" },
+  { label: "About Us", href: "/about-us" },
+  { label: "Products", href: "/products" },
+  { label: "Blog", href: "/blogs" },
+  { label: "Contact us", href: "/contact-us" },
 ];
 
 export const socialLinks = [

@@ -1,19 +1,6 @@
 import Image from "next/image";
 import ArrowUpRight from "@/assets/svg/arrow_right.svg";
-
-const requirements = [
-  "ISO 9001 or equivalent quality certification",
-  "Minimum 50-machine capacity",
-  "Compliance with labor and safety regulations",
-];
-
-const benefits = [
-  "Steady stream of production orders",
-  "Technical and quality assurance support",
-  "On-site QC assistance during production",
-  "Certification of manufacturing capability",
-  "Revenue growth opportunities",
-];
+import { benefits, requirements } from "@/constance/aboutUs";
 
 export default function PartnerWithUsSection() {
   return (
