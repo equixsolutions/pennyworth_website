@@ -2,7 +2,7 @@ import { values } from "@/constance/home";
 
 function StatsSection() {
   return (
-    <div className="bg-white flex items-center justify-center my-24">
+    <div className="flex items-center justify-center my-24">
       <div className="w-full">
         <div className="mb-4 md:px-10 px-5">
           <h2 className="text-m-sm  md:text-m-md font-light text-primary px-18">

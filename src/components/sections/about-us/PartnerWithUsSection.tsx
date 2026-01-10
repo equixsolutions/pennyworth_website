@@ -7,7 +7,6 @@ export default function PartnerWithUsSection() {
     <section className="bg-secondary">
       <div className="mx-auto px-5 md:px-10 pt-20">
         <h2 className="text-lg md:text-xl font-medium mb-4">Partner with Us</h2>
-
         <hr className="border-primary/30 mb-8" />
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2 flex flex-col pb-10">

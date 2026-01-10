@@ -44,6 +44,8 @@ export default function CoreValuesSection() {
     </section>
   );
 }
+
+
 function Value({ title, desc }: { title: string; desc: string }) {
   return (
     <div>
