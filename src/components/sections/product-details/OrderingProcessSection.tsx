@@ -1,39 +1,10 @@
+import {
+  leadTimes,
+  steps,
+  volumeDiscounts,
+} from "@/constance/products/corporateTshirts";
+
 function OrderingProcessSection() {
-  const steps = [
-    { id: "01", title: "Choose your t-shirt style and fabric" },
-    {
-      id: "02",
-      title: "Select colors and sizes",
-      subtitle: "(provide size breakdown)",
-    },
-    { id: "03", title: "Submit your design or work with our team" },
-    { id: "04", title: "Approve digital mockup" },
-    {
-      id: "05",
-      title: "Order sample for quality verification",
-      subtitle: "(recommended)",
-    },
-    {
-      id: "06",
-      title: "Confirm order with 100% advance payment",
-    },
-    { id: "07", title: "Receive your custom t-shirts in 25–30 days" },
-  ];
-
-  const volumeDiscounts = [
-    "100–500 pieces: Base pricing",
-    "500–1,000 pieces: 5% discount",
-    "1,000–2,500 pieces: 12% discount",
-    "2,500+ pieces: 15% discount + free design services",
-  ];
-
-  const leadTimes = [
-    "Standard orders: 25–30 days",
-    "With printing only: 25 days",
-    "With embroidery: 30–35 days",
-    "Rush orders: 20 days (15% premium)",
-  ];
-
   return (
     <section className="text-secondary px-5 md:px-10 py-10">
       <div>

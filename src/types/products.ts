@@ -77,6 +77,60 @@ export interface FeatureSectionProps {
   image?: {
     src: string;
     alt: string;
-    colSpan:number
+    colSpan: number;
   };
+}
+
+interface HeroImage {
+  src: string;
+  alt: string;
+  className: string;
+}
+
+export interface HeroSectionProps {
+  onMenuOpen: () => void;
+  badge: string;
+  title: string;
+  logo: {
+    src: string;
+    alt: string;
+  };
+  images: HeroImage[];
+}
+
+export type SectionType =
+  | "productAbout"
+  | "overview"
+  | "testingQuality"
+  | "productSpecifications"
+  | "careAndMaintenance"
+  | "fitStyle"
+  | "featureGrid"
+  | "infoGrid"
+  | "sizeChart"
+  | "standardScrubColors"
+  | "colorFabricCustomization"
+  | "bulkBenefits"
+  | "complianceStandards"
+  | "orderingProcess"
+  | "featureCombined"
+  | "similarProducts"
+  | "featureOptions"
+  | "chooseByTask"
+  | "parallax";
+
+export type SectionConfig<T = any> = {
+  type: SectionType;
+  props?: T;
+};
+
+export type ProductConfig = {
+  hero: any;
+  sections: SectionConfig[];
+};
+
+export interface ProductAboutConfig {
+  images: string[];
+  title: string;
+  description: string;
 }

@@ -1,17 +1,20 @@
 import Image from "next/image";
 import Menu from "@/assets/svg/menu.svg";
+import { HeroSectionProps } from "@/types/products";
 
-interface HeroSectionProps {
-  onMenuOpen: () => void;
-}
-
-function HeroSection({ onMenuOpen }: HeroSectionProps) {
+function HeroSection({
+  onMenuOpen,
+  badge,
+  title,
+  logo,
+  images,
+}: HeroSectionProps) {
   return (
     <section className="relative bg-primary text-secondary overflow-hidden">
       <div className="absolute top-0 left-0 w-full flex items-center justify-between px-5 md:px-10 pt-6 z-20">
         <Image
-          src="/assets/images/design/penny-wort-logo.png"
-          alt="Pennywort Logo"
+          src={logo.src}
+          alt={logo.alt}
           className="w-[100px] md:w-[140px] lg:w-[180px] h-auto"
           width={180}
           height={60}
@@ -25,34 +28,28 @@ function HeroSection({ onMenuOpen }: HeroSectionProps) {
           <Menu className="text-primary" />
         </button>
       </div>
-      <div className=" grid md:grid-cols-2 md:items-center grid-cols-3">
-        <div className="w-full md:relative absolute md:bottom-0  bottom-20 px-5 z-10">
-          <p className="text-sm mb-3 opacity-80">Flame-Resistant Coveralls</p>
+
+      <div className="grid md:grid-cols-2 md:items-center grid-cols-3">
+        <div className="w-full md:relative absolute md:bottom-0 bottom-20 px-5 z-10">
+          <p className="text-sm mb-3 opacity-80">{badge}</p>
 
           <h1 className="heading-lg-thin md:heading-xl-regular leading-tight">
-            Industrial & Flame-Resistant Coveralls – Premium Protection Workwear
+            {title}
           </h1>
         </div>
 
-        <div className="w-full relative md:left-0 left-[30px] md:col-span-1 md:col-start-2 col-start-2 col-span-2 md:h-[100vh] h-[80vh] grid md:grid-cols-2 grid-cols-3  grid-rows-6">
-          <div className="relative md:col-start-1 row-start-1 row-end-4 md:col-span-1 col-span-2  md:row-start-7 md:row-end-2">
-            <Image
-              src="/assets/images/design/product_hero_2.png"
-              alt="Workwear Model Blue"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-
-          <div className="relative md:col-start-2 col-start-3 row-start-7 row-end-3 md:row-start-1 md:row-end-6">
-            <Image
-              src="/assets/images/design/product_hero.png"
-              alt="Workwear Model Orange"
-              fill
-              className="object-cover"
-            />
-          </div>
+        <div className="w-full relative md:left-0 left-[30px] md:col-span-1 md:col-start-2 col-start-2 col-span-2 md:h-[100vh] h-[80vh] grid md:grid-cols-2 grid-cols-3 grid-rows-6">
+          {images.map((img, i) => (
+            <div key={i} className={img.className}>
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                className="object-cover"
+                priority={i === 0}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>

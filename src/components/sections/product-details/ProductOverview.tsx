@@ -9,7 +9,7 @@ function ProductOverview({
   title,
   images,
   accordionItems,
-  imagePosition = "left",
+  imagePosition = "left", 
 }: ProductOverviewProps) {
   const [activeImage, setActiveImage] = useState(images[0]);
 

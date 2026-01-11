@@ -4,6 +4,7 @@ import React, { useRef, useState } from "react";
 import ProductCard from "@/components/common/ProductCard";
 import ArrowSide from "@/assets/svg/arrow_down.svg";
 import { products } from "@/constance/products";
+import Link from "next/link";
 
 function SignatureProductSection() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -94,12 +95,17 @@ function SignatureProductSection() {
                 )}
 
                 <div className="pb-5 pt-10 px-1 flex justify-center items-center">
-                  <ProductCard
-                    image={item.image}
-                    title={item.title}
-                    textColor={"text-primary"}
-                    bgColor={"bg-muted-background"}
-                  />
+                  <Link
+                    href={`/product-details/${item.slug}`}
+                    className="block pb-5 pt-10 px-1"
+                  >
+                    <ProductCard
+                      image={item.image}
+                      title={item.title}
+                      textColor={"text-primary"}
+                      bgColor={"bg-muted-background"}
+                    />
+                  </Link>
                 </div>
               </div>
             );
