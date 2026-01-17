@@ -35,7 +35,7 @@ function ChooseByTaskSection() {
     <section className="bg-black px-5 md:px-10 py-10 text-secondary">
       <div>
         <div className="mb-10">
-          <h3 className="text-m-sm  md:text-m-md font-light text-secondary px-18 mb-2">
+          <h3 className="md:text-body-lg text-body-sm text-secondary mb-2">
             Choose by Task
           </h3>
           <hr className="border-secondary/30" />
@@ -46,8 +46,8 @@ function ChooseByTaskSection() {
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-secondary/30 bg-secondary/10">
-                  <th className="text-left font-medium px-6 py-4">Task</th>
-                  <th className="text-left font-medium px-6 py-4">
+                  <th className="text-left md:text-body-md-bold text-body-xs-bold px-6 py-4">Task</th>
+                  <th className="text-left md:text-body-md-bold text-body-xs-bold px-6 py-4">
                     Recommended Glove
                   </th>
                 </tr>
@@ -55,8 +55,8 @@ function ChooseByTaskSection() {
               <tbody>
                 {tableData.map((row, i) => (
                   <tr key={i} className="bg-secondary/10">
-                    <td className="px-6 py-3 text-secondary/80">{row.task}</td>
-                    <td className="px-6 py-3 text-secondary/80">{row.glove}</td>
+                    <td className="px-6 py-3 md:text-body-md text-body-xs text-secondary/80">{row.task}</td>
+                    <td className="px-6 py-3 md:text-body-md text-body-xs text-secondary/80">{row.glove}</td>
                   </tr>
                 ))}
               </tbody>

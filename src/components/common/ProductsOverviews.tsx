@@ -63,10 +63,10 @@ export const standardIndustrialCoveralls = {
 };
 function ProductsOverviews() {
   return (
-    <section className="w-full overflow-hidden md:mt-10 mt-16">
+    <section className="w-full overflow-hidden mt-10">
       <div className="pt-4 px-5 md:px-10">
-        <h2 className="text-m-md mb-2">Product Overview</h2>
-        <hr className="border-t border-main" />
+        <h2 className="md:text-body-lg text-body-sm text-primary mb-2">Product Overview</h2>
+        <hr className="border-t border-main border-muted-foreground/50" />
       </div>
       <ProductOverview {...standardIndustrialCoveralls} imagePosition="left" />
       <ProductOverview {...standardIndustrialCoveralls} imagePosition="right"/>

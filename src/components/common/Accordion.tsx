@@ -17,14 +17,14 @@ function Accordion({ items }: { items: AccordionItem[] }) {
               onClick={() => setOpenId(isOpen ? null : item.id)}
               className="w-full flex items-center justify-between py-4 text-left"
             >
-              <span className="text-sm font-medium text-primary">
+              <span className="text-body-md-bold text-primary">
                 {item.title}
               </span>
               <span className="text-lg">{isOpen ? "↑" : "↓"}</span>
             </button>
 
             {isOpen && (
-              <p className="pb-4 text-sm text-muted-foreground leading-relaxed">
+              <p className="pb-4 md:text-body-md text-body-xs text-primary/80 leading-relaxed">
                 {item.content}
               </p>
             )}

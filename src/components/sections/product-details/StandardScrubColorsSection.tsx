@@ -3,9 +3,9 @@ import { scrubColors } from "@/constance/products";
 
 function StandardScrubColorsSection() {
   return (
-    <section className="bg-white px-5 md:px-10 py-10">
+    <section className="bg-secondary px-5 md:px-10 py-10">
       <div>
-        <h3 className="">
+        <h3>
           Standard Scrub Colors
         </h3>
 

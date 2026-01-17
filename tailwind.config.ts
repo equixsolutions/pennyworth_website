@@ -57,18 +57,34 @@ module.exports = {
       },
 
       fontFamily: {
-        ivy: ["IvyMode", "serif"],
+        cantata:["Playfair Display", "serif"],
         manrope: ["Manrope", "system-ui", "sans-serif"],
       },
       fontWeight: {
-        thin: "250",
+        thin: "200",
         regular: "400",
         semibold: "600",
         bold: "700",
       },
+      fontSize: {
+        "fs-lg": ["22px"],
+        "fs-md": ["18px"],
+        "fs-sm": ["16px"],
+        "fs-xs": ["14px"],
 
+        "ivy-50": ["50px", "60px"],
+        "ivy-40": ["40px", "52px"],
+        "ivy-32": ["32px", "100%"],
+        "ivy-30": ["30px", "43px"],
+        "ivy-28": ["28px", "35.2px"],
+        "ivy-27": ["27px", "100%"],
+        "ivy-26": ["26px", "43px"],
+        "ivy-24": ["24px", "100%"],
+        "ivy-18": ["18px", "34.47px"],
+      },
       letterSpacing: {
         wide4: "0.04em",
+        ivy: "0.04em",
       },
 
       borderRadius: {

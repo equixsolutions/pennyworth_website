@@ -23,12 +23,18 @@ const HeroSection = ({ onMenuOpen }: HeroSectionProps) => {
               height={40}
               priority
             />
+            <button
+              onClick={onMenuOpen}
+              className="fixed top-6 right-6 z-20 w-12 h-12 rounded-full bg-primary flex items-center justify-center"
+            >
+              <Menu className="text-secondary" />
+            </button>
           </div>
           <div className="col-span-6 row-span-1" />
           <div className="col-span-6 row-span-1" />
           <div className="relative col-span-3 row-start-4 row-span-1 overflow-hidden ml-10 md:block hidden">
             <Image
-              src="/assets/images/design/hero_2.png"
+              src="/assets/images/design/hero_page.png"
               alt="Workwear background"
               fill
               className="object-containe"
@@ -38,7 +44,7 @@ const HeroSection = ({ onMenuOpen }: HeroSectionProps) => {
         <div className="relative grid grid-cols-6 md:grid-cols-2 md:grid-rows-6 grid-rows-10 col-span-2 md:col-span-1 gap-1">
           <div className="relative overflow-hidden col-span-4 sm:col-span-2 sm:col-start-3 md:col-span-1 md:row-span-5 row-span-8">
             <Image
-              src="/assets/images/design/hero.png"
+              src="/assets/images/design/hero_page_2.png"
               alt="Workwear"
               fill
               className="object-cover"
@@ -47,7 +53,7 @@ const HeroSection = ({ onMenuOpen }: HeroSectionProps) => {
           </div>
           <div className="relative overflow-hidden col-start-5 col-span-2 md:col-start-auto md:col-span-1 md:row-span-6 row-span-10">
             <Image
-              src="/assets/images/design/hero.png"
+              src="/assets/images/design/hero_3.png"
               alt="Workwear"
               fill
               className="object-cover"
@@ -57,18 +63,18 @@ const HeroSection = ({ onMenuOpen }: HeroSectionProps) => {
       </div>
       <div className="md:relative z-10 md:min-h-screen  flex items-center lg:pt-0 lg:items-center">
         <div className="w-full text-center">
-          <h1 className="md:heading-xl-regular heading-lg-thin text-start text-white leading-tight md:ml-10 ml-5">
+          <h1 className="md:heading-xl-thin heading-lg-thin text-start text-secondary leading-tight md:ml-10 ml-5">
             Premium Workwear & Uniforms
             <br />
-            <span className="md:heading-xl-thin">
+            <span className="md:heading-xl-semibold">
               — Where Safety Meets Style,
             </span>
           </h1>
           <div className="w-full flex justify-center">
-            <p className="text-gray-300 text-base text-m-md md:text- mb-8 md:mt-20 mt-14  text-left ml-5">
+            <p className="md:text-body-lg text-body-sm text-secondary mb-8 md:mt-20 mt-14  text-left ml-5">
               India&apos;s Biggest Manufacturer of Flame-Resistant Workwear
               <br className="hidden md:block" />& Custom Uniforms{" "}
-              <span className="text-white font-medium">Since 2014</span>
+              <span className="text-secondary font-medium">Since 2014</span>
             </p>
           </div>
 
@@ -96,18 +102,13 @@ const HeroSection = ({ onMenuOpen }: HeroSectionProps) => {
             </Button>
           </div>
           <img
-            src="/assets/images/design/hero_2.png"
+            src="/assets/images/design/hero_page.png"
             alt="Workwear background"
             className="object-containe mt-10 md:hidden ml-5"
           />
         </div>
       </div>
-      <button
-        onClick={onMenuOpen}
-        className="fixed top-6 right-6 z-20 w-12 h-12 rounded-full bg-black flex items-center justify-center"
-      >
-        <Menu className="text-black" />
-      </button>
+
       <div className="absolute bottom-6 right-6 z-20 rounded-full border  border-secondary  md:border-primary">
         <a href="#about" className="w-12 h-12 flex items-center justify-center">
           <ArrowDown className="animate-bounce text-secondary md:text-primary" />

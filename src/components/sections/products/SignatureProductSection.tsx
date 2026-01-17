@@ -99,12 +99,7 @@ function SignatureProductSection() {
                     href={`/product-details/${item.slug}`}
                     className="block pb-5 pt-10 px-1"
                   >
-                    <ProductCard
-                      image={item.image}
-                      title={item.title}
-                      textColor={"text-primary"}
-                      bgColor={"bg-muted-background"}
-                    />
+                    <ProductCard product={item} textColor={"text-primary"} />
                   </Link>
                 </div>
               </div>

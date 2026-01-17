@@ -26,16 +26,16 @@ function HeroSection({ onMenuOpen }: HeroSectionProps) {
       </div>
 
       <div className="flex flex-1 items-center px-5 md:px-10">
-        <div className="max-w-3xl">
-          <h1 className="heading-lg-thin md:heading-xl-regular leading-tight mb-6">
+        <div className="max-w-5xl">
+          <h1 className="md:heading-xl-semibold heading-md leading-tight mb-6">
             “Your Knowledge Hub for Workwear,
             <br />
-            <span className="heading-lg-thin md:heading-xl-thin">
+            <span>
               Safety & Industry Trends”
             </span>
           </h1>
 
-          <p className="text-sm md:text-base text-secondary/80 leading-relaxed">
+          <p className="md:text-body-lg text-body-sm  text-secondary/80 leading-relaxed">
             At Pennywort Clothing, we don’t just manufacture uniforms — we share
             knowledge. Stay updated with the latest on safety standards, fabric
             innovations, sustainability practices, and client success stories

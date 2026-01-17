@@ -4,7 +4,7 @@ import { ColorSwatchesProps } from "@/types/products";
 function ColorSwatches({ title, colors }: ColorSwatchesProps) {
   return (
     <div>
-      <h4 className="text-sm font-medium text-primary mb-6">{title}</h4>
+      <h4 className="md:text-body-md-bold text-body-xs-bold text-primary mb-6">{title}</h4>
 
       <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-y-6 gap-x-4">
         {colors.map((color) => (
@@ -15,7 +15,7 @@ function ColorSwatches({ title, colors }: ColorSwatchesProps) {
               }`}
               style={{ backgroundColor: color.hex }}
             />
-            <p className="text-xs text-muted-foreground">{color.name}</p>
+            <p className="md:text-body-md text-body-xs text-primary/80">{color.name}</p>
           </div>
         ))}
       </div>

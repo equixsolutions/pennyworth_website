@@ -29,9 +29,9 @@ function ViewSimilarProductsSection() {
     const distances = cardRefs.current.map((card) =>
       card
         ? Math.abs(
-            card.getBoundingClientRect().left + card.clientWidth / 2 - center
+            card.getBoundingClientRect().left + card.clientWidth / 2 - center,
           )
-        : Infinity
+        : Infinity,
     );
 
     setActiveIndex(distances.indexOf(Math.min(...distances)));
@@ -40,7 +40,7 @@ function ViewSimilarProductsSection() {
   return (
     <section className="px-5 md:px-10 py-10 relative">
       <div className="mb-2 flex items-center justify-between">
-        <h2 className="text-m-sm  md:text-m-md font-light text-primary px-18">
+        <h2 className="md:text-body-lg text-body-sm text-primary mb-2 px-18">
           View Similar Products
         </h2>
       </div>
@@ -50,7 +50,7 @@ function ViewSimilarProductsSection() {
           className="absolute left-0 top-1/2 -translate-y-1/2 z-10
             w-10 h-10 md:w-12 md:h-12
             rounded-full border border-muted-foreground
-            bg-white flex items-center justify-center"
+            bg-secondary flex items-center justify-center"
         >
           <ArrowSide className="rotate-90 text-primary" />
         </button>
@@ -62,7 +62,7 @@ function ViewSimilarProductsSection() {
           className="absolute right-0 top-1/2 -translate-y-1/2 z-10
             w-10 h-10 md:w-12 md:h-12
             rounded-full border border-muted-foreground
-            bg-white flex items-center justify-center"
+            bg-secondary flex items-center justify-center"
         >
           <ArrowSide className="-rotate-90 text-primary" />
         </button>
@@ -86,12 +86,7 @@ function ViewSimilarProductsSection() {
                 )}
 
                 <div className="px-6 py-10">
-                  <ProductCard
-                    image={item.image}
-                    title={item.title}
-                    bgColor="bg-white"
-                    textColor="text-primary"
-                  />
+                  <ProductCard product={item} />
                 </div>
               </div>
             ))}

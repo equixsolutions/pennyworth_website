@@ -44,42 +44,42 @@ function ProductSpecifications() {
   };
 
   return (
-    <section className="px-5 md:px-10 py-20">
+    <section className="px-5 md:px-10 py-10">
       <div>
         <div className="mb-10">
-          <h3 className="text-sm font-medium text-primary mb-3">
+          <h3 className="md:text-body-lg text-body-sm text-primary mb-2">
             Product Specifications
           </h3>
           <hr className="border-muted-foreground/40" />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
           <div>
-            <h4 className="text-sm font-medium text-primary mb-2">
+            <h4 className="md:text-body-md-bold text-body-xs-bold text-primary mb-2">
               {sizeRange.title}
             </h4>
-            <p className="text-sm text-muted-foreground">
+            <p className="md:text-body-md text-body-xs text-primary/80">
               {sizeRange.value} <br />
               <span className="text-xs">{sizeRange.note}</span>
             </p>
           </div>
           <div className="md:border-l md:border-muted-foreground/40 md:pl-12">
-            <h4 className="text-sm font-medium text-primary mb-4">
+            <h4 className="md:text-body-md-bold text-body-xs-bold text-primary mb-4">
               {colorOptions.title}
             </h4>
 
-            <div className="flex items-center gap-4 mb-4">
-              <span className="text-xs text-muted-foreground w-16">
+            <div className="flex items-center md:gap-10 mb-4">
+              <span className="md:text-body-md text-body-xs text-primary/80 w-16">
                 {colorOptions.standardLabel}
               </span>
 
-              <div className="flex gap-4">
+              <div className="flex gap-4 md:gap-10">
                 {colorOptions.colors.map((item) => (
                   <div key={item.name} className="text-center">
                     <div
-                      className="w-5 h-5 rounded-full mx-auto mb-1"
+                      className="w-10 h-10 rounded-full mx-auto mb-1"
                       style={{ backgroundColor: item.color }}
                     />
-                    <p className="text-[10px] text-muted-foreground">
+                    <p className="md:text-body-md text-body-xs text-primary/80">
                       {item.name}
                     </p>
                   </div>
@@ -87,7 +87,7 @@ function ProductSpecifications() {
               </div>
             </div>
 
-            <p className="text-xs text-muted-foreground">
+            <p className="md:text-body-md text-body-xs text-primary/80">
               {colorOptions.customNote}
             </p>
           </div>
@@ -96,20 +96,20 @@ function ProductSpecifications() {
         <hr className="border-muted-foreground/40 mb-12" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
-            <h4 className="text-sm font-medium text-primary mb-4">
+            <h4 className="md:text-body-md-bold text-body-xs-bold text-primary/80 mb-4">
               {designFeatures.title}
             </h4>
-            <ul className="space-y-2 text-sm text-muted-foreground list-disc list-inside">
+            <ul className="space-y-2 md:text-body-md text-body-xs text-primary/80 list-disc list-inside">
               {designFeatures.items.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
           </div>
           <div>
-            <h4 className="text-sm font-medium text-primary mb-4">
+            <h4 className="md:text-body-md-bold text-body-xs-bold mb-4">
               {customizationOptions.title}
             </h4>
-            <ul className="space-y-2 text-sm text-muted-foreground list-disc list-inside">
+            <ul className="space-y-2 md:text-body-md text-body-xs text-primary/80 list-disc list-inside">
               {customizationOptions.items.map((item) => (
                 <li key={item}>{item}</li>
               ))}

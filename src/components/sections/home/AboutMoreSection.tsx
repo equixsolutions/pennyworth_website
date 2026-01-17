@@ -45,8 +45,10 @@ function AboutMoreSection() {
   return (
     <section className="relative md:mx-10 ml-5 md:mt-12 mt-24 mb-10">
       <div className="mb-8 md:mb-12 mr-5">
-        <h2 className="text-m-md mb-2">Find Out More About Us</h2>
-        <hr className="border-t border-main" />
+        <h2 className="md:text-body-lg text-body-sm text-primary mb-2">
+          Find Out More About Us
+        </h2>
+        <hr className="border-t border-main border-muted-foreground/50" />
       </div>
       <div className="md:hidden flex font-normal mr-5 text-primary text-base md:text-lg tracking-[0] leading-[normal] mb-8 md:mb-[149px]">
         At Pennywort, sustainability isn't an afterthought—it's woven into every

@@ -3,10 +3,10 @@ import { values } from "@/constance/aboutUs";
 
 export default function PartnerValuesSection() {
   return (
-    <section className="bg-secondary ">
+    <section className="bg-secondary">
       <div className="px-5 md:px-0 ">
-        <div className="mb-10 px-5 md:px-10 ">
-          <h2 className="">
+        <div className="mb-10 md:px-10">
+          <h2 className="md:text-body-lg text-body-sm text-primary mb-2">
             What Our Partners Value Most
           </h2>
         </div>
@@ -25,4 +25,3 @@ export default function PartnerValuesSection() {
     </section>
   );
 }
-

@@ -1,24 +1,18 @@
-"use client";
-
 import { motion } from "framer-motion";
 import ArrowRight from "@/assets/svg/Arrow_right.svg";
+import { Props } from "@/types/products";
 
-type Props = {
-  image: string;
-  title: string;
-  textColor: string;
-  bgColor: string;
-};
+function ProductCard({ product, textColor = "text-secondary" }: Props) {
+  const { title, image, overlay } = product;
 
-function ProductCard({ image, title, textColor, bgColor }: Props) {
   return (
     <motion.div
       initial="rest"
       whileHover="hover"
-      className="relative w-[320px] h-[460px]  cursor-pointer"
+      className="relative w-[320px] h-[460px] cursor-pointer "
     >
-      <div className={`relative h-[420px] overflow-hidden ${bgColor}`}>
-        <img src={image} alt={title} className="w-full h-full object-cover" />
+      <div className="relative h-[420px] overflow-hidden">
+        <img src={image} alt={title} className="w-full h-full object-cover" />{" "}
         <motion.div
           variants={{
             rest: { y: "100%" },
@@ -28,9 +22,8 @@ function ProductCard({ image, title, textColor, bgColor }: Props) {
           className="absolute inset-0 bg-primary/60 flex-col justify-between p-6 hidden md:flex"
         >
           <div>
-            <p className="text-sm text-muted-secondary mb-4 leading-relaxed">
-              Protection meets precision. Our FRC and IFR coveralls meet
-              international safety standards for high-risk industries.
+            <p className="text-body-sm text-muted-secondary mb-4 leading-relaxed">
+              {overlay.description}
             </p>
 
             <div className="mb-4">
@@ -38,7 +31,7 @@ function ProductCard({ image, title, textColor, bgColor }: Props) {
                 Materials
               </p>
               <p className="text-xs text-muted-secondary">
-                100% Cotton FR | Aramid Fibers | Modacrylic Blends
+                {overlay.materials}
               </p>
             </div>
 
@@ -47,26 +40,26 @@ function ProductCard({ image, title, textColor, bgColor }: Props) {
                 Applications
               </p>
               <p className="text-xs text-muted-secondary">
-                Oil & Gas, Welding, Petrochemical
+                {overlay.applications}
               </p>
             </div>
           </div>
 
-          <button className="inline-flex items-center justify-center gap-2 border border-secondary px-4 py-2 text-sm hover:bg-secondary hover:text-primary transition">
-            View Coverall Collection
-            <ArrowRight className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          <button className="inline-flex items-center justify-center gap-2 border border-secondary px-4 py-2 text-sm hover:bg-secondary hover:text-primary text-secondary transition">
+            {overlay.cta}
+            <ArrowRight className="transition-transform" />
           </button>
         </motion.div>
         <div className="absolute bottom-0 left-0 w-full bg-primary/80 p-4 flex justify-center md:hidden">
           <button className="inline-flex items-center gap-2 border border-secondary px-4 py-2 text-sm text-secondary">
-            View Coverall Collection{" "}
-            <ArrowRight className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            {overlay.cta}
+            <ArrowRight />
           </button>
         </div>
       </div>
 
-      <div className="h-[40px] flex items-center justify-center">
-        <p className={`text-sm tracking-wide ${textColor} `}>{title}</p>
+      <div className="h-[60px] flex items-center justify-center">
+        <p className={`heading-caption tracking-wide ${textColor}`}>{title}</p>
       </div>
     </motion.div>
   );

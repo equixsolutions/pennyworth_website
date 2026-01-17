@@ -44,13 +44,15 @@ function Stat({
         initial={{ opacity: 0, y: 16 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
-        className="text-3xl md:text-4xl font-serif mb-2"
+        className="md:heading-md heading-xs font-serif mb-2"
       >
         {displayValue}
         {suffix}
       </motion.div>
 
-      <div className="text-sm text-primary/70">{label}</div>
+      <div className="leading-relaxed md:col-span-2 text-primary/80">
+        {label}
+      </div>
     </div>
   );
 }

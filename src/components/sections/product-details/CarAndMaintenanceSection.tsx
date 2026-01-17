@@ -36,7 +36,7 @@ function CarAndMaintenanceSection() {
     <section className="relative bg-primary py-16 md:py-18 px-5 md:px-10">
       <div className=" mx-auto">
         <div className="mb-12">
-          <h2 className="text-secondary text-lg md:text-xl font-medium mb-2">
+          <h2 className="text-secondary md:text-body-lg text-body-sm mb-2">
             What Sets Pennywort Apart
           </h2>
           <hr className="border-secondary/20" />

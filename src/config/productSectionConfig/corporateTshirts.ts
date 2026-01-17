@@ -22,6 +22,5 @@ export const corporateTshirtsConfig: ProductConfig = {
     { type: "fitStyle", props: fitStyleData },
     { type: "orderingProcess" },
     { type: "similarProducts" },
-    { type: "orderingProcess" },
   ],
 };

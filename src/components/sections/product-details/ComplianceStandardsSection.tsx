@@ -57,16 +57,16 @@ function ComplianceStandardsSection() {
   };
 
   return (
-    <section className="bg-white px-5 md:px-10 py-20">
+    <section className="bg-secondary px-5 md:px-10 py-10">
       <div>
         <div className="mb-6">
-          <h3 className="text-m-sm  md:text-m-md font-light text-primary px-18 mb-2">
+          <h3 className="md:text-body-lg text-body-sm text-primary mb-2">
             {header.title}
           </h3>
-          <hr className="border-main" />
+          <hr className="border-muted-foreground/40" />
         </div>
 
-        <p className="text-sm text-muted-foreground mb-10">{header.subtitle}</p>
+        <p className="md:text-body-md text-body-xs text-primary/80 mb-6">{header.subtitle}</p>
         <div className="border border-muted-foreground/40 grid grid-cols-1 md:grid-cols-3 mb-12">
           {standards.slice(0, 2).map((item) => (
             <div
@@ -82,13 +82,13 @@ function ComplianceStandardsSection() {
                 />
               </div>
 
-              <h4 className="text-sm font-medium text-primary mb-2">
+              <h4 className="md:heading-sub-semibold heading-xs text-primary/80 mb-2">
                 {item.title}
-                <br />
+              
                 {item.code}
               </h4>
 
-              <p className="text-xs text-muted-foreground">
+              <p className="md:text-body-md text-body-xs text-primary/80">
                 {item.description}
               </p>
             </div>
@@ -99,10 +99,10 @@ function ComplianceStandardsSection() {
 
             {standards[2].classes?.map((cls) => (
               <div key={cls.title} className="mb-4 last:mb-0">
-                <h4 className="text-sm font-medium text-primary mb-1">
+                <h4 className="md:text-body-md text-body-xs text-primary/80 mb-1">
                   {cls.title}
                 </h4>
-                <p className="text-xs text-muted-foreground">
+                <p className="md:text-body-md text-body-xs text-primary/80">
                   {cls.description}
                 </p>
               </div>
@@ -111,10 +111,10 @@ function ComplianceStandardsSection() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
           <div>
-            <h4 className="text-sm font-medium text-primary mb-4">
+            <h4 className="md:text-body-md-bold text-body-xs-bold text-primary/80 mb-4">
               {bulkOrderBenefits.title}
             </h4>
-            <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
+            <ul className="list-disc list-inside space-y-2 md:text-body-md text-body-xs text-primary/80">
               {bulkOrderBenefits.items.map((item) => (
                 <li key={item}>{item}</li>
               ))}
@@ -122,10 +122,10 @@ function ComplianceStandardsSection() {
           </div>
 
           <div>
-            <h4 className="text-sm font-medium text-primary mb-4">
+            <h4 className="md:text-body-md-bold text-body-xs-bold text-primary/80 mb-4">
               {volumePricing.title}
             </h4>
-            <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
+            <ul className="list-disc list-inside space-y-2 md:text-body-md text-body-xs text-primary/80">
               {volumePricing.items.map((item) => (
                 <li key={item}>{item}</li>
               ))}

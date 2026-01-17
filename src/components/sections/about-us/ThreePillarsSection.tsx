@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 
 export default function ThreePillarsSection() {
   return (
-    <section className="relative overflow-hidden md:py-6 py-12 bg-secondary">
+    <section className="relative overflow-hidden py-6  bg-secondary">
       <div className="text-center mb-20">
-        <p className="text-sm tracking-widest uppercase text-primary">
+        <p className="text-body-sm md:text-body-lg tracking-widest uppercase text-primary">
           Founded on Three Pillars
         </p>
       </div>
@@ -27,7 +27,7 @@ export default function ThreePillarsSection() {
         })}
       </motion.div>
 
-      <div className="mx-auto px-6 grid md:grid-cols-2 gap-12 text-sm md:text-base leading-relaxed">
+      <div className="mx-auto px-6 grid md:grid-cols-2 gap-12 leading-relaxed md:text-body-md text-body-xs">
         <p className="leading-7">
           In an era where workwear was often seen as generic and disposable, we
           dared to reimagine it. We believed that people who build nations, heal

@@ -10,7 +10,9 @@ export default function CoreValuesSection() {
       <div className="mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-12">
           <div className="flex items-center">
-            <h2 className="text-xl md:text-2xl font-medium">Our Core Values</h2>
+            <h2 className="md:md:heading-xs heading-caption text-secondary mb-2">
+              Our Core Values
+            </h2>
           </div>
           <div>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-12">
@@ -45,12 +47,11 @@ export default function CoreValuesSection() {
   );
 }
 
-
 function Value({ title, desc }: { title: string; desc: string }) {
   return (
     <div>
-      <h3 className="text-sm font-semibold uppercase mb-2">{title}</h3>
-      <p className="text-sm text-white/70 leading-relaxed max-w-xs">{desc}</p>
+      <h3 className="md:text-body-md-bold text-body-sm-bold uppercase mb-2">{title}</h3>
+      <p className="text-sm text-secondary/70 leading-relaxed md:text-body-md text-body-sm max-w-xs">{desc}</p>
     </div>
   );
 }

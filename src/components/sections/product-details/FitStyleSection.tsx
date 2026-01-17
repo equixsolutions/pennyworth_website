@@ -10,9 +10,9 @@ function FitStyleSection({
     <section className=" px-5 md:px-10 py-16">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
         <div>
-          <h4 className="text-sm font-medium text-primary mb-4">{title}:</h4>
+          <h4 className="md:text-body-md-bold text-body-xs-bold">{title}:</h4>
 
-          <ul className="space-y-2 text-sm text-muted-foreground list-disc list-inside">
+          <ul className="space-y-2 md:text-body-md text-body-xs text-primary/80 list-disc list-inside">
             {fitStyles.map((item, i) => (
               <li key={i}>{item}</li>
             ))}

@@ -10,10 +10,10 @@ export default function IndustriesSection() {
   return (
     <section className="w-full bg-primary text-secondary md:px-10 px-5 py-16 md:mt-32 mt-20">
       <div className="pt-4 mb-8">
-        <h2 className="text-m-md mb-2">
+        <h2 className="md:text-body-lg text-body-sm text-secondary mb-2">
           Trusted by Leading Sectors Across India and Beyond
         </h2>
-        <hr className="border-t border-main" />
+        <hr className="border-t border-main border-muted-foreground/50" />
       </div>
 
       <div className="grid md:grid-cols-3 items-start">
@@ -27,7 +27,7 @@ export default function IndustriesSection() {
               className="object-contain"
             />
           </div>
-          <p className="text-xsm md:text-m-sm text-muted-foreground mt-10">
+          <p className="text-body-md text-body-sm text-muted-foreground mt-10">
             Safety vests, coveralls, work gloves, high-vis jackets
           </p>
         </div>
@@ -55,7 +55,7 @@ export default function IndustriesSection() {
                     className={`w-5 h-5 transition-colors
                      ${isHovered ? "text-primary" : "text-secondary"}`}
                   />
-                  <span className="text-sm md:text-base font-light">
+                  <span className="md:heading-xs heading-caption font-light">
                     {item.label}
                   </span>
                 </li>

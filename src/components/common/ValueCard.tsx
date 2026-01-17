@@ -16,7 +16,7 @@ const ValueCard = ({
       `}
     >
       <div className="hidden md:flex h-full items-center justify-center text-center transition-opacity duration-300 md:group-hover:opacity-0 p-8">
-        <h3 className="text-lg font-light tracking-wide">{title}</h3>
+        <h3 className="heading-xs tracking-wide">{title}</h3>
       </div>
       <div
         className="
@@ -32,7 +32,7 @@ const ValueCard = ({
           {title}
         </h3>
 
-        <p className="text-xs leading-5 text-secondary text-center max-w-[260px]">
+        <p className="md:text-body-sm text-body-xs leading-5 text-secondary/60 text-center max-w-[260px]">
           We deliver international-grade workwear at competitive Indian
           manufacturing rates—giving you premium quality without the premium
           price tag.

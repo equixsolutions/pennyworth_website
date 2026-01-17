@@ -9,15 +9,15 @@ function WhyCorporateLeadersSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="bg-secondary px-5 md:px-10 pt-16 md:pt-20">
+    <section ref={ref} className="bg-secondary px-5 md:px-10 py-16 md:py-20">
       <div>
         <div className="mb-10">
-          <h2 className="text-lg md:text-xl mb-2">
+          <h2 className="md:text-body-lg text-body-sm text-primary mb-2">
             Why Corporate Leaders Choose Pennywort
           </h2>
-          <hr className="border-main" />
+          <hr className="border-t border-main border-muted-foreground/50" />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start py-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start md:py-10">
           <div className="flex w-full gap-10">
             <Stat
               value={100}
@@ -33,7 +33,7 @@ function WhyCorporateLeadersSection() {
               format="comma"
             />
           </div>
-          <p className="text-sm md:text-base leading-relaxed md:col-span-2">
+          <p className="md:text-body-md text-body-sm leading-relaxed md:col-span-2 text-primary/80">
             From multinational corporations to government projects, growing
             startups to established enterprises—Pennywort is the manufacturing
             partner trusted by industry leaders who refuse to compromise on

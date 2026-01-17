@@ -10,14 +10,14 @@ function ProductAbout({ images, title, description }: ProductAboutProps) {
   const [activeImage, setActiveImage] = useState(0);
 
   return (
-    <section className="px-5 md:px-10 py-20">
+    <section className="px-5 md:px-10 py-10">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
         <div className="relative w-full">
           <div
             className="flex md:hidden overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar"
             onScroll={(e) => {
               const index = Math.round(
-                e.currentTarget.scrollLeft / e.currentTarget.clientWidth
+                e.currentTarget.scrollLeft / e.currentTarget.clientWidth,
               );
               setActiveImage(index);
             }}
@@ -38,7 +38,7 @@ function ProductAbout({ images, title, description }: ProductAboutProps) {
             ))}
           </div>
 
-          <div className="hidden md:block relative h-[520px]">
+          <div className="hidden md:block relative -top-24 h-[520px] bg-secondary">
             <Image
               src={images[activeImage]}
               alt="Selected product"
@@ -49,10 +49,10 @@ function ProductAbout({ images, title, description }: ProductAboutProps) {
           </div>
         </div>
         <div>
-          <h2 className="text-lg md:text-xl font-medium text-primary mb-6">
+          <h2 className="md:text-body-lg-bold text-body-sm-bold text-primary mb-6">
             {title}
           </h2>
-          <p className="text-sm text-muted-foreground leading-relaxed mb-10">
+          <p className="md:text-body-md text-body-sm text-primary/80 leading-relaxed mb-10">
             {description}
           </p>
           <div className="flex gap-4">

@@ -8,10 +8,10 @@ function InfoGridSection({
   actionButton,
 }: InfoGridSectionProps) {
   return (
-    <section className="bg-white px-5 md:px-10 py-16">
+    <section className="bg-secondary px-5 md:px-10">
       <div>
         <div className="mb-6">
-          <h3 className="text-m-sm  md:text-m-md font-light text-primary px-18">
+          <h3 className="md:text-body-lg text-body-sm text-primary mb-2">
             {heading}
           </h3>
         </div>
@@ -38,11 +38,11 @@ function InfoGridSection({
                 }
               `}
             >
-              <h4 className="text-sm font-medium text-primary mb-4">
+              <h4 className="md:text-body-md-bold text-body-xs-bold mb-4">
                 {col.title}
               </h4>
 
-              <ul className="space-y-2 text-sm text-muted-foreground list-disc list-inside">
+              <ul className="space-y-2 md:text-body-md text-body-xs text-primary/80 list-disc list-inside">
                 {col.items.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
@@ -51,7 +51,7 @@ function InfoGridSection({
           ))}
 
           {image && (
-            <div className="flex justify-end w-full h-[300px]">
+            <div className="flex justify-end w-full h-[350px]">
               <img
                 src={image.src}
                 alt={image.alt}

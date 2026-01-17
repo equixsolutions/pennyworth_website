@@ -15,11 +15,11 @@ function BlogCard({ blog }: { blog: any }) {
       </div>
       <div className="flex flex-col flex-1 mt-4 justify-between">
         <div>
-          <h3 className="text-sm font-medium text-primary mb-2 leading-snug">
+          <h3 className="md:text-body-md-bold text-body-sm-bold text-primary mb-2 leading-snug">
             {blog.title}
           </h3>
 
-          <p className="text-xs text-muted-foreground leading-relaxed mb-4">
+          <p className="md:text-body-md text-body-xs text-muted-foreground leading-relaxed mb-4">
             {blog.description}
           </p>
         </div>

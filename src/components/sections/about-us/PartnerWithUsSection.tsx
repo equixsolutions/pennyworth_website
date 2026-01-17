@@ -4,14 +4,16 @@ import { benefits, requirements } from "@/constance/aboutUs";
 
 export default function PartnerWithUsSection() {
   return (
-    <section className="bg-secondary">
-      <div className="mx-auto px-5 md:px-10 pt-20">
-        <h2 className="text-lg md:text-xl font-medium mb-4">Partner with Us</h2>
-        <hr className="border-primary/30 mb-8" />
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          <div className="lg:col-span-2 flex flex-col pb-10">
-            <div>
-              <h3 className="text-base font-medium mb-4">
+    <section className="">
+      <div className="mx-auto  pt-20">
+        <h2 className="md:text-body-lg text-body-sm text-primary mb-2 px-5 md:px-10">
+          Partner with Us
+        </h2>
+        <hr className="border-t border-main border-muted-foreground/50" />
+        <div className="grid grid-cols-1 lg:grid-cols-3  pt-10">
+          <div className="lg:col-span-2 flex flex-col ">
+            <div className="px-5 md:px-10">
+              <h3 className="md:text-body-md text-body-xs font-medium mb-4">
                 Become a Pennywort Production Partner
               </h3>
 
@@ -24,40 +26,41 @@ export default function PartnerWithUsSection() {
                 production houses with our growing order flow.
               </p>
             </div>
+            <div className="mt-10 bg-primary/10 px-5 md:px-10 py-5">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-16 ">
+                <div>
+                  <h4 className="font-medium mb-6">Partnership Benefits:</h4>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mt-20">
-              <div>
-                <h4 className="font-medium mb-6">Partnership Benefits:</h4>
+                  <ul className="space-y-4">
+                    {benefits.map((item, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <span className="w-2.5 h-2.5 rounded-full bg-primary mt-2 shrink-0" />
+                        <span className="text-sm md:text-base">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-                <ul className="space-y-4">
-                  {benefits.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <span className="w-2.5 h-2.5 rounded-full bg-primary mt-2 shrink-0" />
-                      <span className="text-sm md:text-base">{item}</span>
-                    </li>
-                  ))}
-                </ul>
+                <div>
+                  <h4 className="font-medium mb-6">Requirements:</h4>
+
+                  <ul className="space-y-4">
+                    {requirements.map((item, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <span className="w-2.5 h-2.5 rounded-full bg-primary mt-2 shrink-0" />
+                        <span className="text-sm md:text-base">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
 
-              <div>
-                <h4 className="font-medium mb-6">Requirements:</h4>
-
-                <ul className="space-y-4">
-                  {requirements.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <span className="w-2.5 h-2.5 rounded-full bg-primary mt-2 shrink-0" />
-                      <span className="text-sm md:text-base">{item}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div className="mt-10 ">
+                <button className="inline-flex items-center gap-2 border border-primary px-6 py-3 text-sm md:text-base hover:bg-primary hover:text-secondary transition">
+                  Apply for Partnership
+                  <ArrowUpRight className="w-4 h-4" />
+                </button>
               </div>
-            </div>
-
-            <div className="mt-10 ">
-              <button className="inline-flex items-center gap-2 border border-primary px-6 py-3 text-sm md:text-base hover:bg-primary hover:text-secondary transition">
-                Apply for Partnership
-                <ArrowUpRight className="w-4 h-4" />
-              </button>
             </div>
           </div>
 

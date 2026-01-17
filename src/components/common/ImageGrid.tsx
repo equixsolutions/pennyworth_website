@@ -3,7 +3,7 @@ import Image from "next/image";
 const ImageGrid = () => {
   return (
     <div className="relative w-full h-[600px]">
-      <div className="absolute top-0 left-0 w-[32%] h-[28%] overflow-hidden z-10">
+      <div className="absolute top-0 left-0 w-[38%] h-[28%] overflow-hidden z-10">
         <Image
           src="/assets/images/design/about_2.png"
           alt="Professional suits on rack"

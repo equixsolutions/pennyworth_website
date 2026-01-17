@@ -2,10 +2,10 @@ import { blogCategories } from "@/constance/blogs";
 
 function StatsSection() {
   return (
-    <div className="bg-white flex items-center justify-center my-24">
+    <div className="bg-secondary flex items-center justify-center my-10">
       <div className="w-full">
         <div className="mb-4 md:px-10 px-5">
-          <h2 className="text-m-sm  md:text-m-md font-light text-primary px-18">
+          <h2 className="md:text-body-lg text-body-sm text-primary mb-2">
             Blog Categories.
           </h2>
         </div>
@@ -23,10 +23,10 @@ function StatsSection() {
                 lg:[&:nth-child(2n)]:border-r-1
                 text-left w-full"
             >
-              <h3 className="font-light text-primary mb-2">
+              <h3 className="md:text-body-md-bold text-body-sm-bold text-primary mb-2">
                 {value.heading}
               </h3>
-              <p className="text-muted-foreground ">
+              <p className="text-muted-foreground md:text-body-md text-body-xs">
                 {value.subHeading}
               </p>
             </div>

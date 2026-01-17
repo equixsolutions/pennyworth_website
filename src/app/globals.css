@@ -1,28 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bentham&family=Cantata+One&family=Manrope:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@font-face {
-  font-family: "IvyMode";
-  src: url("/fonts/IvyMode-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "IvyMode";
-  src: url("/fonts/IvyMode-Thin.woff2") format("woff2");
-  font-weight: 250;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "IvyMode";
-  src: url("/fonts/IvyMode-SemiBold.woff2") format("woff2");
-  font-weight: 600;
-  font-style: normal;
-}
 
 @layer base {
   :root {
@@ -71,7 +52,7 @@
 
     --muted: 223 47% 11%;
     --muted-foreground: 215.4 16.3% 56.9%;
-    --muted-background: 230 3% 80%; 
+    --muted-background: 230 3% 80%;
 
     --accent: 0, 0%, 95%, 1;
     --accent-foreground: 210 40% 98%;
@@ -107,7 +88,9 @@
 
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
     font-family: var(--font-manrope);
   }
 
@@ -135,115 +118,117 @@
 }
 
 @layer utilities {
-  .heading-xl {
-    font-family: var(--font-ivy);
-    font-size: 50px;
-    line-height: 60px;
+  /* Body text – Large (22px, Regular, Manrope) */
+  .text-body-lg {
+    @apply font-manrope text-fs-lg font-regular;
   }
 
+  /* Body text – Medium (18px, Regular, Manrope) */
+  .text-body-md {
+    @apply font-manrope text-fs-md font-regular;
+  }
+
+  /* Body text – Small (16px, Regular, Manrope) */
+  .text-body-sm {
+    @apply font-manrope text-fs-sm font-regular;
+  }
+
+  /* Body text – Extra Small (14px, Regular, Manrope) */
+  .text-body-xs {
+    @apply font-manrope text-fs-xs font-regular;
+  }
+
+  /* Body text – Large Bold (22px, Bold, Manrope) */
+  .text-body-lg-bold {
+    @apply font-manrope text-fs-lg font-bold;
+  }
+
+  /* Body text – Medium Bold (18px, Bold, Manrope) */
+  .text-body-md-bold {
+    @apply font-manrope text-fs-md font-bold;
+  }
+  .text-body-sm-bold {
+    @apply font-manrope text-fs-sm font-bold;
+  }
+
+  /* Body text – Extra Small Bold (14px, Bold, Manrope) */
+  .text-body-xs-bold {
+    @apply font-manrope text-fs-xs font-bold;
+  }
+
+  /* Body text – Medium SemiBold (18px, SemiBold, Manrope) */
+  .text-body-md-semibold {
+    @apply font-manrope text-fs-md font-semibold;
+  }
+}
+
+@layer utilities {
+  /* ===== HERO / XL ===== */
+
+  /* 50px – Thin */
   .heading-xl-thin {
-    @apply heading-xl;
-    font-weight: 250;
-    letter-spacing: 0.04em;
+    @apply font-cantata text-ivy-50 font-thin tracking-ivy;
   }
 
+  /* 50px – SemiBold */
   .heading-xl-semibold {
-    @apply heading-xl;
-    font-weight: 600;
-    letter-spacing: 0.04em;
+    @apply font-cantata text-ivy-50 font-semibold tracking-ivy;
   }
 
-  .heading-xl-regular {
-    @apply heading-xl;
-    font-weight: 400;
-  }
-  .heading-xlg {
-    @apply heading-xl;
-    font-weight: 300;
-    line-height: 30px;
-    font-size: 40px;
-    letter-spacing: 0.04em;
-  }
-  .heading-xmd {
-    @apply heading-xlg;
-    font-size: 26px;
-  }
+  /* ===== LARGE HEADINGS ===== */
 
+  /* 40px – Regular */
   .heading-lg {
-    font-family: var(--font-ivy);
-    font-weight: 400;
-    font-size: 30px;
-    line-height: 43px;
-    letter-spacing: 0.04em;
-  }
-  .heading-l-lg {
-    font-family: var(--font-ivy);
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 30px;
-    letter-spacing: 0.04em;
-  }
-  .heading-lg-thin {
-    font-family: var(--font-ivy);
-    font-weight: 250;
-    font-style: thin;
-    font-size: 28px;
-    line-height: 35px;
-    letter-spacing: 0.04em;
+    @apply font-cantata text-ivy-40 font-regular tracking-ivy;
   }
 
-  .text-manrope {
-    font-family: var(--font-manrope);
-  }
-  .text-m-body {
-    @apply text-manrope;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 32px;
+  /* 32px – Regular */
+  .heading-md {
+    @apply font-cantata text-ivy-32 font-regular tracking-ivy;
   }
 
-  .text-body-bold {
-    @apply text-manrope;
-    font-weight: 700;
-    font-size: 22px;
-  }
-  .text-body-bold-md {
-    @apply text-manrope;
-    font-weight: 700;
-    font-size: 18px;
-  }
-  .text-m-lg {
-    @apply text-manrope;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 100%;
+  /* 32px – Regular + Center */
+  .heading-md-center {
+    @apply font-cantata text-ivy-32 font-regular tracking-ivy text-center;
   }
 
-  .text-m-md {
-    @apply text-manrope;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 100%;
+  /* 30px – Regular */
+  .heading-sm {
+    @apply font-cantata text-ivy-30 font-regular tracking-ivy;
   }
 
-  .text-md-bold {
-    @apply text-md;
-    font-weight: 700;
+  /* ===== SUB HEADINGS ===== */
+
+  /* 28px – Thin */
+  .heading-sub-thin {
+    @apply font-cantata text-ivy-28 font-thin tracking-ivy;
   }
 
-  .text-m-sm {
-    @apply text-manrope;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 25px;
+  /* 28px – SemiBold */
+  .heading-sub-semibold {
+    @apply font-cantata text-ivy-28 font-semibold tracking-ivy;
   }
-  .text-xsm {
-    @apply text-m-sm;
-    font-size: 14px;
+
+  /* 27px – Regular + Center */
+  .heading-xs-center {
+    @apply font-cantata text-ivy-27 font-regular tracking-ivy text-center;
   }
-  .text-xm {
-    @apply text-m-sm;
-    font-size: 16px;
+
+  /* 26px – Regular */
+  .heading-xs {
+    @apply font-cantata text-ivy-26 font-regular tracking-ivy;
+  }
+ 
+  /* ===== SMALL HEADINGS ===== */
+
+  /* 24px – Regular + Center */
+  .heading-xxs-center {
+    @apply font-cantata text-ivy-24 font-regular tracking-ivy text-center;
+  }
+
+  /* 18px – Regular */
+  .heading-caption {
+    @apply font-cantata text-ivy-18 font-regular tracking-ivy;
   }
 }
 

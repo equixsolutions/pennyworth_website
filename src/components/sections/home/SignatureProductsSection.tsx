@@ -5,8 +5,6 @@ import ProductCard from "../../common/ProductCard";
 import ArrowSide from "@/assets/svg/arrow_down.svg";
 import { products } from "@/constance/products";
 
-
-
 function SignatureProductSection() {
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
@@ -40,12 +38,12 @@ function SignatureProductSection() {
     <section className="bg-primary text-secondary md:pl-10 pl-5 py-10 md:mt-16 mt-10">
       <div className="grid grid-cols-1 md:grid-cols-6 gap-10">
         <div className="col-span-1 md:col-span-1 flex items-center justify-start">
-          <div className="flex flex-col  md:items-start  md:text-start">
-            <h2 className="text-3xl font-light mb-4">
-              Our Signature <br /> Product Lines
+          <div className="flex flex-col  md:items-start  md:text-start md:w-auto w-full">
+            <h2 className="md:heading-md heading-xs mb-4">
+              Our Signature <br/> Product Lines
             </h2>
 
-            <div className="flex gap-2 mt-6 ">
+            <div className="flex gap-2 mt-6">
               <button
                 onClick={() => scrollToCard(Math.max(activeIndex - 1, 0))}
                 className="w-10 h-10 md:w-14 md:h-14 rounded-full border border-secondary flex items-center justify-center hover:border-secondary/60 transition"
@@ -88,12 +86,7 @@ function SignatureProductSection() {
                   <hr className="absolute bottom-0 left-0 w-[99%] border-secondary/40" />
 
                   <div className="pb-5 pt-10 px-2">
-                    <ProductCard
-                      image={item.image}
-                      title={item.title}
-                      textColor={"text-secondary"}
-                      bgColor={"bg-primary"}
-                    />
+                    <ProductCard product={item} />
                   </div>
                 </div>
               ))}

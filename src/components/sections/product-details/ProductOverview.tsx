@@ -9,7 +9,7 @@ function ProductOverview({
   title,
   images,
   accordionItems,
-  imagePosition = "left", 
+  imagePosition = "left",
 }: ProductOverviewProps) {
   const [activeImage, setActiveImage] = useState(images[0]);
 
@@ -17,9 +17,9 @@ function ProductOverview({
 
   return (
     <section className="px-5 md:px-10 py-10">
-      <div className="max-w-7xl mx-auto">
+      <div className="mx-auto">
         <div className="mb-10">
-          <h2 className="text-xl md:text-2xl font-medium text-primary">
+          <h2 className="md:heading-xs heading-caption text-primary">
             {title}
           </h2>
         </div>

@@ -1,34 +1,36 @@
 import CertItem from "@/components/common/CertItem";
 import Image from "next/image";
 
-const rowOne = [
+const certifications = [
   {
     src: "/assets/images/logo/iso_certification.png",
     desc: "2015 Quality Management",
+    showDivider: true,
   },
   {
     src: "/assets/images/logo/EN_certification.png",
     desc: "Heat & Flame Protection",
+    showDivider: true,
   },
   {
     src: "/assets/images/logo/NFPA_certification.png",
     desc: "Flash Fire Protection",
+    showDivider: true,
   },
   {
     src: "/assets/images/logo/EN_1149_certification.png",
     desc: "Anti-Static Properties",
   },
-];
-
-const rowTwo = [
   {
     src: "/assets/images/logo/EN_ISO_certification.png",
     label: "EN ISO 20471",
     desc: "High Visibility Clothing",
+    showDivider: true,
   },
   {
     src: "/assets/images/logo/ASTM_certification.png",
     desc: "Arc-Rated and Flame-Resistant Protective Clothing",
+    showDivider: true,
   },
   {
     src: "/assets/images/logo/oeko_certification.png",
@@ -36,41 +38,67 @@ const rowTwo = [
   },
 ];
 
- function CertificationsSection() {
+function CertificationsSection() {
+  const row1Small = certifications.slice(0, 3);
+  const row2Small = certifications.slice(3, 5);
+  const row3Small = certifications.slice(5, 7);
+
+  const row1Md = certifications.slice(0, 4);
+  const row2Md = certifications.slice(4, 7);
+
   return (
     <section className="bg-secondary md:mb-10 py-14 md:py-24 px-4 md:px-10">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-center gap-4 mb-14">
           <span className="md:text-m-md text-xm">★</span>
-          <h2 className="md:text-m-md md:text-xm  tracking-wide uppercase">
+          <h2 className="md:text-body-lg text-body-sm text-primary uppercase">
             Certifications & Compliance
           </h2>
-          <span className="md:text-m-md text-xm ">★</span>
+          <span className="md:text-m-md text-xm">★</span>
         </div>
 
-        <div className="flex md:justify-center justify-between">
-          {rowOne.map((item, i) => (
-            <CertItem
-              key={i}
-              {...item}
-              width="w-[20%]"
-              showDivider={i !== rowOne.length - 1}
-            />
-          ))}
+        <div className="md:hidden space-y-10">
+          <div className="grid grid-cols-3 gap-x-6 place-items-center">
+            {row1Small.map((item, i) => (
+              <CertItem key={i} {...item} />
+            ))}
+          </div>
+
+          <div className="flex justify-center">
+            <div className="grid grid-cols-2 gap-x-6 place-items-center">
+              {row2Small.map((item, i) => (
+                <CertItem key={i} {...item} />
+              ))}
+            </div>
+          </div>
+
+          <div className="flex justify-center">
+            <div className="grid grid-cols-2 gap-x-6 place-items-center">
+              {row3Small.map((item, i) => (
+                <CertItem key={i} {...item} />
+              ))}
+            </div>
+          </div>
         </div>
 
-        <div className="flex justify-center md:gap-0 gap-[30px] mt-16">
-          {rowTwo.map((item, i) => (
-            <CertItem
-              key={i}
-              {...item}
-              width="w-[24%]"
-              showDivider={i !== rowTwo.length - 1}
-            />
-          ))}
+        <div className="hidden md:block space-y-10">
+          <div className="grid grid-cols-4 gap-x-6 place-items-center">
+            {row1Md.map((item, i) => (
+              <CertItem key={i} {...item} />
+            ))}
+          </div>
+
+          <div className="flex justify-center">
+            <div className="grid grid-cols-3 gap-x-6 place-items-center">
+              {row2Md.map((item, i) => (
+                <CertItem key={i} {...item} />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
 }
-export default CertificationsSection
+
+export default CertificationsSection;

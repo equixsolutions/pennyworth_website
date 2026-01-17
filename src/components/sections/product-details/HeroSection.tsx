@@ -31,9 +31,9 @@ function HeroSection({
 
       <div className="grid md:grid-cols-2 md:items-center grid-cols-3">
         <div className="w-full md:relative absolute md:bottom-0 bottom-20 px-5 z-10">
-          <p className="text-sm mb-3 opacity-80">{badge}</p>
+          <p className="text-sm mb-3 md:text-body-lg text-body-md opacity-80">{badge}</p>
 
-          <h1 className="heading-lg-thin md:heading-xl-regular leading-tight">
+          <h1 className="md:heading-xl-semibold heading-sub-semibold leading-tight">
             {title}
           </h1>
         </div>

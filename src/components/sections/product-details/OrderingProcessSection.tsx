@@ -9,12 +9,12 @@ function OrderingProcessSection() {
     <section className="text-secondary px-5 md:px-10 py-10">
       <div>
         <div className="mb-10">
-          <h2 className="text-m-sm  md:text-m-md font-light text-primary px-18 mb-2">
+          <h2 className="md:text-body-lg text-body-sm text-primary mb-2">
             Ordering Process
           </h2>
           <hr className="border-muted-foreground/40" />
         </div>
-        <div className="relative top-20 mb-36">
+        <div className="relative top-20 md:mb-56 mb-40">
           <div
             className="
             absolute left-1/2 top-0 bottom-0 w-px bg-muted-foreground/40
@@ -47,11 +47,11 @@ function OrderingProcessSection() {
               ${
                 isTop
                   ? "md:-translate-y-20 top-1/2"
-                  : "md:translate-y-20 md:bottom-[75%] relative"
+                  : "md:translate-y-20 md:bottom-[0%] relative"
               }
             `}
                     >
-                      <p className="text-primary leading-snug">{step.title}</p>
+                      <p className="md:text-body-md text-body-xs text-primary/80 leading-snug">{step.title}</p>
                       {step.subtitle && (
                         <p className="text-[10px] text-muted-foreground">
                           {step.subtitle}
@@ -66,16 +66,16 @@ function OrderingProcessSection() {
         </div>
         <div className="relative top-[50%] grid grid-cols-1 md:grid-cols-2 bg-primary text-secondary">
           <div className="p-8 border-b md:border-b-0 md:border-r border-muted/20">
-            <h4 className="text-sm font-medium mb-4">Volume Discounts</h4>
-            <ul className="space-y-2 text-xs text-secondary/80 list-disc list-inside">
+            <h4 className="md:text-body-md-bold text-body-xs-bold mb-4">Volume Discounts</h4>
+            <ul className="space-y-2 md:text-body-md text-body-xs text-secondary/80 list-disc list-inside">
               {volumeDiscounts.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
           </div>
           <div className="p-8">
-            <h4 className="text-sm font-medium mb-4">Lead Times</h4>
-            <ul className="space-y-2 text-xs text-secondary/80 list-disc list-inside">
+            <h4 className="md:text-body-md-bold text-body-xs-bold mb-4">Lead Times</h4>
+            <ul className="space-y-2 md:text-body-md text-body-xs text-secondary/80 list-disc list-inside">
               {leadTimes.map((item) => (
                 <li key={item}>{item}</li>
               ))}

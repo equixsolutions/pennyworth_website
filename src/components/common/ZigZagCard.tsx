@@ -13,7 +13,7 @@ function ZigZagCard({
   return (
     <div className="relative w-[260px] h-[320px] shrink-0 flex items-center justify-center">
       <span
-        className={`absolute top-2 text-lg font-serif text-primary-900 transition-opacity ${
+        className={`absolute -top-2 text-lg md:heading-xs heading-caption   text-primary-900 transition-opacity ${
           isUp ? "opacity-100" : "opacity-0"
         }`}
       >
@@ -29,7 +29,7 @@ function ZigZagCard({
         <Image src={src} alt={label} fill className="object-cover" />
       </motion.div>
       <span
-        className={`absolute bottom-0 text-lg font-serif text-primary-900 transition-opacity ${
+        className={`absolute -bottom-2 text-lg md:heading-xs heading-caption text-primary-900 transition-opacity ${
           !isUp ? "opacity-100" : "opacity-0"
         }`}
       >

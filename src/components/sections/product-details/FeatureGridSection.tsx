@@ -16,7 +16,7 @@ function FeatureGridSection({
     >
       <div>
         <div className="mb-10">
-          <h2 className="text-secondary text-lg md:text-xl font-medium mb-3">
+          <h2 className="text-secondary md:text-body-lg text-body-sm  mb-2">
             {heading}
           </h2>
           <hr className="border-secondary/20" />
@@ -35,7 +35,7 @@ function FeatureGridSection({
             <FeatureCard key={i} {...item} />
           ))}
 
-          {image && (
+          {image && ( 
             <div
               className={`relative w-full md:col-span-${image.colSpan} h-full  min-h-[260px] md:h-[100%] md:min-h-[100%]`}
             >

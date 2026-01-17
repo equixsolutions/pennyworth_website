@@ -19,10 +19,10 @@ const columns = [
 
 function SizeChartSection() {
   return (
-    <section className="bg-white px-5 md:px-10 py-10">
+    <section className="bg-secondary px-5 md:px-10 py-10">
       <div>
         <div className="mb-6">
-          <h3 className="text-sm font-medium text-primary mb-3">Size Chart</h3>
+          <h3 className="md:text-body-md text-body-xs text-primary/80  mb-3">Size Chart</h3>
         </div>
 
         <div className="overflow-x-auto border border-primary/20">
@@ -32,7 +32,7 @@ function SizeChartSection() {
                 {columns.map((col) => (
                   <th
                     key={col.key}
-                    className="text-left font-medium px-4 py-3 border-r last:border-r-0 border-muted-foreground/40"
+                    className="md:text-body-md-bold text-body-xs-bold px-4 py-3 border-r last:border-r-0 border-muted-foreground/40"
                   >
                     {col.label}
                   </th>
@@ -49,7 +49,7 @@ function SizeChartSection() {
                   {columns.map((col) => (
                     <td
                       key={col.key}
-                      className="px-4 py-3 border-r last:border-r-0 border-muted-foreground/40"
+                      className="px-4 py-3 border-r last:border-r-0 border-muted-foreground/40 md:text-body-md text-body-xs"
                     >
                       {row[col.key as keyof typeof row]}
                     </td>

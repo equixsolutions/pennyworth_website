@@ -134,3 +134,20 @@ export interface ProductAboutConfig {
   title: string;
   description: string;
 }
+
+type Product = {
+  title: string;
+  image: string;
+  overlay: {
+    description: string;
+    materials: string;
+    applications: string;
+    cta: string;
+  };
+};
+
+
+export type Props = {
+  product: Product;
+  textColor?: string;
+};

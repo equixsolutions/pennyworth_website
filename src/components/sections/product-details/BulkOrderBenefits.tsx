@@ -39,21 +39,21 @@ function BulkOrderBenefits() {
   };
 
   return (
-    <section className="bg-white px-5 md:px-10 py-10">
+    <section className="bg-secondary px-5 md:px-10 py-10">
       <div>
         <div className="mb-10">
-          <h3 className="text-m-sm mb-2  md:text-m-md font-light text-primary px-18">
+          <h3 className="md:text-body-lg text-body-sm text-primary mb-2 px-18">
             Bulk Order Benefits
           </h3>
-          <hr className="border-muted-foreground/40" />
+          <hr className="border-muted-foreground/50" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-12">
           <div>
-            <h4 className="text-sm font-medium text-primary mb-4">
+            <h4 className="md:text-body-md-bold text-body-sm-bold  text-primary mb-4">
               {volumeDiscounts.title}
             </h4>
-            <ul className="space-y-2 text-sm text-muted-foreground list-disc list-inside">
+            <ul className="space-y-2 md:text-body-md text-body-xs text-primary/80 list-disc list-inside">
               {volumeDiscounts.items.map((item) => (
                 <li key={item}>{item}</li>
               ))}
@@ -61,10 +61,10 @@ function BulkOrderBenefits() {
           </div>
 
           <div>
-            <h4 className="text-sm font-medium text-primary mb-4">
+            <h4 className="md:text-body-md-bold text-body-sm-bold text-primary mb-4">
               {valueAddedServices.title}
             </h4>
-            <ul className="space-y-2 text-sm text-muted-foreground list-disc list-inside">
+            <ul className="space-y-2 md:text-body-md text-body-xs text-primary/80 list-disc list-inside">
               {valueAddedServices.items.map((item) => (
                 <li key={item}>{item}</li>
               ))}
@@ -73,14 +73,16 @@ function BulkOrderBenefits() {
         </div>
 
         <div>
-          <h4 className="text-sm font-medium text-primary mb-4">
+          <h4 className="md:text-body-md-bold text-body-sm-bold text-primary mb-4">
             {leadTimes.title}
           </h4>
 
-          <div className="space-y-3 text-sm text-muted-foreground">
+          <div className="space-y-3 md:text-body-md text-body-xs text-primary/80">
             {leadTimes.items.map((item) => (
               <p key={item.label}>
-                <span className="font-medium text-primary">{item.label}:</span>{" "}
+                <span className="md:text-body-md-bold text-body-xs text-primary">
+                  {item.label}:
+                </span>{" "}
                 {item.value}
               </p>
             ))}

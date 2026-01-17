@@ -3,29 +3,63 @@ export const products = [
     title: "Flame-Resistant Coveralls",
     slug: "fr-coveralls",
     image: "/assets/images/design/product_1.png",
+    overlay: {
+      description:
+        "Protection meets precision. Our FRC and IFR coveralls meet international safety standards for high-risk industries.",
+      materials: "100% Cotton FR | Aramid Fibers | Modacrylic Blends",
+      applications: "Oil & Gas, Welding, Petrochemical",
+      cta: "View Coverall Collection",
+    },
   },
   {
     title: "High-Visibility Safety Vests",
     slug: "safety-vests",
     image: "/assets/images/design/product_2.png",
+    overlay: {
+      description:
+        "Protection meets precision. Our FRC and IFR coveralls meet international safety standards for high-risk industries.",
+      materials: "100% Cotton FR | Aramid Fibers | Modacrylic Blends",
+      applications: "Oil & Gas, Welding, Petrochemical",
+      cta: "View Coverall Collection",
+    },
   },
   {
     title: "Corporate & Custom T-Shirts",
     slug: "corporate-tshirts",
     image: "/assets/images/design/product_4.png",
+    overlay: {
+      description:
+        "Protection meets precision. Our FRC and IFR coveralls meet international safety standards for high-risk industries.",
+      materials: "100% Cotton FR | Aramid Fibers | Modacrylic Blends",
+      applications: "Oil & Gas, Welding, Petrochemical",
+      cta: "View Coverall Collection",
+    },
   },
   {
     title: "Industrial Work Gloves",
     slug: "work-gloves",
     image: "/assets/images/design/product_6.png",
+    overlay: {
+      description:
+        "Protection meets precision. Our FRC and IFR coveralls meet international safety standards for high-risk industries.",
+      materials: "100% Cotton FR | Aramid Fibers | Modacrylic Blends",
+      applications: "Oil & Gas, Welding, Petrochemical",
+      cta: "View Coverall Collection",
+    },
   },
   {
     title: "Medical Scrubs & Lab Coats",
     slug: "medical-scrubs",
     image: "/assets/images/design/product_5.png",
+    overlay: {
+      description:
+        "High-visibility safety vests designed for maximum visibility and comfort in hazardous environments.",
+      materials: "Polyester Mesh | Reflective Tape",
+      applications: "Construction, Roadwork, Logistics",
+      cta: "View Safety Vest Collection",
+    },
   },
 ];
-
 export const benefits = [
   "Match any Pantone color reference",
   "Match from fabric swatch or photo",
@@ -93,8 +127,13 @@ export const scrubColors = [
   },
 ];
 
-
-
-
-
-
+export  const testAndQuality = [
+    "Vertical flame spread test (ISO 15025)",
+    "Heat transmission indexing",
+    "Tensile strength testing",
+    "Tear resistance evaluation",
+    "Colorfastness to washing (ISO 105)",
+    "Dimensional stability after laundering",
+    "Seam strength analysis",
+    "Anti-static property verification (where applicable)",
+  ];

@@ -26,12 +26,10 @@ function Product({ params }: PageProps) {
   return (
     <>
       <HeroSection {...config.hero} onMenuOpen={() => setIsMenuOpen(true)} />
-
       {config.sections.map((section, index) => {
         const SectionComponent = PRODUCT_SECTIONS[section.type];
         return <SectionComponent key={index} {...section.props} />;
       })}
-
       <Footer />
       <NavigationMenu
         isOpen={isMenuOpen}

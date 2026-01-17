@@ -28,7 +28,7 @@ function ValueCell({
         height={40}
         className="object-cover absolute right-0 bottom-0"
       />
-      <p className="text-sm md:text-base leading-relaxed max-w-sm">{text}</p>
+      <p className="md:text-body-md-bold text-body-sm-bold leading-relaxed max-w-sm">{text}</p>
       <div className="absolute right-4 bottom-4 opacity-[0.05] pointer-events-none">
         <PennyWort className="w-16 h-auto" />
       </div>

@@ -5,7 +5,6 @@ interface HeroSectionProps {
   onMenuOpen: () => void;
 }
 
-
 function HeroSection({ onMenuOpen }: HeroSectionProps) {
   return (
     <section className="relative bg-primary overflow-hidden md:min-h-[70vh] ">
@@ -45,10 +44,13 @@ function HeroSection({ onMenuOpen }: HeroSectionProps) {
       </div>
       <div className="md:relative z-10 md:min-h-[70vh]   flex items-center lg:pt-0 lg:items-center">
         <div className="w-full text-center">
-          <h1 className="md:heading-xl-regular heading-lg-thin text-start text-secondary leading-tight md:ml-10 ml-5">
+          <h1 className="md:text-body-lg text-body-md text-start text-secondary leading-tight md:ml-10 ml-5">
             Crafted for Comfort.
             <br />
-            <span className="md:heading-xl-thin">Designed for You.</span>
+            <span className="md:heading-xl-semibold">
+              Engineering Excellence in <br />
+              Every Stitch
+            </span>
           </h1>
         </div>
       </div>

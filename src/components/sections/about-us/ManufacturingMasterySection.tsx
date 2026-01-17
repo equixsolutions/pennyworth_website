@@ -3,12 +3,12 @@ export default function ManufacturingMasterySection() {
     <section className="w-full text-primary my-12 md:px-10 px-5">
       <div>
         <div className="mb-4 md:mb-8">
-          <h2 className="text-lg md:text-xl mb-2">
+          <h2 className="md:text-body-lg text-body-sm text-primary mb-2">
             Two Decades of Manufacturing Mastery
-            <hr className="border-main" />
           </h2>
+          <hr className="border-t border-main border-muted-foreground/50" />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 text-sm md:text-base leading-relaxed text-gray-700">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 text-sm  leading-relaxed md:text-body-md text-body-xs">
           <div className="space-y-4">
             <p>
               At Pennywort Clothing, we believe workwear is more than clothing —

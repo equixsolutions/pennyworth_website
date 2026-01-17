@@ -10,7 +10,7 @@ function ParallaxSection() {
       </div>
       <div className="absolute inset-0 bg-primary/20" />
       <div className="relative z-10 h-full flex items-center justify-center">
-        <h2 className="text-secondary/20 text-2xl md:text-7xl font-light tracking-wide">
+        <h2 className="text-secondary/20 text-body-lg-bold md:!text-[106px] !text-[40px] tracking-wide">
           Parallax effect
         </h2>
       </div>

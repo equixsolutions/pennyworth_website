@@ -7,12 +7,11 @@ export default function WhyPennywortSection() {
   return (
     <section className="bg-secondary text-primary md:px-10 px-5 md:mt-24 ">
       <div className="">
-        <h2 className="md:text-m-md text-xm mb-2">
+        <h2 className="md:text-body-lg text-body-sm text-primary mb-2">
           Why Pennywort Leads the Industry
         </h2>
-
-        <hr className="border-t border-main" />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-xsm md:text-xm leading-relaxed text-primary mt-10">
+        <hr className="border-t border-main border-muted-foreground/50" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:text-body-md text-body-sm leading-relaxed text-primary mt-10">
           <div className="space-y-4">
             <p>
               At Pennywort Limited (PW), we connect global businesses with the
@@ -45,7 +44,7 @@ export default function WhyPennywortSection() {
         </div>
         <div className="flex items-center justify-center gap-4 mt-20 mb-10 md:text-m-md text-xm">
           <span>★</span>
-          <span>We are Certified by</span>
+          <span className="text-body-lg">We are Certified by</span>
           <span>★</span>
         </div>
         <div className="relative flex justify-center">

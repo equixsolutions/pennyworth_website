@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button";
 function ContactSection() {
   const fields = ["Name", "Phone", "Email", "Subject"];
   return (
-    <section className="bg-white px-5 md:px-10 py-20">
+    <section className="bg-secondary px-5 md:px-10 py-20">
       <div className=" grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div>
-          <h3 className="text-sm font-medium text-primary mb-8">
+          <h3 className="md:text-body-lg text-body-sm leading-relaxed text-primary mb-8">
             Contact Form details
           </h3>
 
@@ -17,7 +17,7 @@ function ContactSection() {
                 <input
                   type="text"
                   placeholder={label}
-                  className="w-full border-b border-muted-foreground/40 py-3 text-sm focus:outline-none focus:border-primary"
+                  className="w-full border-b md:text-body-md text-body-xs leading-relaxed border-muted-foreground/40 py-3 text-sm focus:outline-none focus:border-primary"
                 />
               </div>
             ))}
@@ -26,20 +26,20 @@ function ContactSection() {
               <textarea
                 placeholder="Message"
                 rows={4}
-                className="w-full border-b border-muted-foreground/40 py-3 text-sm resize-none focus:outline-none focus:border-primary"
+                className="w-full border-b border-muted-foreground/40 md:text-body-md text-body-xs leading-relaxed py-3 text-sm resize-none focus:outline-none focus:border-primary"
               />
             </div>
           </form>
 
           <div className="mt-12">
-            <p className="text-sm text-primary mb-4">
+            <p className="text-primary mb-4 md:text-body-md=bold text-body-sm-bold leading-relaxed">
               Join Pennywort today and elevate your production business to new
               heights of success.
             </p>
             <Button
               variant="heroPrimary"
               size="lg"
-              className="group w-[200px] text-m-sm  p-2 text-primary border border-primary md:px-6 md:py-3"
+              className="group w-[250px] md:text-body-md text-body-sm leading-relaxed p-2 text-primary border border-primary md:px-6 md:py-3"
             >
               Please fill the form
               <ArrowRight className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -47,12 +47,12 @@ function ContactSection() {
           </div>
         </div>
         <div className="bg-muted-background  md:p-12">
-          <h3 className="text-sm font-semibold text-primary mb-6">
+          <h3 className="md:text-body-bold text-body-sm-bold leading-relaxed mb-6">
             Unlock unprecedented opportunities for your production company by
             registering with Pennywort.
           </h3>
 
-          <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
+          <div className="space-y-4 md:text-body-md text-body-sm leading-relaxed">
             <p>
               As a registered member, your company gains exclusive access to a
               stream of production orders directly from Pennywort. Once the

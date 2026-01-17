@@ -55,8 +55,10 @@ function TestimonialSection() {
   return (
     <section className="relative overflow-x-hidden mb-20 w-full">
       <div className="pt-4 mb-8 md:mx-10 mx-5">
-        <h2 className="text-m-md mb-2">What Our Partners Say</h2>
-        <hr className="border-t border-main" />
+        <h2 className="md:text-body-lg text-body-sm text-primary mb-2">
+          What Our Partners Say
+        </h2>
+        <hr className="border-t border-main border-muted-foreground/50" />
       </div>
       <div className="absolute inset-x-0 md:top-20 top-10 pointer-events-none overflow-hidden z-0 md:mx-10 mx-5">
         <span className="flex justify-start leading-none text-muted-foreground relative md:right-auto right-14  scale-50 md:scale-100">
@@ -95,7 +97,7 @@ function TestimonialSection() {
                 className="flex gap-16 items-start will-change-transform"
               >
                 <div className="max-w-xl">
-                  <p className="text-xl leading-relaxed text-gray-900 mb-6">
+                  <p className="md:heading-md heading-caption  leading-relaxed text-gray-900 mb-6">
                     {active.quote}
                   </p>
                   <p className="text-sm text-gray-600">
@@ -104,7 +106,7 @@ function TestimonialSection() {
                 </div>
 
                 <div className="hidden md:block max-w-md">
-                  <p className="text-lg leading-relaxed text-gray-400">
+                  <p className="md:heading-md heading-caption leading-relaxed text-gray-400">
                     {next.quote}
                   </p>
                 </div>
@@ -117,7 +119,7 @@ function TestimonialSection() {
               <div
                 key={i}
                 className={`h-[2px] w-24 transition-colors duration-300 ${
-                  i === index ? "bg-  " : "bg-gray-300"
+                  i === index ? "bg-primary/60  " : "bg-gray-300"
                 }`}
               />
             ))}
