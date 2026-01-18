@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   X,
 } from "lucide-react";
-import ArrowRight from "@/assets/svg/Arrow_right.svg";
+// import ArrowRight from "@/assets/svg/Arrow_right.svg";
 import { menuItems, socialLinks } from "@/constance/home";
 
 interface NavigationMenuProps {
@@ -74,13 +74,13 @@ const NavigationMenu = ({ isOpen, onClose }: NavigationMenuProps) => {
                       >
                         {item.label}
                       </span>
-                      <ArrowRight
+                      {/* <ArrowRight
                         className={`w-6 h-6 md:w-8 md:h-8 transition-all duration-300 ${
                           hoveredItem === item.label
                             ? "text-secondary translate-x-0 opacity-100"
                             : "text-muted-foreground -translate-x-2 opacity-50"
                         }`}
-                      />
+                      /> */}
                     </a>
                   </motion.li>
                 ))}

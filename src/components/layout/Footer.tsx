@@ -1,5 +1,5 @@
 import React from "react";
-import ArrowRight from "@/assets/svg/Arrow_right.svg";
+// import ArrowRight from "@/assets/svg/Arrow_right.svg";
 import {
   footerLinksData,
   navigationLinks,
@@ -30,7 +30,7 @@ export default function Footer() {
                     <span className="text-secondary text-base md:text-body-md-bold text-body-sm-bold">
                       {link.label}
                     </span>
-                    <ArrowRight className="text-secondary" />
+                    {/* <ArrowRight className="text-secondary" /> */}
                   </div>
                   <hr className="border-muted-secondary_light mb-3" />
                   <p className="text-muted-secondary md:text-body-md text-body-xs">

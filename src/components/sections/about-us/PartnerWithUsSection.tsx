@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ArrowUpRight from "@/assets/svg/Arrow_right.svg";
+// import ArrowUpRight from "@/assets/svg/Arrow_right.svg";
 import { benefits, requirements } from "@/constance/aboutUs";
 
 export default function PartnerWithUsSection() {
@@ -58,7 +58,7 @@ export default function PartnerWithUsSection() {
               <div className="mt-10 ">
                 <button className="inline-flex items-center gap-2 border border-primary px-6 py-3 text-sm md:text-base hover:bg-primary hover:text-secondary transition">
                   Apply for Partnership
-                  <ArrowUpRight className="w-4 h-4" />
+                  {/* <ArrowUpRight className="w-4 h-4" /> */}
                 </button>
               </div>
             </div>
