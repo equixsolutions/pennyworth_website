@@ -1,12 +1,9 @@
+"use client"
+
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   X,
-  Linkedin,
-  Instagram,
-  Facebook,
-  Youtube,
-  Twitter,
 } from "lucide-react";
 import ArrowRight from "@/assets/svg/Arrow_right.svg";
 import { menuItems, socialLinks } from "@/constance/home";

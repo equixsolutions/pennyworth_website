@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import Menu from "@/assets/svg/menu.svg";
 import Image from "next/image";

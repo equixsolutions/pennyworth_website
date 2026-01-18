@@ -8,13 +8,8 @@ import { PRODUCT_SECTIONS } from "@/config/products/productSectionRegistry";
 import { notFound, useParams } from "next/navigation";
 import React, { useState } from "react";
 
-type PageProps = {
-  params: {
-    product: ProductSlug;
-  };
-};
 
-function Product({ params }: PageProps) {
+function Product() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { product } = useParams<{ product: ProductSlug }>();
   const config = PRODUCT_CONFIGS[product];

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ArrowUpRight from "@/assets/svg/arrow_right.svg";
+import ArrowUpRight from "@/assets/svg/Arrow_right.svg";
 import { benefits, requirements } from "@/constance/aboutUs";
 
 export default function PartnerWithUsSection() {
