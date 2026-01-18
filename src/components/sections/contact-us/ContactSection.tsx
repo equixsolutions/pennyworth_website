@@ -1,4 +1,4 @@
-import ArrowRight from "@/assets/svg/Arrow_right.svg";
+import ArrowRight from "@/assets/svg/arrow.svg";
 import { Button } from "@/components/ui/button";
 
 function ContactSection() {

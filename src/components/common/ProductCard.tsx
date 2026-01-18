@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import ArrowRight from "@/assets/svg/Arrow_right.svg";
+import ArrowRight from "@/assets/svg/arrow.svg";
 import { Props } from "@/types/products";
 
 function ProductCard({ product, textColor = "text-secondary" }: Props) {

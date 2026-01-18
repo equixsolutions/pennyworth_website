@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Button } from "../ui/button";
-// import ArrowRight from "@/assets/svg/Arrow_right.svg";
+import ArrowRight from "@/assets/svg/arrow.svg";
 
 function BlogCard({ blog }: { blog: any }) {
   return (
@@ -30,7 +30,7 @@ function BlogCard({ blog }: { blog: any }) {
           className="group w-[150px] text-m-sm  p-2 text-primary border border-primary md:px-6 md:py-3"
         >
           Read More
-          {/* <ArrowRight className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" /> */}
+          <ArrowRight className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
         </Button>
       </div>
     </div>

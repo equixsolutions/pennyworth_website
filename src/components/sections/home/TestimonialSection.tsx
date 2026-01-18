@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { testimonials } from "@/constance/home";
 import { Button } from "../../ui/button";
-// import ArrowRight from "@/assets/svg/Arrow_right.svg";
+import ArrowRight from "@/assets/svg/arrow.svg";
 import ArrowSide from "@/assets/svg/arrow_down.svg";
 import Comma from "@/assets/svg/comma.svg";
 
@@ -130,7 +130,7 @@ function TestimonialSection() {
             className="group w-[300px] text-m-sm px-4 py-2 mt-6 text-primary border border-primary md:px-6 md:py-3"
           >
             Read More Success Stories
-            {/* <ArrowRight className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" /> */}
+            <ArrowRight className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </Button>
         </div>
       </div>

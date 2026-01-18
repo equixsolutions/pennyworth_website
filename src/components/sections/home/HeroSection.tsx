@@ -1,6 +1,6 @@
 "use client";
 
-import ArrowRight from "@/assets/svg/Arrow_right.svg";
+import ArrowRight from "@/assets/svg/arrow.svg";
 import ArrowDown from "@/assets/svg/arrow_down.svg";
 import Menu from "@/assets/svg/menu.svg";
 import { Button } from "@/components/ui/button";
