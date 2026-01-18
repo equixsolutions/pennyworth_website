@@ -4,20 +4,15 @@ import Facebook from "@/assets/svg/Facebook.svg";
 import Youtube from "@/assets/svg/youtube.svg";
 import x from "@/assets/svg/X.svg";
 
-import {
-  ArrowUpRight,
-  ShieldCheck,
-  Factory,
-  Boxes,
-  Palette,
-  Leaf,
-  FileText,
-  HeartPulse,
-  Building2,
-  HardHat,
-  Hotel,
-  Truck,
-} from "lucide-react";
+import GasPump from "@/assets/svg/GasPump.svg";
+import Heartbeat from "@/assets/svg/Heartbeat.svg";
+import BuildingOffice from "@/assets/svg/BuildingOffice.svg";
+import FactoryTS from "@/assets/svg/Factory.svg";
+import PipeWrench from "@/assets/svg/PipeWrench.svg";
+import Island from "@/assets/svg/Island.svg";
+import TruckTS from "@/assets/svg/Truck.svg";
+
+import { ShieldCheck, Factory, Boxes, Palette, Leaf } from "lucide-react";
 
 export const menuItems = [
   { label: "Home", href: "" },
@@ -73,13 +68,13 @@ export const features = [
 ];
 
 export const industries = [
-  { label: "Oil, Gas & Energy", icon: FileText },
-  { label: "Healthcare & Medical", icon: HeartPulse },
-  { label: "Corporate & Retail", icon: Building2 },
-  { label: "Manufacturing & Industrial", icon: Factory },
-  { label: "Construction & Infrastructure", icon: HardHat },
-  { label: "Hospitality & Tourism", icon: Hotel },
-  { label: "Logistics & Warehousing", icon: Truck },
+  { label: "Oil, Gas & Energy", icon: GasPump },
+  { label: "Healthcare & Medical", icon: Heartbeat },
+  { label: "Corporate & Retail", icon: BuildingOffice },
+  { label: "Manufacturing & Industrial", icon: FactoryTS },
+  { label: "Construction & Infrastructure", icon: PipeWrench },
+  { label: "Hospitality & Tourism", icon: Island },
+  { label: "Logistics & Warehousing", icon: TruckTS },
 ];
 
 export const sustainabilityFeaturesData = [

@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Points from "@/assets/svg/penny_points.svg";
 import InfoCard from "@/components/common/InfoCard";
+import Points from "@/components/common/Points";
 
 const missionPoints = [
   "Delivering world-class manufacturing quality at competitive Indian prices",
@@ -25,16 +25,22 @@ export default function MissionVisionSection() {
             comfortable, confident, and safe.
           </p>
 
-          <p className="leading-relaxed md:text-body-md text-body-xs mb-4">We're committed to:</p>
+          <p className="leading-relaxed md:text-body-md text-body-xs mb-4">
+            We're committed to:
+          </p>
 
           <ul className="space-y-4">
             {missionPoints.map((item, i) => (
-              <li key={i} className="flex items-start gap-3">
-                <Points />
-                <span className="leading-relaxed md:text-body-md text-body-xs">
-                  {item}
-                </span>
-              </li>
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+                  <Points />
+                </div>
+                <div className="space-y-1 flex flex-col gap-2">
+                  <p className="md:text-body-md text-body-xs text-primary/70">
+                    {item}
+                  </p>
+                </div>
+              </div>
             ))}
           </ul>
         </InfoCard>

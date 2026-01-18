@@ -48,11 +48,11 @@ export default function IndustriesSection() {
                     first:border-t-0 last:border-b-0
                     transition-all duration-200
                     ${
-                      isHovered ? "bg-secondary text-primary" : "text-secondary"
+                      isHovered ? "bg-secondary text-primary/80" : "text-secondary"
                     }`}
                 >
                   <Icon
-                    className={`w-5 h-5 transition-colors
+                    className={` transition-colors
                      ${isHovered ? "text-primary" : "text-secondary"}`}
                   />
                   <span className="md:heading-xs heading-caption font-light">

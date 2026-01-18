@@ -203,6 +203,9 @@
   .heading-sub-thin {
     @apply font-cantata text-ivy-28 font-thin tracking-ivy;
   }
+  .heading-sub-hero {
+    @apply font-cantata text-ivy-26 font-thin tracking-ivy;
+  }
 
   /* 28px – SemiBold */
   .heading-sub-semibold {

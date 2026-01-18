@@ -13,8 +13,14 @@ interface HeroSectionProps {
 const HeroSection = ({ onMenuOpen }: HeroSectionProps) => {
   return (
     <section className="relative bg-primary min-h-screen  overflow-hidden">
-      <div className="md:absolute inset-0 grid grid-cols-3 md:min-h-screen">
-        <div className="relative col-span-1 md:col-span-2 grid grid-cols-1 md:grid-cols-8 grid-rows-4">
+      <button
+        onClick={onMenuOpen}
+        className="absolute top-6 right-10 z-20 w-12 h-12 rounded-full bg-primary flex items-center justify-center"
+      >
+        <Menu className="text-secondary" />
+      </button>
+      <div className="md:absolute inset-0 grid grid-cols-3 h-screen md:min-h-screen">
+        <div className="relative col-span-1 md:col-span-2 grid grid-cols-1 md:grid-cols-12 md:grid-rows-4 grid-rows-6">
           <div className="relative col-span-6 row-span-1 flex items-start p-6 md:p-10">
             <Image
               src="/assets/images/design/penny-wort-logo.png"
@@ -23,16 +29,11 @@ const HeroSection = ({ onMenuOpen }: HeroSectionProps) => {
               height={40}
               priority
             />
-            <button
-              onClick={onMenuOpen}
-              className="fixed top-6 right-6 z-20 w-12 h-12 rounded-full bg-primary flex items-center justify-center"
-            >
-              <Menu className="text-secondary" />
-            </button>
           </div>
+
           <div className="col-span-6 row-span-1" />
           <div className="col-span-6 row-span-1" />
-          <div className="relative col-span-3 row-start-4 row-span-1 overflow-hidden ml-10 md:block hidden">
+          <div className="relative col-span-4 md:row-start-4 row-start-6 row-span-1 overflow-hidden md:ml-10 ml-4 md:w-auto w-[240px]">
             <Image
               src="/assets/images/design/hero_page.png"
               alt="Workwear background"
@@ -42,7 +43,7 @@ const HeroSection = ({ onMenuOpen }: HeroSectionProps) => {
           </div>
         </div>
         <div className="relative grid grid-cols-6 md:grid-cols-2 md:grid-rows-6 grid-rows-10 col-span-2 md:col-span-1 gap-1">
-          <div className="relative overflow-hidden col-span-4 sm:col-span-2 sm:col-start-3 md:col-span-1 md:row-span-5 row-span-8">
+          <div className="relative overflow-hidden col-span-4 sm:col-span-2 sm:col-start-3 md:col-span-1 md:row-span-5  row-span-4">
             <Image
               src="/assets/images/design/hero_page_2.png"
               alt="Workwear"
@@ -51,7 +52,7 @@ const HeroSection = ({ onMenuOpen }: HeroSectionProps) => {
               priority
             />
           </div>
-          <div className="relative overflow-hidden col-start-5 col-span-2 md:col-start-auto md:col-span-1 md:row-span-6 row-span-10">
+          <div className="relative overflow-hidden col-start-5 col-span-2 md:col-start-auto md:col-span-1 md:row-span-6 row-span-5">
             <Image
               src="/assets/images/design/hero_3.png"
               alt="Workwear"
@@ -61,9 +62,9 @@ const HeroSection = ({ onMenuOpen }: HeroSectionProps) => {
           </div>
         </div>
       </div>
-      <div className="md:relative z-10 md:min-h-screen  flex items-center lg:pt-0 lg:items-center">
+      <div className="md:relative absolute md:bottom-auto bottom-[23%] z-10 md:min-h-screen  flex items-center lg:pt-0 lg:items-center">
         <div className="w-full text-center">
-          <h1 className="md:heading-xl-thin heading-lg-thin text-start text-secondary leading-tight md:ml-10 ml-5">
+          <h1 className="md:heading-xl-thin heading-sub-hero text-start text-secondary leading-tight md:ml-10 ml-5">
             Premium Workwear & Uniforms
             <br />
             <span className="md:heading-xl-semibold">
@@ -71,7 +72,7 @@ const HeroSection = ({ onMenuOpen }: HeroSectionProps) => {
             </span>
           </h1>
           <div className="w-full flex justify-center">
-            <p className="md:text-body-lg text-body-sm text-secondary mb-8 md:mt-20 mt-14  text-left ml-5">
+            <p className="md:text-body-lg text-body-sm text-secondary mb-8 md:mt-20 mt-8  text-left ml-5">
               India&apos;s Biggest Manufacturer of Flame-Resistant Workwear
               <br className="hidden md:block" />& Custom Uniforms{" "}
               <span className="text-secondary font-medium">Since 2014</span>
@@ -101,11 +102,6 @@ const HeroSection = ({ onMenuOpen }: HeroSectionProps) => {
               <ArrowRight className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </Button>
           </div>
-          <img
-            src="/assets/images/design/hero_page.png"
-            alt="Workwear background"
-            className="object-containe mt-10 md:hidden ml-5"
-          />
         </div>
       </div>
 
