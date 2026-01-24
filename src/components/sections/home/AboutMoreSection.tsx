@@ -2,18 +2,26 @@ import { motion, useMotionValue } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import ArrowSide from "@/assets/svg/arrow_down.svg";
 
-const images = [
-  "/assets/images/design/news_2.png",
-  "/assets/images/design/news_1.png",
-  "/assets/images/design/news_3.png",
-  "/assets/images/design/news_4.png",
-  "/assets/images/design/news_5.png",
-];
+import { client } from "@/sanity/client";
+import { homeVideosQuery } from "@/sanity/queries";
+import { mapSanityVideosToCarouselItems } from "@/lib/homeAdapter";
 
 function AboutMoreSection() {
   const trackRef = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const [isDragging, setIsDragging] = useState(false);
+
+  const [slides, setSlides] = useState<
+    { id: string; title: string; url: string; thumbnail: string }[]
+  >([]);
+
+  useEffect(() => {
+    client.fetch(homeVideosQuery).then((data) => {
+      const items = mapSanityVideosToCarouselItems(data?.videos ?? []);
+      setSlides(items);
+      x.set(0);
+    });
+  }, []);
 
   useEffect(() => {
     let rafId: number;
@@ -42,6 +50,8 @@ function AboutMoreSection() {
   const nudgeLeft = () => x.set(x.get() + 200);
   const nudgeRight = () => x.set(x.get() - 200);
 
+  if (!slides.length) return null; // or show skeleton
+
   return (
     <section className="relative md:mx-10 ml-5 md:mt-12 mt-24 mb-10">
       <div className="mb-8 md:mb-12 mr-5">
@@ -50,6 +60,7 @@ function AboutMoreSection() {
         </h2>
         <hr className="border-t border-main border-muted-foreground/50" />
       </div>
+
       <div className="md:hidden flex font-normal mr-5 text-primary text-base md:text-lg tracking-[0] leading-[normal] mb-8 md:mb-[149px]">
         At Pennywort, sustainability isn't an afterthought—it's woven into every
         thread. We're committed to:
@@ -66,15 +77,15 @@ function AboutMoreSection() {
           onDragStart={() => setIsDragging(true)}
           onDragEnd={() => setIsDragging(false)}
         >
-          {[...images, ...images].map((src, i) => (
+          {[...slides, ...slides].map((item, i) => (
             <div
-              key={i}
+              key={`${item.id}-${i}`}
               className="flex-shrink-0 w-[90vw] sm:w-[45vw] lg:w-[33vw]"
             >
               <div className="relative">
                 <img
-                  src={src}
-                  alt={`Slide ${i}`}
+                  src={item.thumbnail}
+                  alt={item.title}
                   className="w-full h-[304px] object-cover"
                 />
               </div>
@@ -82,14 +93,18 @@ function AboutMoreSection() {
           ))}
         </motion.div>
       </div>
+
       <div className="flex md:justify-center gap-1 mt-8">
         <button
+          type="button"
           onClick={nudgeLeft}
           className="w-14 h-14 rounded-full border border-primary flex items-center justify-center hover:border-muted-foreground hover:text-muted-foreground transition"
         >
           <ArrowSide className="rotate-90" />
         </button>
+
         <button
+          type="button"
           onClick={nudgeRight}
           className="w-14 h-14 rounded-full border border-primary flex items-center justify-center hover:border-muted-foreground hover:text-muted-foreground transition"
         >

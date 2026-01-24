@@ -1,15 +1,27 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useRef, useState,useEffect } from "react";
 import ProductCard from "@/components/common/ProductCard";
 import ArrowSide from "@/assets/svg/arrow_down.svg";
-import { products } from "@/constance/products";
+
 import Link from "next/link";
+
+import { client } from "@/sanity/client";
+import { signatureProductsQuery } from "@/sanity/queries";
+import { mapSanityProductsToCards } from "@/lib/productAdapter";
 
 function SignatureProductSection() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
+
+   const [products, setProducts] = useState<any[]>([]);
+
+  useEffect(() => {
+    client.fetch(signatureProductsQuery).then((data) => {
+      setProducts(mapSanityProductsToCards(data));
+    });
+  }, []);
 
   const handleScroll = () => {
     if (!scrollContainerRef.current) return;
@@ -72,7 +84,7 @@ function SignatureProductSection() {
             no-scrollbar
         "
         >
-          {products.map((item, i) => {
+          {products.map((data, i) => {
             const COLS = 4;
 
             const isLastCol = (i + 1) % COLS === 0;
@@ -96,10 +108,10 @@ function SignatureProductSection() {
 
                 <div className="pb-5 pt-10 px-1 flex justify-center items-center">
                   <Link
-                    href={`/product-details/${item.slug}`}
+                    href={`/product-details/${data.slug}`}
                     className="block pb-5 pt-10 px-1"
                   >
-                    <ProductCard product={item} textColor={"text-primary"} />
+                    <ProductCard product={data} textColor={"text-primary"} />
                   </Link>
                 </div>
               </div>

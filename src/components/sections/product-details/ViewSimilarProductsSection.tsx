@@ -1,14 +1,25 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState,useEffect } from "react";
 import ProductCard from "../../common/ProductCard";
 import ArrowSide from "@/assets/svg/arrow_down.svg";
 import { products } from "@/constance/products";
+import { client } from "@/sanity/client";
+import { signatureProductsQuery } from "@/sanity/queries";
+import { mapSanityProductsToCards } from "@/lib/productAdapter";
 
 function ViewSimilarProductsSection() {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
+
+     const [products, setProducts] = useState<any[]>([]);
+  
+    useEffect(() => {
+      client.fetch(signatureProductsQuery).then((data) => {
+        setProducts(mapSanityProductsToCards(data));
+      });
+    }, []);
 
   const scrollTo = (index: number) => {
     cardRefs.current[index]?.scrollIntoView({

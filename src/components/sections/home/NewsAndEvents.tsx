@@ -4,7 +4,10 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import ArrowSide from "@/assets/svg/arrow_down.svg";
-import { carouselItems } from "@/constance/home";
+
+import { client } from "@/sanity/client";
+import { homeEngagementsQuery } from "@/sanity/queries";
+import { mapSanityEngagementsToCarouselItems } from "@/lib/homeAdapter";
 
 const IMAGE_WIDTH_MOBILE = 230;
 const IMAGE_WIDTH_DESKTOP = 270;
@@ -20,7 +23,9 @@ const VISIBLE_RANGE = 7;
 
 export default function NewsAndEvents() {
   const [position, setPosition] = useState(0);
+  const [carouselItems, setCarouselItems] = useState<any[]>([]);
   const total = carouselItems.length;
+
   const [isDesktop, setIsDesktop] = useState(false);
   const [activeTab, setActiveTab] = useState("news");
 
@@ -40,12 +45,36 @@ export default function NewsAndEvents() {
   }, []);
 
   useEffect(() => {
+    client.fetch(homeEngagementsQuery).then((data) => {
+      const items = mapSanityEngagementsToCarouselItems(data?.engagements ?? []);
+      setCarouselItems(items);
+      setPosition(0);
+    });
+  }, []);
+
+  useEffect(() => {
+    if (total === 0) return;
+
     const interval = setInterval(() => {
       setPosition((prev) => prev - 1);
     }, AUTO_SLIDE_INTERVAL);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [total]);
+
+
+  if (total === 0) {
+    return (
+      <section className="w-full overflow-hidden md:mt-10 mt-16">
+        <div className="pt-4 px-5 md:px-10">
+          <h2 className="md:text-body-lg text-body-sm text-primary mb-2">
+            Find our more Engagements
+          </h2>
+          <hr className="border-t border-main border-muted-foreground/50" />
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="w-full overflow-hidden md:mt-10 mt-16">
@@ -55,7 +84,7 @@ export default function NewsAndEvents() {
         </h2>
         <hr className="border-t border-main border-muted-foreground/50" />
       </div>
-      <div className="flex justify-center gap-8 mt-8 mb-20 md:mt-12 md:mb-20"></div>
+
       <div className="relative w-full flex justify-center">
         <div className="relative md:h-[460px] h-[400px] w-full">
           {Array.from({ length: VISIBLE_RANGE }).map((_, i) => {
@@ -70,14 +99,13 @@ export default function NewsAndEvents() {
 
             return (
               <motion.div
-                key={`${virtualIndex}-${item.id}`}
+                key={`${virtualIndex}-${item.id ?? itemIndex}`}
                 className="absolute top-0 left-1/2"
                 animate={{
                   x:
                     -(offset * ITEM_WIDTH) +
                     (Math.abs(offset) === 1
-                      ? ((offset > 0 ? 1 : -1) * (GAP_ACTIVE - GAP_INACTIVE)) /
-                        2
+                      ? ((offset > 0 ? 1 : -1) * (GAP_ACTIVE - GAP_INACTIVE)) / 2
                       : 0),
                   opacity: Math.abs(offset) > 2 ? 0 : 1,
                 }}
@@ -108,16 +136,18 @@ export default function NewsAndEvents() {
               </motion.div>
             );
           })}
-          <div className="absolute flex bottom-[115px] md:bottom-[75px] md:gap-[440px] gap-[300px] justify-center  w-full">
+
+          <div className="absolute flex bottom-[115px] md:bottom-[75px] md:gap-[440px] gap-[300px] justify-center w-full">
             <button
               onClick={() => setPosition((p) => p - 1)}
-              className="w-10 h-10  rounded-full border border-muted-foreground  flex items-center justify-center hover:bg-gray-100 transition"
+              className="w-10 h-10 rounded-full border border-muted-foreground flex items-center justify-center hover:bg-gray-100 transition"
             >
               <ArrowSide className="rotate-90" />
             </button>
+
             <button
               onClick={() => setPosition((p) => p + 1)}
-              className="w-10 h-10  rounded-full border border-muted-foreground  flex items-center justify-center hover:bg-gray-100 transition"
+              className="w-10 h-10 rounded-full border border-muted-foreground flex items-center justify-center hover:bg-gray-100 transition"
             >
               <ArrowSide className="-rotate-90" />
             </button>
