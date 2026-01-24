@@ -1,6 +1,60 @@
 import { urlFor } from "@/sanity/image";
 
-export function mapSanityProductToConfig(p: any) {
+interface SanityImage extends Record<string, unknown> {
+  asset?: unknown;
+}
+
+interface SanityAccordionItem {
+  title?: string;
+  content?: unknown;
+}
+
+interface PortableTextChild {
+  text?: string;
+}
+
+interface SanityVariantImage {
+  image?: SanityImage;
+  alt?: string;
+  _key?: string;
+}
+
+interface SanityVariant {
+  images?: SanityVariantImage[];
+  accordionItems?: SanityAccordionItem[];
+  title?: string;
+  imagePosition?: string;
+}
+
+interface SanityProduct {
+  title?: string;
+  slug?: string;
+  image?: unknown;
+  cardOverlay?: {
+    description?: string;
+    materials?: string;
+    applications?: string;
+    cta?: string;
+  };
+  hero?: {
+    image1?: SanityImage;
+    image1Alt?: string;
+    image2?: SanityImage;
+    image2Alt?: string;
+    badge?: string;
+    title?: string;
+    logo?: SanityImage;
+    logoAlt?: string;
+  };
+  productAbout?: {
+    images?: SanityImage[];
+    title?: string;
+    description?: string;
+  };
+  variants?: SanityVariant[];
+}
+
+export function mapSanityProductToConfig(p: SanityProduct) {
   const hero = p?.hero;
 
   const heroImages = [
@@ -22,13 +76,13 @@ export function mapSanityProductToConfig(p: any) {
       : null,
   ].filter(Boolean);
 
-  const sections: any[] = [];
+  const sections: Array<{ type: string; props: Record<string, unknown> }> = [];
 
-  // Product About
+
   if (p?.productAbout) {
     const aboutImages = (p.productAbout.images ?? [])
-      .filter((img: any) => img?.asset)
-      .map((img: any) => urlFor(img).width(1200).quality(80).url());
+      .filter((img: SanityImage) => img?.asset)
+      .map((img: SanityImage) => urlFor(img).width(1200).quality(80).url());
 
     if (aboutImages.length) {
       sections.push({
@@ -42,19 +96,18 @@ export function mapSanityProductToConfig(p: any) {
     }
   }
 
-  // Overview Section
-// Variants (multiple ProductOverview sections)
+
 if (p?.variants?.length) {
-  const items = p.variants.map((s: any) => {
+  const items = p.variants.map((s: SanityVariant) => {
     const images = (s.images ?? [])
-      .filter((it: any) => it?.image?.asset)
-      .map((it: any) => ({
+      .filter((it: SanityVariantImage) => it?.image?.asset)
+      .map((it: SanityVariantImage) => ({
         id: it._key,
-        src: urlFor(it.image).width(1200).quality(80).url(),
+        src: urlFor(it.image!).width(1200).quality(80).url(),
         alt: it.alt ?? "",
       }));
 
-const accordionItems = (s.accordionItems ?? []).map((it: any, idx: number) => ({
+const accordionItems = (s.accordionItems ?? []).map((it: SanityAccordionItem, idx: number) => ({
   id: idx + 1,
   title: it.title ?? "",
   content: portableTextToPlainText(it.content), // ✅ convert
@@ -67,7 +120,7 @@ const accordionItems = (s.accordionItems ?? []).map((it: any, idx: number) => ({
       images,
       accordionItems,
     };
-  }).filter((v: any) => v.images?.length);
+  }).filter((v) => v.images?.length);
 
   if (items.length) {
     sections.push({
@@ -84,7 +137,7 @@ const accordionItems = (s.accordionItems ?? []).map((it: any, idx: number) => ({
       title: hero?.title ?? "",
       images: heroImages,
       logo: {
-        src: urlFor(hero?.logo).width(300).quality(80).url(),
+        src: hero?.logo?.asset ? urlFor(hero.logo).width(300).quality(80).url() : "",
         alt: hero?.logoAlt ?? "",
       },
     },
@@ -96,7 +149,7 @@ const accordionItems = (s.accordionItems ?? []).map((it: any, idx: number) => ({
 
 
 
-export function mapSanityProductsToCards(products: any[]) {
+export function mapSanityProductsToCards(products: SanityProduct[]) {
   return products.map((p) => ({
     title: p.title,
     slug: p.slug,
@@ -109,7 +162,7 @@ export function mapSanityProductsToCards(products: any[]) {
     },
   }));
 }
-function portableTextToPlainText(value: any): string {
+function portableTextToPlainText(value: unknown): string {
   if (!value) return "";
 
   // If Sanity returns Portable Text blocks (array)
@@ -118,7 +171,7 @@ function portableTextToPlainText(value: any): string {
       .map((block) => {
         if (block?._type !== "block") return "";
         return (block.children ?? [])
-          .map((child: any) => child?.text ?? "")
+          .map((child: PortableTextChild) => child?.text ?? "")
           .join("");
       })
       .filter(Boolean)

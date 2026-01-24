@@ -13,12 +13,12 @@ function ProductOverview({
 }: ProductOverviewProps) {
   const [activeImage, setActiveImage] = useState(images[0]);
 
-  // ✅ when images arrive async, update activeImage
+ 
   useEffect(() => {
     if (images.length) setActiveImage(images[0]);
   }, [images]);
 
-  // ✅ guard (prevents crash)
+
   if (!images.length) return null;
 
   const isImageLeft = imagePosition === "left";

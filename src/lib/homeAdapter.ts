@@ -1,6 +1,19 @@
 import { urlFor } from "@/sanity/image";
 
-export function mapSanityEngagementsToCarouselItems(engagements: any[] = []) {
+interface SanityEngagement {
+  _key: string;
+  title?: string;
+  image?: { asset: { _ref: string } };
+}
+
+interface SanityVideo {
+  _key: string;
+  title?: string;
+  videoUrl: string;
+  thumbnail?: { asset: { _ref: string } };
+}
+
+export function mapSanityEngagementsToCarouselItems(engagements: SanityEngagement[] = []) {
   return engagements.map((e) => ({
     id: e._key,
     title: e.title ?? "",
@@ -10,7 +23,7 @@ export function mapSanityEngagementsToCarouselItems(engagements: any[] = []) {
 
 
 
-export function mapSanityVideosToCarouselItems(videos: any[] = []) {
+export function mapSanityVideosToCarouselItems(videos: SanityVideo[] = []) {
   return videos.map((v) => ({
     id: v._key,
     title: v.title ?? "",
