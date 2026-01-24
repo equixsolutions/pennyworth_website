@@ -28,7 +28,8 @@
       "@/hooks/*": ["src/hooks/*"],
       "@/types/*": ["src/types/*"],
       "@/constants/*": ["src/constants/*"],
-      "@/styles/*": ["src/styles/*"]
+      "@/styles/*": ["src/styles/*"],
+      "@/sanity/*": ["src/sanity/*"]
     }
   },
   "include": [
