@@ -5,6 +5,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -221,7 +223,7 @@
   .heading-xs {
     @apply font-cantata text-ivy-26 font-regular tracking-ivy;
   }
- 
+
   /* ===== SMALL HEADINGS ===== */
 
   /* 24px – Regular + Center */
@@ -306,3 +308,4 @@
     color: hsl(var(--muted-foreground));
   }
 }
+

@@ -36,7 +36,6 @@ function TestimonialSection() {
     setIndex((i) => (i - 1 + total) % total);
   };
 
-  // Reduced translate distance to avoid overflow on resize
   const containerVariants = {
     enter: (direction: number) => ({
       x: direction > 0 ? 40 : -40,

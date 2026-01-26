@@ -1,6 +1,15 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function ComplianceStandardsSection() {
+  const sectionRef = useRef<HTMLElement | null>(null);
+
   const header = {
     title: "Compliance & Standards",
     subtitle: "All Pennywort safety vests meet or exceed:",
@@ -56,36 +65,100 @@ function ComplianceStandardsSection() {
     ],
   };
 
+  useEffect(() => {
+    if (!sectionRef.current) return;
+
+    const ctx = gsap.context(() => {
+      // Heading
+      gsap.from(".compliance-heading", {
+        opacity: 0,
+        y: 20,
+        duration: 0.7,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          once: true,
+        },
+      });
+
+      // Subtitle
+      gsap.from(".compliance-subtitle", {
+        opacity: 0,
+        y: 15,
+        duration: 0.6,
+        ease: "power2.out",
+        delay: 0.1,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 78%",
+          once: true,
+        },
+      });
+
+      // Standards cards
+      gsap.from(".compliance-card", {
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        ease: "power3.out",
+        stagger: 0.15,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 75%",
+          once: true,
+        },
+      });
+
+      // Bottom lists
+      gsap.from(".compliance-list", {
+        opacity: 0,
+        y: 25,
+        duration: 0.7,
+        ease: "power3.out",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 70%",
+          once: true,
+        },
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="bg-secondary px-5 md:px-10 py-10">
+    <section ref={sectionRef} className="bg-secondary px-5 md:px-10 py-10">
       <div>
         <div className="mb-6">
-          <h3 className="md:text-body-lg text-body-sm text-primary mb-2">
+          <h3 className="compliance-heading md:text-body-lg text-body-sm text-primary mb-2">
             {header.title}
           </h3>
           <hr className="border-muted-foreground/40" />
         </div>
 
-        <p className="md:text-body-md text-body-xs text-primary/80 mb-6">{header.subtitle}</p>
+        <p className="compliance-subtitle md:text-body-md text-body-xs text-primary/80 mb-6">
+          {header.subtitle}
+        </p>
+
         <div className="border border-muted-foreground/40 grid grid-cols-1 md:grid-cols-3 mb-12">
           {standards.slice(0, 2).map((item) => (
             <div
               key={item.code}
-              className="p-6 md:p-8 border-b md:border-b-0 md:border-r border-muted-foreground/40"
+              className="compliance-card p-6 md:p-8 border-b md:border-b-0 md:border-r border-muted-foreground/40"
             >
               <div className="relative w-10 h-10 mb-4">
                 <Image
                   src={item.icon}
-                  alt={"LOGO"}
+                  alt="LOGO"
                   fill
                   className="object-contain"
                 />
               </div>
 
               <h4 className="md:heading-sub-semibold heading-xs text-primary/80 mb-2">
-                {item.title}
-              
-                {item.code}
+                {item.title} {item.code}
               </h4>
 
               <p className="md:text-body-md text-body-xs text-primary/80">
@@ -94,7 +167,7 @@ function ComplianceStandardsSection() {
             </div>
           ))}
 
-          <div className="p-6 md:p-8">
+          <div className="compliance-card p-6 md:p-8">
             <div className="mb-4 text-xl">{standards[2].icon}</div>
 
             {standards[2].classes?.map((cls) => (
@@ -109,8 +182,9 @@ function ComplianceStandardsSection() {
             ))}
           </div>
         </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-          <div>
+          <div className="compliance-list">
             <h4 className="md:text-body-md-bold text-body-xs-bold text-primary/80 mb-4">
               {bulkOrderBenefits.title}
             </h4>
@@ -121,7 +195,7 @@ function ComplianceStandardsSection() {
             </ul>
           </div>
 
-          <div>
+          <div className="compliance-list">
             <h4 className="md:text-body-md-bold text-body-xs-bold text-primary/80 mb-4">
               {volumePricing.title}
             </h4>

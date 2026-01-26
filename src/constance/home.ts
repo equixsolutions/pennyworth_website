@@ -68,13 +68,41 @@ export const features = [
 ];
 
 export const industries = [
-  { label: "Oil, Gas & Energy", icon: GasPump },
-  { label: "Healthcare & Medical", icon: Heartbeat },
-  { label: "Corporate & Retail", icon: BuildingOffice },
-  { label: "Manufacturing & Industrial", icon: FactoryTS },
-  { label: "Construction & Infrastructure", icon: PipeWrench },
-  { label: "Hospitality & Tourism", icon: Island },
-  { label: "Logistics & Warehousing", icon: TruckTS },
+  {
+    label: "Oil, Gas & Energy",
+    icon: GasPump,
+    image: "/assets/images/design/industries_1.png",
+  },
+  {
+    label: "Healthcare & Medical",
+    icon: Heartbeat,
+    image: "/assets/images/design/industries_2.png",
+  },
+  {
+    label: "Corporate & Retail",
+    icon: BuildingOffice,
+    image: "/assets/images/design/industries_3.png",
+  },
+  {
+    label: "Manufacturing & Industrial",
+    icon: FactoryTS,
+    image: "/assets/images/design/industries_4.png",
+  },
+  {
+    label: "Construction & Infrastructure",
+    icon: PipeWrench,
+    image: "/assets/images/design/industries_5.png",
+  },
+  {
+    label: "Hospitality & Tourism",
+    icon: Island,
+    image: "/assets/images/design/industries_6.png",
+  },
+  {
+    label: "Logistics & Warehousing",
+    icon: TruckTS,
+    image: "/assets/images/design/industries_7.png",
+  },
 ];
 
 export const sustainabilityFeaturesData = [

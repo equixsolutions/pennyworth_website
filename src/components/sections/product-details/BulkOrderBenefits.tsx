@@ -1,4 +1,14 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 function BulkOrderBenefits() {
+  const sectionRef = useRef<HTMLElement | null>(null);
+
   const volumeDiscounts = {
     title: "Volume Discounts",
     items: [
@@ -38,41 +48,107 @@ function BulkOrderBenefits() {
     ],
   };
 
+  useEffect(() => {
+    if (!sectionRef.current) return;
+
+    const ctx = gsap.context(() => {
+      // Section heading
+      gsap.from(".bulk-heading", {
+        opacity: 0,
+        y: 20,
+        duration: 0.7,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          once: true,
+        },
+      });
+
+      // Two main columns
+      gsap.from(".bulk-column", {
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        ease: "power3.out",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 75%",
+          once: true,
+        },
+      });
+
+      // List items (very subtle)
+      gsap.from(".bulk-list-item", {
+        opacity: 0,
+        y: 10,
+        duration: 0.4,
+        ease: "power2.out",
+        stagger: 0.05,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 72%",
+          once: true,
+        },
+      });
+
+      // Lead times section
+      gsap.from(".bulk-lead-times", {
+        opacity: 0,
+        y: 25,
+        duration: 0.7,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 70%",
+          once: true,
+        },
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="bg-secondary px-5 md:px-10 py-10">
+    <section ref={sectionRef} className="bg-secondary px-5 md:px-10 py-10">
       <div>
         <div className="mb-10">
-          <h3 className="md:text-body-lg text-body-sm text-primary mb-2 px-18">
+          <h3 className="bulk-heading md:text-body-lg text-body-sm text-primary mb-2 px-18">
             Bulk Order Benefits
           </h3>
           <hr className="border-muted-foreground/50" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-12">
-          <div>
-            <h4 className="md:text-body-md-bold text-body-sm-bold  text-primary mb-4">
+          <div className="bulk-column">
+            <h4 className="md:text-body-md-bold text-body-sm-bold text-primary mb-4">
               {volumeDiscounts.title}
             </h4>
             <ul className="space-y-2 md:text-body-md text-body-xs text-primary/80 list-disc list-inside">
               {volumeDiscounts.items.map((item) => (
-                <li key={item}>{item}</li>
+                <li key={item} className="bulk-list-item">
+                  {item}
+                </li>
               ))}
             </ul>
           </div>
 
-          <div>
+          <div className="bulk-column">
             <h4 className="md:text-body-md-bold text-body-sm-bold text-primary mb-4">
               {valueAddedServices.title}
             </h4>
             <ul className="space-y-2 md:text-body-md text-body-xs text-primary/80 list-disc list-inside">
               {valueAddedServices.items.map((item) => (
-                <li key={item}>{item}</li>
+                <li key={item} className="bulk-list-item">
+                  {item}
+                </li>
               ))}
             </ul>
           </div>
         </div>
 
-        <div>
+        <div className="bulk-lead-times">
           <h4 className="md:text-body-md-bold text-body-sm-bold text-primary mb-4">
             {leadTimes.title}
           </h4>

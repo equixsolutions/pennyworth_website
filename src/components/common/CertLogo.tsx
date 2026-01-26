@@ -2,13 +2,13 @@ import Image from "next/image";
 
 type Props = {
   src: string;
-  className: string;
+  className?: string;
 };
 
-export function CertLogo({ src, className }: Props) {
+export function CertLogo({ src, className = "" }: Props) {
   return (
     <div
-      className={`absolute w-10 h-10 md:w-24 md:h-24  
+      className={`group w-10 h-10 md:w-24 md:h-24 
       flex items-center justify-center ${className}`}
     >
       <Image
@@ -16,7 +16,14 @@ export function CertLogo({ src, className }: Props) {
         alt="Certification"
         width={100}
         height={100}
-        className="object-contain"
+        className="
+          object-contain
+          grayscale
+          transition-all
+          duration-300
+          ease-in-out
+          group-hover:grayscale-0
+        "
       />
     </div>
   );

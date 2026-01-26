@@ -77,7 +77,7 @@ export default function NewsAndEvents() {
   }
 
   return (
-    <section className="w-full overflow-hidden md:mt-10 mt-16">
+    <section className="w-full overflow-hidden md:mt-10 mt-24">
       <div className="pt-4 px-5 md:px-10">
         <h2 className="md:text-body-lg text-body-sm text-primary mb-2">
           Find our more Engagements
@@ -86,7 +86,7 @@ export default function NewsAndEvents() {
       </div>
 
       <div className="relative w-full flex justify-center">
-        <div className="relative md:h-[460px] h-[400px] w-full">
+        <div className="relative md:h-[460px] h-[400px] w-full mt-28">
           {Array.from({ length: VISIBLE_RANGE }).map((_, i) => {
             const center = Math.floor(VISIBLE_RANGE / 2);
             const offset = i - center;

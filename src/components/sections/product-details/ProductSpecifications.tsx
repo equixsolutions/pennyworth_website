@@ -1,4 +1,14 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 function ProductSpecifications() {
+  const sectionRef = useRef<HTMLElement | null>(null);
+
   const sizeRange = {
     title: "Size Range",
     value: "XS to 5XL",
@@ -43,17 +53,74 @@ function ProductSpecifications() {
     ],
   };
 
+  useEffect(() => {
+    if (!sectionRef.current) return;
+
+    const ctx = gsap.context(() => {
+      gsap.from(".ps-heading", {
+        opacity: 0,
+        y: 20,
+        duration: 0.7,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          once: true,
+        },
+      });
+
+      gsap.from(".ps-top", {
+        opacity: 0,
+        y: 30,
+        duration: 0.9,
+        ease: "power3.out",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 75%",
+          once: true,
+        },
+      });
+
+      gsap.from(".ps-divider", {
+        opacity: 0,
+        duration: 0.6,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 65%",
+          once: true,
+        },
+      });
+
+      gsap.from(".ps-bottom", {
+        opacity: 0,
+        y: 30,
+        duration: 0.9,
+        ease: "power3.out",
+        stagger: 0.25,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 60%",
+          once: true,
+        },
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="px-5 md:px-10 py-10">
+    <section ref={sectionRef} className="px-5 md:px-10 py-10">
       <div>
         <div className="mb-10">
-          <h3 className="md:text-body-lg text-body-sm text-primary mb-2">
+          <h3 className="ps-heading md:text-body-lg text-body-sm text-primary mb-2">
             Product Specifications
           </h3>
           <hr className="border-muted-foreground/40" />
         </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
-          <div>
+          <div className="ps-top">
             <h4 className="md:text-body-md-bold text-body-xs-bold text-primary mb-2">
               {sizeRange.title}
             </h4>
@@ -62,7 +129,8 @@ function ProductSpecifications() {
               <span className="text-xs">{sizeRange.note}</span>
             </p>
           </div>
-          <div className="md:border-l md:border-muted-foreground/40 md:pl-12">
+
+          <div className="ps-top md:border-l md:border-muted-foreground/40 md:pl-12">
             <h4 className="md:text-body-md-bold text-body-xs-bold text-primary mb-4">
               {colorOptions.title}
             </h4>
@@ -93,9 +161,10 @@ function ProductSpecifications() {
           </div>
         </div>
 
-        <hr className="border-muted-foreground/40 mb-12" />
+        <hr className="ps-divider border-muted-foreground/40 mb-12" />
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div>
+          <div className="ps-bottom">
             <h4 className="md:text-body-md-bold text-body-xs-bold text-primary/80 mb-4">
               {designFeatures.title}
             </h4>
@@ -105,7 +174,8 @@ function ProductSpecifications() {
               ))}
             </ul>
           </div>
-          <div>
+
+          <div className="ps-bottom">
             <h4 className="md:text-body-md-bold text-body-xs-bold mb-4">
               {customizationOptions.title}
             </h4>

@@ -1,16 +1,44 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect } from "react";
 import ValueCard from "../../common/ValueCard";
 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const ValuesSection = () => {
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(".value-image", {
+        scrollTrigger: {
+          trigger: ".values-section",
+          start: "top 80%",
+        },
+        opacity: 0,
+        y: 40,
+        duration: 0.7,
+        stagger: 0.15,
+        ease: "power3.out",
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="w-full md:px-10 px-5 md:mt-24 ">
+    <section className="values-section w-full md:px-10 px-5 md:mt-24">
       <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2">
-        <div className="relative h-[200px] md:aspect-square md:h-auto md:order-1">
+
+        <div className="value-image relative h-[200px] md:aspect-square md:h-auto md:order-1">
           <Image
             src="/assets/images/design/value_1.png"
             alt="Sustainability"
             fill
             className="object-cover"
+            loading="lazy"
           />
         </div>
 
@@ -23,12 +51,13 @@ const ValuesSection = () => {
           order="md:order-2"
           mobileHeight
         />
-        <div className="relative h-[200px] md:aspect-square md:h-auto md:order-3">
+        <div className="value-image relative h-[200px] md:aspect-square md:h-auto md:order-3">
           <Image
             src="/assets/images/design/value_2.png"
             alt="Fast Turnaround"
             fill
             className="object-cover"
+            loading="lazy"
           />
         </div>
 
@@ -41,12 +70,14 @@ const ValuesSection = () => {
           order="md:order-4"
           mobileHeight
         />
-        <div className="relative h-[200px] md:aspect-square md:h-auto md:order-6">
+
+        <div className="value-image relative h-[200px] md:aspect-square md:h-auto md:order-6">
           <Image
             src="/assets/images/design/value_3.png"
             alt="Global Standards"
             fill
             className="object-cover"
+            loading="lazy"
           />
         </div>
 
@@ -59,12 +90,13 @@ const ValuesSection = () => {
           order="md:order-5"
           mobileHeight
         />
-        <div className="relative h-[200px] md:aspect-square md:h-auto md:order-8">
+        <div className="value-image relative h-[200px] md:aspect-square md:h-auto md:order-8">
           <Image
             src="/assets/images/design/value_4.png"
             alt="Customization"
             fill
             className="object-cover"
+            loading="lazy"
           />
         </div>
 
