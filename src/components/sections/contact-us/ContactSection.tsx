@@ -54,8 +54,6 @@ function ContactSection() {
           once: true,
         },
       });
-
-      // CTA button emphasis
       gsap.from(".contact-cta", {
         opacity: 0,
         y: 20,
