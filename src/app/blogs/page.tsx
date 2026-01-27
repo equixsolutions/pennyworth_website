@@ -1,4 +1,5 @@
 "use client";
+
 import Footer from "@/components/layout/Footer";
 import NavigationMenu from "@/components/layout/NavigationMenu";
 import HeroSection from "@/components/sections/blogs/HeroSection";

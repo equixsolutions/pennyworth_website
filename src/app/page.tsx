@@ -15,14 +15,20 @@ import TestimonialSection from "@/components/sections/home/TestimonialSection";
 import Footer from "@/components/layout/Footer";
 import SignatureProductSection from "@/components/sections/home/SignatureProductsSection";
 import WhyPennywortSection from "@/components/sections/home/WhyPennywortSection";
+import IntroLoader from "@/components/layout/IntroLoader";
 
 const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [loadingDone, setLoadingDone] = useState(false);
 
   return (
     <>
-      <main className="min-h-screen">
-        <HeroSection onMenuOpen={() => setIsMenuOpen(true)} />
+      {!loadingDone && <IntroLoader onFinish={() => setLoadingDone(true)} />}
+      <main id="home-content" className="min-h-screen">
+        <HeroSection
+          onMenuOpen={() => setIsMenuOpen(true)}
+          ready={loadingDone}
+        />
         <StatsSection />
         <AboutSection />
         <LeadershipSection />

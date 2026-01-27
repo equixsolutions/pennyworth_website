@@ -1,45 +1,52 @@
 "use client";
 
-import React, { useRef, useState,useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import ProductCard from "@/components/common/ProductCard";
 import ArrowSide from "@/assets/svg/arrow_down.svg";
-
 import Link from "next/link";
-
 import { client } from "@/sanity/client";
 import { signatureProductsQuery } from "@/sanity/queries";
 import { mapSanityProductsToCards } from "@/lib/productAdapter";
+import gsap from "gsap";
+import { ProductSkeleton } from "@/components/layout/ProductSkeleton";
 
 function SignatureProductSection() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
-
-   const [products, setProducts] = useState<any[]>([]);
+  const [products, setProducts] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     client.fetch(signatureProductsQuery).then((data) => {
       setProducts(mapSanityProductsToCards(data));
+      setLoading(false);
     });
   }, []);
 
+  useEffect(() => {
+    if (loading || cardRefs.current.length === 0) return;
+
+    gsap.from(cardRefs.current, {
+      opacity: 0,
+      y: 40,
+      duration: 0.8,
+      ease: "power3.out",
+      stagger: 0.12,
+    });
+  }, [loading]);
+
   const handleScroll = () => {
     if (!scrollContainerRef.current) return;
-
     const scrollLeft = scrollContainerRef.current.scrollLeft;
     const cardWidth = cardRefs.current[0]?.offsetWidth || 1;
-    const index = Math.round(scrollLeft / cardWidth);
-    setActiveIndex(index);
+    setActiveIndex(Math.round(scrollLeft / cardWidth));
   };
 
   const scrollToCard = (index: number) => {
     if (!scrollContainerRef.current || !cardRefs.current[index]) return;
-
-    const container = scrollContainerRef.current;
-    const card = cardRefs.current[index];
-
-    container.scrollTo({
-      left: card.offsetLeft,
+    scrollContainerRef.current.scrollTo({
+      left: cardRefs.current[index]!.offsetLeft,
       behavior: "smooth",
     });
   };
@@ -48,28 +55,31 @@ function SignatureProductSection() {
     <section className="bg-secondary px-5 md:px-10 py-16 md:py-24">
       <div>
         <div className="mb-2">
-          <h2 className="text-sm md:text-base font-medium">
+          <h2 className="md:text-body-lg text-body-sm">
             Our Signature Product Lines
           </h2>
           <hr className="border-primary/30 mt-4 md:hidden" />
         </div>
-        <div className="flex gap-2 mt-10 md:hidden">
-          <button
-            onClick={() => scrollToCard(Math.max(activeIndex - 1, 0))}
-            className="w-10 h-10 md:w-14 md:h-14 rounded-full border border-primary flex items-center justify-center  transition"
-          >
-            <ArrowSide className="rotate-90" />
-          </button>
 
-          <button
-            onClick={() =>
-              scrollToCard(Math.min(activeIndex + 1, products.length - 1))
-            }
-            className="w-10 h-10 md:w-14 md:h-14 rounded-full border border-primary flex items-center justify-center  transition"
-          >
-            <ArrowSide className="-rotate-90" />
-          </button>
-        </div>
+        {!loading && (
+          <div className="flex gap-2 mt-10 md:hidden">
+            <button
+              onClick={() => scrollToCard(Math.max(activeIndex - 1, 0))}
+              className="w-10 h-10 md:w-14 md:h-14 rounded-full border border-primary flex items-center justify-center transition"
+            >
+              <ArrowSide className="rotate-90" />
+            </button>
+
+            <button
+              onClick={() =>
+                scrollToCard(Math.min(activeIndex + 1, products.length - 1))
+              }
+              className="w-10 h-10 md:w-14 md:h-14 rounded-full border border-primary flex items-center justify-center transition"
+            >
+              <ArrowSide className="-rotate-90" />
+            </button>
+          </div>
+        )}
 
         <div
           ref={scrollContainerRef}
@@ -84,18 +94,15 @@ function SignatureProductSection() {
             no-scrollbar
         "
         >
-          {products.map((data, i) => {
+          {(loading ? Array.from({ length: 4 }) : products).map((data, i) => {
             const COLS = 4;
-
             const isLastCol = (i + 1) % COLS === 0;
             const hasBelow = i + COLS < products.length;
 
             return (
               <div
                 key={i}
-                ref={(el) => {
-                  cardRefs.current[i] = el;
-                }}
+                ref={(el: any) => (cardRefs.current[i] = el)}
                 className="relative snap-start"
               >
                 <hr className="absolute top-0 left-1 w-[98%] border-t border-primary md:block hidden" />
@@ -107,29 +114,35 @@ function SignatureProductSection() {
                 )}
 
                 <div className="pb-5 pt-10 px-1 flex justify-center items-center">
-                  <Link
-                    href={`/product-details/${data.slug}`}
-                    className="block pb-5 pt-10 px-1"
-                  >
-                    <ProductCard product={data} textColor={"text-primary"} />
-                  </Link>
+                  {loading ? (
+                    <ProductSkeleton />
+                  ) : (
+                    <Link
+                      href={`/product-details/${data.slug}`}
+                      className="block pb-5 pt-10 px-1"
+                    >
+                      <ProductCard product={data} textColor={"text-primary"} />
+                    </Link>
+                  )}
                 </div>
               </div>
             );
           })}
         </div>
 
-        <div className="flex gap-3 mt-6 justify-center md:hidden">
-          {products.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => scrollToCard(i)}
-              className={`h-[2px] w-12 transition-colors duration-300 ${
-                i === activeIndex ? "bg-primary" : "bg-primary/30"
-              }`}
-            />
-          ))}
-        </div>
+        {!loading && (
+          <div className="flex gap-3 mt-6 justify-center md:hidden">
+            {products.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => scrollToCard(i)}
+                className={`h-[2px] w-12 transition-colors duration-300 ${
+                  i === activeIndex ? "bg-primary" : "bg-primary/30"
+                }`}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
