@@ -1,11 +1,35 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bentham&family=Cantata+One&family=Manrope:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bentham&family=Cantata+One&family=Manrope:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"); */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Manrope";
+  src: url("/assets/fonts/manrope/Manrope-Regular.ttf") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
 
+@font-face {
+  font-family: "Manrope";
+  src: url("/assets/fonts/manrope/Manrope-SemiBold.ttf") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/assets/fonts/manrope/Manrope-Bold.ttf") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Playfair Display";
+  src: url("/assets/fonts/playfair/PlayfairDisplay-Regular.ttf") format("woff2");
+  font-display: swap;
+}
 
 @layer base {
   :root {
@@ -44,7 +68,7 @@
 
     --danger: 0, 82%, 77%, 0.9;
 
-    --font-ivy: "IvyMode";
+    --font-ivy: "Playfair Display", serif;
     --font-manrope: "Manrope";
   }
 
@@ -308,4 +332,3 @@
     color: hsl(var(--muted-foreground));
   }
 }
-
