@@ -1,47 +1,25 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState,useEffect } from "react";
 import ProductCard from "../../common/ProductCard";
 import ArrowSide from "@/assets/svg/arrow_down.svg";
+import { products } from "@/constance/products";
 import { client } from "@/sanity/client";
 import { signatureProductsQuery } from "@/sanity/queries";
 import { mapSanityProductsToCards } from "@/lib/productAdapter";
-import gsap from "gsap";
-
-function ProductSkeleton() {
-  return (
-    <div className="px-6 py-10 animate-pulse">
-      <div className="w-[220px] h-[280px] bg-muted-foreground/20" />
-    </div>
-  );
-}
 
 function ViewSimilarProductsSection() {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [products, setProducts] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    client.fetch(signatureProductsQuery).then((data) => {
-      setProducts(mapSanityProductsToCards(data));
-      setLoading(false);
-    });
-  }, []);
-
-  // 🔥 Animate cards when data is ready
-  useEffect(() => {
-    if (loading || cardRefs.current.length === 0) return;
-
-    gsap.from(cardRefs.current, {
-      opacity: 0,
-      y: 40,
-      duration: 0.9,
-      ease: "power3.out",
-      stagger: 0.15,
-    });
-  }, [loading]);
+     const [products, setProducts] = useState<any[]>([]);
+  
+    useEffect(() => {
+      client.fetch(signatureProductsQuery).then((data) => {
+        setProducts(mapSanityProductsToCards(data));
+      });
+    }, []);
 
   const scrollTo = (index: number) => {
     cardRefs.current[index]?.scrollIntoView({
@@ -70,8 +48,6 @@ function ViewSimilarProductsSection() {
     setActiveIndex(distances.indexOf(Math.min(...distances)));
   };
 
-  const displayItems = loading ? Array.from({ length: 4 }) : products;
-
   return (
     <section className="px-5 md:px-10 py-10 relative">
       <div className="mb-2 flex items-center justify-between">
@@ -79,7 +55,6 @@ function ViewSimilarProductsSection() {
           View Similar Products
         </h2>
       </div>
-
       <div className="relative">
         <button
           onClick={() => scrollTo(Math.max(activeIndex - 1, 0))}
@@ -109,43 +84,35 @@ function ViewSimilarProductsSection() {
           className="overflow-x-auto no-scrollbar"
         >
           <div className="flex snap-x snap-mandatory">
-            {displayItems.map((item, i) => (
+            {products.map((item, i) => (
               <div
                 key={i}
-                ref={(el:any) => (cardRefs.current[i] = el)}
-                className="snap-center relative"
+                ref={(el: any) => (cardRefs.current[i] = el)}
+                className="snap-center  relative"
               >
                 <hr className="absolute top-0 left-0 w-full border-muted-foreground/40" />
                 <hr className="absolute bottom-0 left-0 w-full border-muted-foreground/40" />
-
-                {!loading && i !== products.length - 1 && (
+                {i !== products.length - 1 && (
                   <div className="absolute right-0 top-2 h-[95%] w-px bg-muted-foreground/40" />
                 )}
 
-                {loading ? (
-                  <ProductSkeleton />
-                ) : (
-                  <div className="px-6 py-10">
-                    <ProductCard product={item} />
-                  </div>
-                )}
+                <div className="px-6 py-10">
+                  <ProductCard product={item} />
+                </div>
               </div>
-            );
-          })}
+            ))}
           </div>
         </div>
       </div>
-
       <div className="flex justify-center gap-3 mt-6">
-        {!loading &&
-          products.map((_, i) => (
-            <span
-              key={i}
-              className={`h-[2px] w-10 transition-colors ${
-                i === activeIndex ? "bg-primary" : "bg-muted-foreground/40"
-              }`}
-            />
-          ))}
+        {products.map((_, i) => (
+          <span
+            key={i}
+            className={`h-[2px] w-10 transition-colors ${
+              i === activeIndex ? "bg-primary" : "bg-muted-foreground/40"
+            }`}
+          />
+        ))}
       </div>
     </section>
   );
