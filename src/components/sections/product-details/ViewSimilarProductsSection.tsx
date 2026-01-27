@@ -7,6 +7,7 @@ import { products } from "@/constance/products";
 import { client } from "@/sanity/client";
 import { signatureProductsQuery } from "@/sanity/queries";
 import { mapSanityProductsToCards } from "@/lib/productAdapter";
+import Link from "next/link";
 
 function ViewSimilarProductsSection() {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -84,23 +85,39 @@ function ViewSimilarProductsSection() {
           className="overflow-x-auto no-scrollbar"
         >
           <div className="flex snap-x snap-mandatory">
-            {products.map((item, i) => (
+          {products.map((data, i) => {
+            const COLS = 4;
+
+            const isLastCol = (i + 1) % COLS === 0;
+            const hasBelow = i + COLS < products.length;
+
+            return (
               <div
                 key={i}
-                ref={(el: any) => (cardRefs.current[i] = el)}
-                className="snap-center  relative"
+                ref={(el) => {
+                  cardRefs.current[i] = el;
+                }}
+                className="relative snap-start"
               >
-                <hr className="absolute top-0 left-0 w-full border-muted-foreground/40" />
-                <hr className="absolute bottom-0 left-0 w-full border-muted-foreground/40" />
-                {i !== products.length - 1 && (
-                  <div className="absolute right-0 top-2 h-[95%] w-px bg-muted-foreground/40" />
+                <hr className="absolute top-0 left-1 w-[98%] border-t border-primary md:block hidden" />
+                {!isLastCol && (
+                  <div className="absolute right-0 top-2 h-[96%] w-px bg-primary md:block hidden" />
+                )}
+                {!hasBelow && (
+                  <hr className="absolute bottom-0 left-1 w-[98%] border-t border-primary md:block hidden" />
                 )}
 
-                <div className="px-6 py-10">
-                  <ProductCard product={item} />
+                <div className="pb-5 pt-10 px-1 flex justify-center items-center">
+                  <Link
+                    href={`/product-details/${data.slug}`}
+                    className="block pb-5 pt-10 px-1"
+                  >
+                    <ProductCard product={data} textColor={"text-primary"} />
+                  </Link>
                 </div>
               </div>
-            ))}
+            );
+          })}
           </div>
         </div>
       </div>

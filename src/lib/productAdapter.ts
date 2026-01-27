@@ -86,7 +86,7 @@ export function mapSanityProductToConfig(p: SanityProduct) {
 
     if (aboutImages.length) {
       sections.push({
-        type: "productAbout", // must match PRODUCT_SECTIONS.productAbout
+        type: "productAbout", 
         props: {
           title: p.productAbout.title ?? "",
           description: p.productAbout.description ?? "",
@@ -110,7 +110,7 @@ if (p?.variants?.length) {
 const accordionItems = (s.accordionItems ?? []).map((it: SanityAccordionItem, idx: number) => ({
   id: idx + 1,
   title: it.title ?? "",
-  content: portableTextToPlainText(it.content), // ✅ convert
+  content: portableTextToPlainText(it.content),
 }));
 
 
@@ -125,7 +125,7 @@ const accordionItems = (s.accordionItems ?? []).map((it: SanityAccordionItem, id
   if (items.length) {
     sections.push({
       type: "overview",
-      props: { items }, // 👈 pass array to wrapper
+      props: { items }, 
     });
   }
 }
@@ -165,7 +165,6 @@ export function mapSanityProductsToCards(products: SanityProduct[]) {
 function portableTextToPlainText(value: unknown): string {
   if (!value) return "";
 
-  // If Sanity returns Portable Text blocks (array)
   if (Array.isArray(value)) {
     return value
       .map((block) => {
@@ -178,7 +177,6 @@ function portableTextToPlainText(value: unknown): string {
       .join("\n");
   }
 
-  // If already a string
   if (typeof value === "string") return value;
 
   return "";

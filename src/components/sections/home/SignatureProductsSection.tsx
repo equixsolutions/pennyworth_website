@@ -3,11 +3,11 @@
 import { useRef, useState,useEffect } from "react";
 import ProductCard from "../../common/ProductCard";
 import ArrowSide from "@/assets/svg/arrow_down.svg";
-import { products } from "@/constance/products";
 
 import { client } from "@/sanity/client";
 import { signatureProductsQuery } from "@/sanity/queries";
 import { mapSanityProductsToCards } from "@/lib/productAdapter";
+import Link from "next/link";
 
 
 function SignatureProductSection() {
@@ -83,27 +83,39 @@ function SignatureProductSection() {
             className="overflow-x-auto no-scrollbar"
           >
             <div className="flex snap-x snap-mandatory gap-2">
-              {products.map((item, i) => (
-                <div
-                  key={i}
-                  ref={(el) => {
-                    cardRefs.current[i] = el;
-                  }}
-                  className="relative snap-start"
-                >
-                  <hr className="absolute top-0 left-1 w-[98%] border-secondary/40" />
+          {products.map((data, i) => {
+            const COLS = 4;
 
-                  {i !== products.length - 1 && (
-                    <hr className="absolute w-px h-[98%] top-1 bg-secondary/40 -right-1" />
-                  )}
+            const isLastCol = (i + 1) % COLS === 0;
+            const hasBelow = i + COLS < products.length;
 
-                  <hr className="absolute bottom-0 left-0 w-[99%] border-secondary/40" />
+            return (
+              <div
+                key={i}
+                ref={(el) => {
+                  cardRefs.current[i] = el;
+                }}
+                className="relative snap-start"
+              >
+                <hr className="absolute top-0 left-1 w-[98%] border-t border-primary md:block hidden" />
+                {!isLastCol && (
+                  <div className="absolute right-0 top-2 h-[96%] w-px bg-primary md:block hidden" />
+                )}
+                {!hasBelow && (
+                  <hr className="absolute bottom-0 left-1 w-[98%] border-t border-primary md:block hidden" />
+                )}
 
-                  <div className="pb-5 pt-10 px-2">
-                    <ProductCard product={item} />
-                  </div>
+                <div className="pb-5 pt-10 px-1 flex justify-center items-center">
+                  <Link
+                    href={`/product-details/${data.slug}`}
+                    className="block pb-5 pt-10 px-1"
+                  >
+                    <ProductCard product={data} textColor={"text-primary"} />
+                  </Link>
                 </div>
-              ))}
+              </div>
+            );
+          })}
             </div>
           </div>
 
