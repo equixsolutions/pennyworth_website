@@ -98,6 +98,7 @@ function SignatureProductSection() {
   return (
     <section
       ref={sectionRef}
+      id="about"
       className="bg-primary text-secondary md:pl-10 pl-5 py-10 md:mt-16 mt-10"
     >
       <div className="grid grid-cols-1 md:grid-cols-6 gap-10">

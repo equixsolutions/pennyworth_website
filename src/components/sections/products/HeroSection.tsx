@@ -92,7 +92,7 @@ function HeroSection({ onMenuOpen }: HeroSectionProps) {
         <div className="relative md:h-full h-[50vh] grid grid-cols-6 md:grid-cols-2 md:grid-rows-6 grid-rows-10 col-span-2 md:mr-16 gap-1">
           <div className="relative overflow-hidden col-span-3 col-start-3 md:col-span-1 md:row-span-6 row-span-6 hero-image">
             <Image
-              src="/assets/images/design/hero.png"
+              src="/assets/images/design/product_hero_1.png"
               alt="Workwear"
               fill
               className="object-cover"
@@ -102,7 +102,7 @@ function HeroSection({ onMenuOpen }: HeroSectionProps) {
 
           <div className="relative overflow-hidden md:row-start-6 md:row-end-3 row-start-11 row-end-5 col-start-6 col-span-10 md:col-start-2 md:col-span-1 hero-image">
             <Image
-              src="/assets/images/design/hero.png"
+              src="/assets/images/design/product_hero_1.png"
               alt="Workwear"
               loading="lazy"
               fill

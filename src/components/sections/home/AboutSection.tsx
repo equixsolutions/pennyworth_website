@@ -8,6 +8,7 @@ import FeatureItem from "@/components/common/FeatureItem";
 import ImageGrid from "@/components/common/ImageGrid";
 import { features } from "@/constance/home";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -98,7 +99,7 @@ const AboutSection = () => {
           ].map((text, i) => (
             <p
               key={i}
-              ref={(el:any) => el && (textRefs.current[i] = el)}
+              ref={(el: any) => el && (textRefs.current[i] = el)}
               className="md:text-body-md text-body-xs text-primary/70 !leading-tight"
             >
               {text}
@@ -116,21 +117,22 @@ const AboutSection = () => {
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  ref={(el:any) => el && (featureRefs.current[index] = el)}
+                  ref={(el: any) => el && (featureRefs.current[index] = el)}
                 >
                   <FeatureItem {...feature} />
                 </div>
               ))}
             </div>
-
-            <Button
-              ref={buttonRef}
-              variant="outline"
-              className="md:text-body-md text-body-xs mt-10 border-primary rounded-sm px-6 py-5 group"
-            >
-              Learn Our Story
-              <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </Button>
+            <Link href="/about-us">
+              <Button
+                ref={buttonRef}
+                variant="outline"
+                className="md:text-body-md text-body-xs mt-10 border-primary rounded-sm px-6 py-5 group"
+              >
+                Learn Our Story
+                <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </Button>
+            </Link>
           </div>
 
           <div className="h-[500px] md:h-[500px] lg:h-auto">

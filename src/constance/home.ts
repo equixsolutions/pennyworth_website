@@ -15,7 +15,7 @@ import TruckTS from "@/assets/svg/Truck.svg";
 import { ShieldCheck, Factory, Boxes, Palette, Leaf } from "lucide-react";
 
 export const menuItems = [
-  { label: "Home", href: "" },
+  { label: "Home", href: "/" },
   { label: "About Us", href: "/about-us" },
   { label: "Products", href: "/products" },
   { label: "Blog", href: "/blogs" },
@@ -190,25 +190,34 @@ export const footerLinksData = [
   {
     label: "Request a Quote",
     description: "Get custom pricing for your bulk order",
+    url: "/contact-us",
   },
-  { label: "Order Samples", description: "Test quality before bulk order" },
+  {
+    label: "Order Samples",
+    description: "Test quality before bulk order",
+    url: "/contact-us",
+  },
+
   {
     label: "Design Your Uniform",
     description: "Use our online customization tool",
+    url: "/contact-us",
   },
   {
     label: "Download Catalog",
     description: "Browse our complete product range",
+    url: "/contact-us",
   },
 ];
 
 export const navigationLinks = [
-  "HOME",
-  "ABOUT US",
-  "CUSTOMIZE WEAR",
-  "BLOG",
-  "CONTACT US",
+  { label: "HOME", url: "/" },
+  { label: "ABOUT US", url: "/about-us" },
+  { label: "CUSTOMIZE WEAR", url: "/customize-wear" },
+  { label: "BLOG", url: "/blog" },
+  { label: "CONTACT US", url: "/contact-us" },
 ];
+
 export const visitUsData = [
   {
     title: "Address",

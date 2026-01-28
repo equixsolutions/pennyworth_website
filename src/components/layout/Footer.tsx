@@ -8,6 +8,7 @@ import {
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -109,9 +110,11 @@ export default function Footer() {
               {footerLinksData.map((link, i) => (
                 <div key={i} className="w-[250px]">
                   <div className="flex justify-between mb-4">
-                    <span className="text-secondary md:text-body-md-bold text-body-sm-bold">
-                      {link.label}
-                    </span>
+                    <Link href={link.url}>
+                      <span className="text-secondary md:text-body-md-bold text-body-sm-bold">
+                        {link.label}
+                      </span>
+                    </Link>
                     <ArrowRight className="text-secondary" />
                   </div>
                   <hr className="border-muted-secondary_light mb-3" />
@@ -158,7 +161,7 @@ export default function Footer() {
       </section>
       <div
         ref={visitCardRef}
-        className="absolute top-[40%] left-1/2 -translate-x-1/2 w-[90%] max-w-[680px] bg-secondary-background text-secondary px-6 py-8 z-30 md:top-[25%] md:left-auto md:right-[10px] lg:right-[63px] md:translate-x-0 md:w-[50%] md:px-[56px] md:py-[48px]"
+        className="absolute top-[42%] left-1/2 -translate-x-1/2 w-[90%] max-w-[680px] bg-secondary-background text-secondary px-6 py-8 z-30 md:top-[25%] md:left-auto md:right-[10px] lg:right-[63px] md:translate-x-0 md:w-[50%] md:px-[56px] md:py-[48px]"
       >
         <h2 className="md:text-body-lg text-body-sm mb-10">Visit Us</h2>
 
@@ -189,9 +192,11 @@ export default function Footer() {
 
         <nav className="flex flex-col lg:flex-row items-start md:gap-6 gap-2 text-base">
           {navigationLinks.map((link, i) => (
-            <button key={i} className="hover:opacity-70 text-xsm md:text-m-sm">
-              {link}
-            </button>
+            <Link key={i} href={link.url}>
+              <button className="hover:opacity-70 text-xsm md:text-m-sm">
+                {link.label}
+              </button>
+            </Link>
           ))}
         </nav>
       </div>

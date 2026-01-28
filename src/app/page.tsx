@@ -2,7 +2,7 @@
 
 import HeroSection from "@/components/sections/home/HeroSection";
 import NavigationMenu from "@/components/layout/NavigationMenu";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import StatsSection from "@/components/sections/home/StatsSection";
 import AboutSection from "@/components/sections/home/AboutSection";
 import LeadershipSection from "@/components/sections/home/LeadershipSection";
@@ -20,10 +20,39 @@ import IntroLoader from "@/components/layout/IntroLoader";
 const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [loadingDone, setLoadingDone] = useState(false);
+  const [shouldShowLoader, setShouldShowLoader] = useState(false);
+
+
+  //this is not a right way to set the intro loader
+  // fix later
+  useEffect(() => {
+    const navigated = window.performance.getEntriesByType(
+      "navigation",
+    )[0] as PerformanceNavigationTiming;
+
+    const isReload = navigated?.type === "reload";
+    const isBackForward = navigated?.type === "back_forward";
+
+    const hasSeenLoader = sessionStorage.getItem("loaderSeen");
+
+    if (isReload || !hasSeenLoader) {
+      setShouldShowLoader(true);
+      sessionStorage.setItem("loaderSeen", "true");
+    } else if (isBackForward || hasSeenLoader) {
+      setLoadingDone(true);
+      setShouldShowLoader(false);
+    }
+  }, []);
+
+  const handleLoaderFinish = () => {
+    setLoadingDone(true);
+  };
 
   return (
     <>
-      {!loadingDone && <IntroLoader onFinish={() => setLoadingDone(true)} />}
+      {shouldShowLoader && !loadingDone && (
+        <IntroLoader onFinish={handleLoaderFinish} />
+      )}
       <main id="home-content" className="min-h-screen">
         <HeroSection
           onMenuOpen={() => setIsMenuOpen(true)}
