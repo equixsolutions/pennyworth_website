@@ -10,6 +10,7 @@ import { mapSanityProductsToCards } from "@/lib/productAdapter";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,12 +28,10 @@ function SignatureProductSection() {
     });
   }, []);
 
-
   useEffect(() => {
     if (!products.length) return;
 
     const ctx = gsap.context(() => {
-    
       gsap.from(".signature-header", {
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -44,7 +43,6 @@ function SignatureProductSection() {
         ease: "power3.out",
       });
 
-      // Cards reveal
       gsap.from(cardRefs.current, {
         scrollTrigger: {
           trigger: scrollContainerRef.current,
@@ -129,6 +127,7 @@ function SignatureProductSection() {
             </div>
           </div>
         </div>
+
         <div className="col-span-1 md:col-span-5 w-full">
           <div
             ref={scrollContainerRef}
@@ -136,33 +135,37 @@ function SignatureProductSection() {
             className="overflow-x-auto no-scrollbar"
           >
             <div className="flex snap-x snap-mandatory gap-2">
-              {products.map((item, i) => (
+              {products.map((data, i) => (
                 <div
-                  key={i}
-                  ref={(el: any) => (cardRefs.current[i] = el)}
+                  key={data.slug ?? i}
+                  ref={(el) => {
+                    cardRefs.current[i] = el;
+                  }}
                   className="relative snap-start"
                 >
                   <hr className="absolute top-0 left-1 w-[98%] border-secondary/40" />
-
                   {i !== products.length - 1 && (
                     <hr className="absolute w-px h-[98%] top-1 bg-secondary/40 -right-1" />
                   )}
-
                   <hr className="absolute bottom-0 left-0 w-[99%] border-secondary/40" />
 
                   <div className="pb-5 pt-10 px-2">
-                    <ProductCard product={item} />
+                    <Link
+                      href={`/product-details/${data.slug}`}
+                      className="block pb-5 pt-10 px-1"
+                    >
+                      <ProductCard product={data} />
+                    </Link>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-        
           <div className="flex gap-3 mt-6 justify-center md:justify-start">
-            {products.map((_, i) => (
+            {products.map((p, i) => (
               <button
-                key={i}
+                key={p.slug ?? i}
                 onClick={() => scrollToCard(i)}
                 className={`h-[2px] w-12 transition-colors duration-300 ${
                   i === activeIndex ? "bg-secondary" : "bg-secondary/30"

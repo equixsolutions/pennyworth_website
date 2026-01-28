@@ -82,7 +82,7 @@ export const homeVideosQuery = `
     _key,
     title,
     videoUrl,
-    thumbnail
+    "thumbnail": thumbnail.asset->url
   }
 }
 `;

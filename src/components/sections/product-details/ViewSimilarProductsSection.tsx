@@ -7,6 +7,7 @@ import { client } from "@/sanity/client";
 import { signatureProductsQuery } from "@/sanity/queries";
 import { mapSanityProductsToCards } from "@/lib/productAdapter";
 import gsap from "gsap";
+import Link from "next/link";
 
 function ProductSkeleton() {
   return (
@@ -24,10 +25,18 @@ function ViewSimilarProductsSection() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    let mounted = true;
+
     client.fetch(signatureProductsQuery).then((data) => {
+      if (!mounted) return;
       setProducts(mapSanityProductsToCards(data));
       setLoading(false);
+      setActiveIndex(0);
     });
+
+    return () => {
+      mounted = false;
+    };
   }, []);
 
   //  Animate cards when data is ready
@@ -110,10 +119,12 @@ function ViewSimilarProductsSection() {
           className="overflow-x-auto no-scrollbar"
         >
           <div className="flex snap-x snap-mandatory">
-            {displayItems.map((item, i) => (
+            {displayItems.map((data: any, i: number) => (
               <div
-                key={i}
-                ref={(el: any) => (cardRefs.current[i] = el)}
+                key={loading ? i : (data?.slug ?? i)}
+                ref={(el) => {
+                  cardRefs.current[i] = el;
+                }}
                 className="snap-center relative"
               >
                 <hr className="absolute top-0 left-0 w-full border-muted-foreground/40" />
@@ -127,7 +138,12 @@ function ViewSimilarProductsSection() {
                   <ProductSkeleton />
                 ) : (
                   <div className="px-6 py-10">
-                    <ProductCard product={item} />
+                    <Link
+                      href={`/product-details/${data.slug}`}
+                      className="block pb-5 pt-10 px-1"
+                    >
+                      <ProductCard product={data} />
+                    </Link>
                   </div>
                 )}
               </div>
@@ -138,9 +154,9 @@ function ViewSimilarProductsSection() {
 
       <div className="flex justify-center gap-3 mt-6">
         {!loading &&
-          products.map((_, i) => (
+          products.map((p, i) => (
             <span
-              key={i}
+              key={p.slug ?? i}
               className={`h-[2px] w-10 transition-colors ${
                 i === activeIndex ? "bg-primary" : "bg-muted-foreground/40"
               }`}
