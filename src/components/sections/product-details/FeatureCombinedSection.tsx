@@ -46,6 +46,7 @@ function FeatureCombinedSection({
         y: 20,
         duration: 0.7,
         ease: "power2.out",
+        immediateRender: false,
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 80%",
@@ -59,6 +60,7 @@ function FeatureCombinedSection({
         y: 30,
         duration: 0.8,
         ease: "power3.out",
+        immediateRender: false,
         stagger: 0.15,
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -73,6 +75,7 @@ function FeatureCombinedSection({
         y: 15,
         duration: 0.6,
         ease: "power2.out",
+        immediateRender: false,
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 72%",
@@ -86,6 +89,7 @@ function FeatureCombinedSection({
         y: 30,
         duration: 0.9,
         ease: "power3.out",
+        immediateRender: false,
         stagger: 0.15,
         scrollTrigger: {
           trigger: sectionRef.current,

@@ -23,6 +23,7 @@ function HeroSection({
     const ctx = gsap.context(() => {
       gsap.from(".hero-header", {
         opacity: 0,
+        immediateRender: false,
         y: -20,
         duration: 0.8,
         ease: "power3.out",
@@ -30,6 +31,7 @@ function HeroSection({
       const words: any = textRef.current?.querySelectorAll(".hero-word");
       gsap.from(words, {
         opacity: 0,
+        immediateRender: false,
         y: 20,
         duration: 0.6,
         ease: "power3.out",
@@ -42,6 +44,7 @@ function HeroSection({
         opacity: 0,
         y: (i: number) => (i % 2 === 0 ? -120 : 120),
         duration: 1.1,
+        immediateRender: false,
         ease: "power3.out",
         stagger: 0.15,
         delay: 0.4,

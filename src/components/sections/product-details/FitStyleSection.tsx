@@ -22,6 +22,7 @@ function FitStyleSection({
       // Title + list
       gsap.from(".fs-text", {
         opacity: 0,
+        immediateRender: false,
         y: 20,
         duration: 0.7,
         ease: "power2.out",
@@ -35,6 +36,7 @@ function FitStyleSection({
       // List items
       gsap.from(".fs-item", {
         opacity: 0,
+        immediateRender: false,
         y: 10,
         duration: 0.4,
         ease: "power2.out",
@@ -52,6 +54,7 @@ function FitStyleSection({
         y: 30,
         duration: 0.9,
         ease: "power3.out",
+        immediateRender: false,
         stagger: 0.15,
         scrollTrigger: {
           trigger: sectionRef.current,

@@ -29,6 +29,7 @@ function ProductOverview({
       gsap.from(".po-title", {
         opacity: 0,
         y: 20,
+        immediateRender: false,
         duration: 0.6,
         ease: "power2.out",
         scrollTrigger: {
@@ -41,6 +42,7 @@ function ProductOverview({
       gsap.from(".po-image", {
         opacity: 0,
         y: 40,
+        immediateRender: false,
         duration: 1,
         ease: "power3.out",
         scrollTrigger: {
@@ -54,6 +56,7 @@ function ProductOverview({
         y: 15,
         duration: 0.4,
         stagger: 0.08,
+        immediateRender: false,
         ease: "power2.out",
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -66,6 +69,7 @@ function ProductOverview({
         opacity: 0,
         y: 30,
         duration: 0.8,
+        immediateRender: false,
         ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,

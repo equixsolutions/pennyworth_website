@@ -20,6 +20,7 @@ function ColorFabricCustomizationSection() {
         opacity: 0,
         y: 20,
         duration: 0.7,
+        immediateRender: false,
         ease: "power2.out",
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -34,6 +35,7 @@ function ColorFabricCustomizationSection() {
         y: 20,
         duration: 0.6,
         ease: "power2.out",
+        immediateRender: false,
         stagger: 0.12,
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -48,6 +50,7 @@ function ColorFabricCustomizationSection() {
         y: 15,
         duration: 0.5,
         ease: "power2.out",
+        immediateRender: false,
         stagger: 0.08,
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -62,6 +65,7 @@ function ColorFabricCustomizationSection() {
         y: 30,
         duration: 0.9,
         ease: "power3.out",
+        immediateRender: false,
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 72%",

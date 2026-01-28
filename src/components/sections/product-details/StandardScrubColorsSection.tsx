@@ -19,6 +19,7 @@ function StandardScrubColorsSection() {
       gsap.from(".ssc-heading", {
         opacity: 0,
         y: 20,
+        immediateRender: false,
         duration: 0.6,
         ease: "power2.out",
         scrollTrigger: {
@@ -31,6 +32,7 @@ function StandardScrubColorsSection() {
       // Color groups animation
       gsap.from(".ssc-group", {
         opacity: 0,
+        immediateRender: false,
         y: 30,
         duration: 0.8,
         ease: "power3.out",

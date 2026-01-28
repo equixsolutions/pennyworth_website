@@ -30,12 +30,13 @@ function ViewSimilarProductsSection() {
     });
   }, []);
 
-  // 🔥 Animate cards when data is ready
+  //  Animate cards when data is ready
   useEffect(() => {
     if (loading || cardRefs.current.length === 0) return;
 
     gsap.from(cardRefs.current, {
       opacity: 0,
+      immediateRender: false,
       y: 40,
       duration: 0.9,
       ease: "power3.out",
@@ -112,7 +113,7 @@ function ViewSimilarProductsSection() {
             {displayItems.map((item, i) => (
               <div
                 key={i}
-                ref={(el:any) => (cardRefs.current[i] = el)}
+                ref={(el: any) => (cardRefs.current[i] = el)}
                 className="snap-center relative"
               >
                 <hr className="absolute top-0 left-0 w-full border-muted-foreground/40" />

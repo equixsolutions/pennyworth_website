@@ -59,6 +59,7 @@ function ProductSpecifications() {
     const ctx = gsap.context(() => {
       gsap.from(".ps-heading", {
         opacity: 0,
+        immediateRender: false,
         y: 20,
         duration: 0.7,
         ease: "power2.out",
@@ -72,6 +73,7 @@ function ProductSpecifications() {
       gsap.from(".ps-top", {
         opacity: 0,
         y: 30,
+        immediateRender: false,
         duration: 0.9,
         ease: "power3.out",
         stagger: 0.2,
@@ -85,6 +87,7 @@ function ProductSpecifications() {
       gsap.from(".ps-divider", {
         opacity: 0,
         duration: 0.6,
+        immediateRender: false,
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 65%",
@@ -95,6 +98,7 @@ function ProductSpecifications() {
       gsap.from(".ps-bottom", {
         opacity: 0,
         y: 30,
+        immediateRender: false,
         duration: 0.9,
         ease: "power3.out",
         stagger: 0.25,

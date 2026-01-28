@@ -25,6 +25,7 @@ function InfoGridSection({
         opacity: 0,
         y: 20,
         duration: 0.7,
+        immediateRender: false,
         ease: "power2.out",
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -38,6 +39,7 @@ function InfoGridSection({
         opacity: 0,
         y: 30,
         duration: 0.8,
+        immediateRender: false,
         ease: "power3.out",
         stagger: 0.15,
         scrollTrigger: {
@@ -53,6 +55,7 @@ function InfoGridSection({
         y: 40,
         duration: 0.9,
         ease: "power3.out",
+        immediateRender: false,
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 72%",
@@ -66,6 +69,7 @@ function InfoGridSection({
         y: 20,
         duration: 0.6,
         ease: "power2.out",
+        immediateRender: false,
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 70%",

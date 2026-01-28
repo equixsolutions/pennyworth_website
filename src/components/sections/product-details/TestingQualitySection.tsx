@@ -20,6 +20,7 @@ function TestingQualitySection() {
         opacity: 0,
         y: 30,
         duration: 0.9,
+        immediateRender: false,
         ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -34,6 +35,7 @@ function TestingQualitySection() {
         y: 20,
         duration: 0.6,
         ease: "power2.out",
+        immediateRender: false,
         stagger: 0.15,
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -46,6 +48,7 @@ function TestingQualitySection() {
       gsap.from(".tq-image", {
         opacity: 0,
         y: 40,
+        immediateRender: false,
         duration: 1.1,
         ease: "power3.out",
         scrollTrigger: {
@@ -92,7 +95,7 @@ function TestingQualitySection() {
             src="/assets/images/design/T&Q.png"
             alt="Quality Testing"
             fill
-            loading="lazy"
+            // loading="lazy"
             className="object-cover"
             priority
           />

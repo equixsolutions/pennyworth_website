@@ -22,6 +22,7 @@ function ProductAbout({ images, title, description }: ProductAboutProps) {
       gsap.from(".pa-image", {
         opacity: 0,
         y: 40,
+        immediateRender: false,
         duration: 1,
         ease: "power3.out",
         scrollTrigger: {
@@ -36,6 +37,7 @@ function ProductAbout({ images, title, description }: ProductAboutProps) {
         opacity: 0,
         y: 30,
         duration: 0.8,
+        immediateRender: false,
         ease: "power2.out",
         delay: 0.1,
         scrollTrigger: {
@@ -49,6 +51,7 @@ function ProductAbout({ images, title, description }: ProductAboutProps) {
       gsap.from(".pa-thumb", {
         opacity: 0,
         y: 15,
+        immediateRender: false,
         duration: 0.4,
         ease: "power2.out",
         stagger: 0.08,

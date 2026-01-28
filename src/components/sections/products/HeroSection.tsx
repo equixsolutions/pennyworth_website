@@ -82,7 +82,6 @@ function HeroSection({ onMenuOpen }: HeroSectionProps) {
                 alt="Penny Wort Logo"
                 width={160}
                 height={40}
-                priority
                 loading="lazy"
                 className="cursor-pointer"
               />

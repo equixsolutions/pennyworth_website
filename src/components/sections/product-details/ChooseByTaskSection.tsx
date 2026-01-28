@@ -50,6 +50,7 @@ function ChooseByTaskSection() {
         y: 20,
         duration: 0.7,
         ease: "power2.out",
+        immediateRender: false,
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 80%",
@@ -63,6 +64,7 @@ function ChooseByTaskSection() {
         y: 15,
         duration: 0.5,
         ease: "power2.out",
+        immediateRender: false,
         stagger: 0.06,
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -78,6 +80,7 @@ function ChooseByTaskSection() {
         duration: 0.9,
         ease: "power3.out",
         stagger: 0.15,
+        immediateRender: false,
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 70%",

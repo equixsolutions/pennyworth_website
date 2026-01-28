@@ -58,6 +58,7 @@ function BulkOrderBenefits() {
         y: 20,
         duration: 0.7,
         ease: "power2.out",
+        immediateRender: false,
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 80%",
@@ -71,6 +72,7 @@ function BulkOrderBenefits() {
         y: 30,
         duration: 0.8,
         ease: "power3.out",
+        immediateRender: false,
         stagger: 0.2,
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -85,6 +87,7 @@ function BulkOrderBenefits() {
         y: 10,
         duration: 0.4,
         ease: "power2.out",
+        immediateRender: false,
         stagger: 0.05,
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -99,6 +102,7 @@ function BulkOrderBenefits() {
         y: 25,
         duration: 0.7,
         ease: "power3.out",
+        immediateRender: false,
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 70%",

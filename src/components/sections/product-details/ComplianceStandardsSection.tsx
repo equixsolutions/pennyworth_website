@@ -73,6 +73,7 @@ function ComplianceStandardsSection() {
       gsap.from(".compliance-heading", {
         opacity: 0,
         y: 20,
+        immediateRender: false,
         duration: 0.7,
         ease: "power2.out",
         scrollTrigger: {
@@ -88,6 +89,7 @@ function ComplianceStandardsSection() {
         y: 15,
         duration: 0.6,
         ease: "power2.out",
+        immediateRender: false,
         delay: 0.1,
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -102,6 +104,7 @@ function ComplianceStandardsSection() {
         y: 30,
         duration: 0.8,
         ease: "power3.out",
+        immediateRender: false,
         stagger: 0.15,
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -116,6 +119,7 @@ function ComplianceStandardsSection() {
         y: 25,
         duration: 0.7,
         ease: "power3.out",
+        immediateRender: false,
         stagger: 0.2,
         scrollTrigger: {
           trigger: sectionRef.current,

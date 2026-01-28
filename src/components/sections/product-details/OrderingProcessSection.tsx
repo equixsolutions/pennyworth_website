@@ -22,6 +22,7 @@ function OrderingProcessSection() {
       gsap.from(".op-heading", {
         opacity: 0,
         y: 20,
+        immediateRender: false,
         duration: 0.7,
         ease: "power2.out",
         scrollTrigger: {
@@ -34,6 +35,7 @@ function OrderingProcessSection() {
       // Timeline line
       gsap.from(".op-line", {
         scaleX: 0,
+        immediateRender: false,
         scaleY: 0,
         transformOrigin: "center",
         duration: 0.8,
@@ -50,6 +52,7 @@ function OrderingProcessSection() {
         opacity: 0,
         y: 30,
         duration: 0.6,
+        immediateRender: false,
         ease: "power3.out",
         stagger: 0.15,
         scrollTrigger: {
@@ -63,6 +66,7 @@ function OrderingProcessSection() {
       gsap.from(".op-bottom", {
         opacity: 0,
         y: 40,
+        immediateRender: false,
         duration: 0.8,
         ease: "power3.out",
         stagger: 0.2,

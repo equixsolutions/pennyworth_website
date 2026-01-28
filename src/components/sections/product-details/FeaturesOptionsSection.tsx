@@ -22,6 +22,7 @@ function FeaturesOptionsSection({
         opacity: 0,
         y: 20,
         duration: 0.7,
+        immediateRender: false,
         ease: "power2.out",
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -35,6 +36,7 @@ function FeaturesOptionsSection({
         opacity: 0,
         y: 30,
         duration: 0.8,
+        immediateRender: false,
         ease: "power3.out",
         stagger: 0.15,
         scrollTrigger: {
@@ -49,6 +51,7 @@ function FeaturesOptionsSection({
         opacity: 0,
         y: 10,
         duration: 0.4,
+        immediateRender: false,
         ease: "power2.out",
         stagger: 0.05,
         scrollTrigger: {
