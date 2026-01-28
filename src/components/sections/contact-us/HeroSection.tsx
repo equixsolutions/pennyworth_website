@@ -63,7 +63,6 @@ function HeroSection({ onMenuOpen }: HeroSectionProps) {
       ref={sectionRef}
       className="relative bg-primary text-secondary min-h-[70vh] flex flex-col"
     >
-      {/* HEADER */}
       <div className="hero-header flex items-center justify-between px-5 md:px-10 pt-6">
         <Link href="/" aria-label="Go to home">
           <Image
