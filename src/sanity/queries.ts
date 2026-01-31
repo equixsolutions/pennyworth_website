@@ -87,6 +87,15 @@ export const homeVideosQuery = `
 }
 `;
 ;
+export const testimonialsQuery = `
+*[_type == "testimonial" && isActive == true]
+| order(order asc, _createdAt desc){
+  _id,
+  quote,
+  author,
+  company
+}[0...10]
+`;
 
 
 
