@@ -52,10 +52,11 @@ export const productBySlugQuery = `
 
 
 export const signatureProductsQuery = `
-*[_type == "product" == true] {
+*[_type == "product"]
+| order(order asc, _createdAt desc){
   title,
   "slug": slug.current,
-  cardOverlay {
+  cardOverlay{
     description,
     materials,
     applications,
